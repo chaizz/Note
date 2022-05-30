@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "45e27063459979cb",
+        "id": "b37acf90519c67b3",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md",
-            "mode": "preview",
-            "source": false
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -48,12 +44,20 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "f0737c2c0d2fc27a",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 163
   },
   "right": {
     "id": "50b88b08f3ed1911",
@@ -69,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -79,17 +82,49 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "a9db84d4a13574c4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d5f90b9106e51797",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "37c8248fa65e5de6",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 100
   },
-  "active": "45e27063459979cb",
+  "active": "b37acf90519c67b3",
   "lastOpenFiles": [
-    "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md",
-    "未命名.md"
+    "obsdian 学习/obsdian 插件.md",
+    "未命名.md",
+    "test.md",
+    "Templates/笔记.md",
+    "Linux/aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md",
+    "README.md",
+    "Templates/hexo.md",
+    "2022-05-30.md"
   ]
 }

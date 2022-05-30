@@ -3,5 +3,8 @@
   "defaultViewMode": "preview",
   "legacyEditor": false,
   "trashOption": "local",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": true,
+  "rightToLeft": false,
+  "attachmentFolderPath": "/files"
 }
