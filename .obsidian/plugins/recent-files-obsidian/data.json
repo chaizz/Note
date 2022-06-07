@@ -1,0 +1,30 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Docker 知识总结",
+      "path": "Docker 知识总结.md"
+    },
+    {
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Django之美：dajngo的常用插件.md"
+    },
+    {
+      "basename": "Centos7-5源码安装postgresql-12",
+      "path": "Centos7-5源码安装postgresql-12.md"
+    },
+    {
+      "basename": "CDN工作原理",
+      "path": "CDN工作原理.md"
+    },
+    {
+      "basename": "两台linux-互相传输文件",
+      "path": "两台linux-互相传输文件.md"
+    },
+    {
+      "basename": "连接Oracle数据库",
+      "path": "连接Oracle数据库.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null
+}
