@@ -1,6 +1,130 @@
 {
   "recentFiles": [
     {
+      "basename": "MySQL性能优化总结",
+      "path": "Database/MySQL/MySQL性能优化总结.md"
+    },
+    {
+      "basename": "MySQL索引原理",
+      "path": "Database/MySQL/MySQL索引原理.md"
+    },
+    {
+      "basename": "MySQL索引问题",
+      "path": "Database/MySQL/MySQL索引问题.md"
+    },
+    {
+      "basename": "MySQL事务与锁机制",
+      "path": "Database/MySQL/MySQL事务与锁机制.md"
+    },
+    {
+      "basename": "MySQL的MVCC机制",
+      "path": "Database/MySQL/MySQL的MVCC机制.md"
+    },
+    {
+      "basename": "Mysql 8.0 数据库无法远程连接",
+      "path": "Database/MySQL/Mysql 8.0 数据库无法远程连接.md"
+    },
+    {
+      "basename": "连接Oracle数据库",
+      "path": "Database/Oracle/连接Oracle数据库.md"
+    },
+    {
+      "basename": "Redis知识巩固",
+      "path": "Database/Redis/Redis知识巩固.md"
+    },
+    {
+      "basename": "Redis底层原理",
+      "path": "Database/Redis/Redis底层原理.md"
+    },
+    {
+      "basename": "面试题汇总",
+      "path": "Interview/面试题汇总.md"
+    },
+    {
+      "basename": "Centos7-5源码安装postgresql-12",
+      "path": "Linux/Centos7-5源码安装postgresql-12.md"
+    },
+    {
+      "basename": "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档",
+      "path": "Linux/aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md"
+    },
+    {
+      "basename": "两台linux-互相传输文件",
+      "path": "Linux/两台linux-互相传输文件.md"
+    },
+    {
+      "basename": "Pulasr知识总结",
+      "path": "MessageQueue/Pulasr知识总结.md"
+    },
+    {
+      "basename": "obsdian 插件",
+      "path": "Obsdian/obsdian 插件.md"
+    },
+    {
+      "basename": "迭代思维与MVP产品的规划方法",
+      "path": "ProductManager/迭代思维与MVP产品的规划方法.md"
+    },
+    {
+      "basename": "Python代码规范（pep8-Google-style）",
+      "path": "Python/Python代码规范（pep8-Google-style）.md"
+    },
+    {
+      "basename": "Python-Elestatcsearch",
+      "path": "Python/Python-Elestatcsearch.md"
+    },
+    {
+      "basename": "Jupyter-notebook的安装与基本使用",
+      "path": "Python/Jupyter-notebook的安装与基本使用.md"
+    },
+    {
+      "basename": "flaskshell创建索引出错",
+      "path": "Python/flaskshell创建索引出错.md"
+    },
+    {
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Python/Django之美：dajngo的常用插件.md"
+    },
+    {
+      "basename": "hexo",
+      "path": "Templates/hexo.md"
+    },
+    {
+      "basename": "CDN工作原理",
+      "path": "Web/CDN工作原理.md"
+    },
+    {
+      "basename": "Typora设置七牛云图床",
+      "path": "Web/Typora设置七牛云图床.md"
+    },
+    {
+      "basename": "DockerCompose知识总结",
+      "path": "Linux/Docker/DockerCompose知识总结.md"
+    },
+    {
+      "basename": "Docker部署MySQL8",
+      "path": "Linux/Docker/Docker部署MySQL8.md"
+    },
+    {
+      "basename": "Docker 知识总结",
+      "path": "Linux/Docker/Docker 知识总结.md"
+    },
+    {
+      "basename": "部署YoloV5",
+      "path": "Linux/部署YoloV5.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "DockerSwarm理解",
+      "path": "Linux/Docker/DockerSwarm理解.md"
+    },
+    {
+      "basename": "Dockerfile知识总结",
+      "path": "Linux/Docker/Dockerfile知识总结.md"
+    },
+    {
       "basename": "Docker 知识总结",
       "path": "Docker 知识总结.md"
     },

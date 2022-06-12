@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "6c2435d78ad57074",
+        "id": "7e8f317ab90b9fd0",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Docker 知识总结.md",
-            "mode": "preview",
+            "file": "Database/MySQL/MySQL性能优化总结.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 429
+    "width": 327
   },
   "right": {
     "id": "50b88b08f3ed1911",
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker 知识总结.md",
+                "file": "Database/MySQL/MySQL性能优化总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker 知识总结.md"
+                "file": "Database/MySQL/MySQL性能优化总结.md"
               }
             }
           },
@@ -118,23 +118,23 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 426
+    "width": 396
   },
-  "active": "6c2435d78ad57074",
+  "active": "7e8f317ab90b9fd0",
   "lastOpenFiles": [
-    "Docker 知识总结.md",
-    "Django之美：dajngo的常用插件.md",
-    "Centos7-5源码安装postgresql-12.md",
-    "CDN工作原理.md",
-    "两台linux-互相传输文件.md",
-    "连接Oracle数据库.md",
-    "obsdian 学习/obsdian 插件.md",
-    "未命名.md",
-    "test.md",
-    "Templates/笔记.md"
+    "Database/MySQL/MySQL性能优化总结.md",
+    "Database/MySQL/MySQL索引原理.md",
+    "Database/MySQL/MySQL索引问题.md",
+    "Database/MySQL/MySQL事务与锁机制.md",
+    "Database/MySQL/MySQL的MVCC机制.md",
+    "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
+    "Database/Oracle/连接Oracle数据库.md",
+    "Database/Redis/Redis知识巩固.md",
+    "Database/Redis/Redis底层原理.md",
+    "Interview/面试题汇总.md"
   ]
 }

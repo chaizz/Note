@@ -1,10 +1,12 @@
 {
   "promptDelete": false,
-  "defaultViewMode": "preview",
+  "defaultViewMode": "source",
   "legacyEditor": false,
   "trashOption": "local",
   "alwaysUpdateLinks": true,
   "strictLineBreaks": true,
   "rightToLeft": false,
-  "attachmentFolderPath": "/files"
+  "attachmentFolderPath": "/files",
+  "readableLineLength": false,
+  "livePreview": true
 }
