@@ -4,8 +4,6 @@
 
 ## 1、安装 Rocketmq-client-cpp 所需工具
 
-^c7a6a6
-
 - gcc-c++ 4.8.2: c++ compiler while need support C++11
 - cmake 2.8.0: build jsoncpp require it
 - automake 1.11.1: build libevent require it
@@ -13,8 +11,6 @@
 - libtool 2.2.6: build libevent require it
 
 ### 1.1 检查各项工具是否可用
-
-^12414f
 
 ```shell
 g++ -v

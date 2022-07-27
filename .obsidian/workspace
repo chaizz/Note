@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "7e8f317ab90b9fd0",
+        "id": "537c829d4b2b6e85",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database/MySQL/MySQL性能优化总结.md",
+            "file": "Linux/K8S/部署k8S集群.md",
             "mode": "source",
             "source": false
           }
@@ -30,8 +30,10 @@
             "id": "0094eeed7de9900a",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
-              "state": {}
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md"
+              }
             }
           },
           {
@@ -56,12 +58,21 @@
               "type": "recent-files",
               "state": {}
             }
+          },
+          {
+            "id": "6e093248b2ca9c82",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 327
+    "width": 362
   },
   "right": {
     "id": "50b88b08f3ed1911",
@@ -77,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database/MySQL/MySQL性能优化总结.md",
+                "file": "Linux/K8S/部署k8S集群.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database/MySQL/MySQL性能优化总结.md"
+                "file": "Linux/K8S/部署k8S集群.md"
               }
             }
           },
@@ -118,23 +129,23 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 396
+    "width": 141
   },
-  "active": "7e8f317ab90b9fd0",
+  "active": "537c829d4b2b6e85",
   "lastOpenFiles": [
+    "Linux/Centos7-5源码安装postgresql-12.md",
+    "Linux/K8S/部署k8S集群.md",
+    "Database/MySQL/MySQL的MVCC机制.md",
+    "Database/MySQL/MySQL事务与锁机制.md",
     "Database/MySQL/MySQL性能优化总结.md",
     "Database/MySQL/MySQL索引原理.md",
     "Database/MySQL/MySQL索引问题.md",
-    "Database/MySQL/MySQL事务与锁机制.md",
-    "Database/MySQL/MySQL的MVCC机制.md",
     "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
-    "Database/Oracle/连接Oracle数据库.md",
-    "Database/Redis/Redis知识巩固.md",
-    "Database/Redis/Redis底层原理.md",
-    "Interview/面试题汇总.md"
+    "Obsdian/obsdian 插件.md",
+    "MessageQueue/Pulasr知识总结.md"
   ]
 }
