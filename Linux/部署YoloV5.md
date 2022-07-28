@@ -18,7 +18,7 @@ photos: ["https://tc.chaizz.com/5e4e19f6e15111eb9d7c5254006b8f1d.jpeg"]
 三、升级包
 
 ```shell
-sudo apt-get update	
+sudo apt-get update    
 ```
 
 ```shell
@@ -28,25 +28,25 @@ sudo apt-get upgrade
 四、下载Nvidia 驱动。[下载地址](https://www.nvidia.cn/content/DriverDownload-March2009/confirmation.php?url=/XFree86/Linux-x86_64/460.84/NVIDIA-Linux-x86_64-460.84.run&lang=cn&type=TITAN)。根据自己的显卡查找驱动。
 
 - 禁用nouveau驱动
-
-  -  编辑 /etc/modprobe.d/blacklist-nouveau.conf 
-
-     ```
-     blacklist nouveau
-     blacklist lbm-nouveau
-     options nouveau modeset=0
-     alias nouveau off
-     alias lbm-nouveau off
-     ```
-
+  
+  - 编辑 /etc/modprobe.d/blacklist-nouveau.conf 
+    
+    ```
+    blacklist nouveau
+    blacklist lbm-nouveau
+    options nouveau modeset=0
+    alias nouveau off
+    alias lbm-nouveau off
+    ```
+  
   - 接下来然后执行：
-
+    
     ```shell
     echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
     ```
-
+  
   - 然后重启
-
+    
     ```shell
     sudo reboot
     ```
@@ -94,49 +94,49 @@ nvcc -V
 七、配置Python 虚拟环境 （Pyenv）
 
 - 安装步骤
-
+  
   - 安装git
-
+    
     ```shell
-    sudo apt-get install git	
+    sudo apt-get install git    
     git clone https://github.com/yyuu/pyenv.git ~/.pyenv
     ```
-
-  -  打开环境变量
-
-     ```shell
-     sudo vim ~/.bashrc
-     #输入以下内容：
-     export PATH=~/.pyenv/bin:$PATH
-     export PYENV_ROOT=~/.pyenv
-     eval "$(pyenv init -)"
-     ```
-
-     ```shell
-     刷新环境变量
-     source ~/.bashrc
-     ```
-
+  
+  - 打开环境变量
+    
+    ```shell
+    sudo vim ~/.bashrc
+    #输入以下内容：
+    export PATH=~/.pyenv/bin:$PATH
+    export PYENV_ROOT=~/.pyenv
+    eval "$(pyenv init -)"
+    ```
+    
+    ```shell
+    刷新环境变量
+    source ~/.bashrc
+    ```
+  
   - 查看可安装的Python版本
-
+    
     ```
     pyenv install --list
     ```
-
+  
   - 安装指定版本的Python
-
+    
     ```
     pyenv install 3.8.5
     ```
-
+  
   - 更新数据库
-
+    
     ```
     pyenv rehash
     ```
-
+  
   - 切换python版本
-
+    
     ```
     # xxx表示要切换的版本
     **有三种切换方式 glocal local shell**
@@ -144,49 +144,45 @@ nvcc -V
     　　2. local 本次登录环境。重启后，则环境失效，并返回当前glocal的环境。
     　　3. shell 局部（临时）环境。关闭命令行窗口，则环境失效，并返回当前glocal的环境。
     pyenv glocal xxx  
-    
     ```
-
+  
   - 查看已经安装的版本
-
+    
     ```
     pyenv versions
-    
     ```
-
+  
   - 卸载已经安装的版本
-
+    
     ```
     pyenv uninstall xxx
     ```
-
+  
   - 安装virtualenv   创建虚拟环境
-
+    
     ```
     git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
     ```
-
+  
   - 添加环境变量
-
+    
     ```
     cho 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
     
     source ~/.bashrc
     ```
-
+  
   - 创建虚拟环境
-
+    
     ```
     pyenv virtualenv 3.7.0 yolo385
     ```
-
+  
   - 删除虚拟环境
-
+    
     ```
     rm -rf ~/.pyenv/versions/env370
     ```
-
-    
 
 八、安装pytorch
 
@@ -201,4 +197,3 @@ pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f h
 出现 not import _lzma :
 
 解决办法 ：重新安装pandas
-

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Linux/K8S/部署k8S集群.md",
+            "file": "Linux/K8S/部署Kuboard.md",
             "mode": "source",
             "source": false
           }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/K8S/部署k8S集群.md",
+                "file": "Linux/K8S/部署Kuboard.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/K8S/部署k8S集群.md"
+                "file": "Linux/K8S/部署Kuboard.md"
               }
             }
           },
@@ -137,15 +137,15 @@
   },
   "active": "537c829d4b2b6e85",
   "lastOpenFiles": [
-    "Linux/Centos7-5源码安装postgresql-12.md",
     "Linux/K8S/部署k8S集群.md",
+    "Linux/K8S/部署Kuboard.md",
+    "Linux/Centos7-5源码安装postgresql-12.md",
     "Database/MySQL/MySQL的MVCC机制.md",
     "Database/MySQL/MySQL事务与锁机制.md",
     "Database/MySQL/MySQL性能优化总结.md",
     "Database/MySQL/MySQL索引原理.md",
     "Database/MySQL/MySQL索引问题.md",
     "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
-    "Obsdian/obsdian 插件.md",
-    "MessageQueue/Pulasr知识总结.md"
+    "Obsdian/obsdian 插件.md"
   ]
 }

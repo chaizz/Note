@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "部署Kuboard",
+      "path": "Linux/K8S/部署Kuboard.md"
+    },
+    {
       "basename": "部署k8S集群",
       "path": "Linux/K8S/部署k8S集群.md"
     },
