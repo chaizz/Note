@@ -5,6 +5,10 @@ tags: Kuboard
 photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
 ---
 
+​           
+
+<!--more-->
+
 参考链接
 
 > [安装 Kuboard v3 - 内建用户库 | Kuboard](https://www.kuboard.cn/install/v3/install-built-in.html)
@@ -37,5 +41,3 @@ sudo docker run -d \
 
 - 用户名： `admin`
 - 密 码： `Kuboard123`
-
-四、问题

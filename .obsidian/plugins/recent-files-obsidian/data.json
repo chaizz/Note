@@ -1,12 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "部署Kuboard",
-      "path": "Linux/K8S/部署Kuboard.md"
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Python/Django之美：dajngo的常用插件.md"
     },
     {
       "basename": "部署k8S集群",
       "path": "Linux/K8S/部署k8S集群.md"
+    },
+    {
+      "basename": "部署Kuboard",
+      "path": "Linux/K8S/部署Kuboard.md"
     },
     {
       "basename": "Centos7-5源码安装postgresql-12",
@@ -71,10 +75,6 @@
     {
       "basename": "flaskshell创建索引出错",
       "path": "Python/flaskshell创建索引出错.md"
-    },
-    {
-      "basename": "Django之美：dajngo的常用插件",
-      "path": "Python/Django之美：dajngo的常用插件.md"
     },
     {
       "basename": "hexo",

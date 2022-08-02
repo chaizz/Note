@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Linux/K8S/部署Kuboard.md",
+            "file": "Python/Django之美：dajngo的常用插件.md",
             "mode": "source",
             "source": false
           }
@@ -42,7 +42,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Django、后端",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/K8S/部署Kuboard.md",
+                "file": "Python/Django之美：dajngo的常用插件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/K8S/部署Kuboard.md"
+                "file": "Python/Django之美：dajngo的常用插件.md"
               }
             }
           },
@@ -129,13 +129,13 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 141
+    "width": 449
   },
-  "active": "537c829d4b2b6e85",
+  "active": "a9db84d4a13574c4",
   "lastOpenFiles": [
     "Linux/K8S/部署k8S集群.md",
     "Linux/K8S/部署Kuboard.md",

@@ -5,6 +5,10 @@ tags: Kubernets
 photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
 ---
 
+​       
+
+<!--more-->
+
 参考链接
 
 > [安装 Kubernetes 多集群管理工具 - Kuboard v3 | Kuboard](https://www.kuboard.cn/install/v3/install.html)
@@ -317,7 +321,7 @@ kubectl get nodes
 
 # 三、问题
 
-问题一：出现 initial timeout of 40s passed。
+## 问题一：出现 initial timeout of 40s passed。
 
 在一开始部署的时候安装：kubelet、kubeadm、kubectl，没有指定版本，直接使用的最新版（1.24.+），在往上查了半天，找到一篇博客后（地址忘记了）提示说可能是由于版本的问题，然后在重新安装指定版本的kubelet、kubeadm、kubectl 工具，接下来一路畅通。
 
