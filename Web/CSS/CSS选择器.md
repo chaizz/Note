@@ -10,6 +10,8 @@ photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 
 <!--more-->
 
+# CSS选择器
+
 > CSS中使用选择器来指定网页上我们想要格式化的HTML元素
 
 ## 1 选择器列表
