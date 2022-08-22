@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "537c829d4b2b6e85",
+        "id": "44f0aee8c9e69765",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Python/Django之美：dajngo的常用插件.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -27,22 +23,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0094eeed7de9900a",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md"
-              }
-            }
-          },
-          {
             "id": "98c9c3b509dd4cd1",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Django、后端",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -52,79 +38,18 @@
             }
           },
           {
-            "id": "f0737c2c0d2fc27a",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {}
-            }
-          },
-          {
             "id": "6e093248b2ca9c82",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {}
             }
-          }
-        ],
-        "currentTab": 1
-      }
-    ],
-    "direction": "horizontal",
-    "width": 362
-  },
-  "right": {
-    "id": "50b88b08f3ed1911",
-    "type": "split",
-    "children": [
-      {
-        "id": "928650d17f8fb05d",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8ed67b293d7d1059",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Python/Django之美：dajngo的常用插件.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
           },
           {
-            "id": "a9db84d4a13574c4",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "d5f90b9106e51797",
+            "id": "0c408781f41a6ba0",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Python/Django之美：dajngo的常用插件.md"
-              }
-            }
-          },
-          {
-            "id": "37c8248fa65e5de6",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -133,19 +58,27 @@
       }
     ],
     "direction": "horizontal",
-    "width": 449
+    "width": 226
   },
-  "active": "a9db84d4a13574c4",
+  "right": {
+    "id": "50b88b08f3ed1911",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 251.5,
+    "collapsed": true
+  },
+  "active": "44f0aee8c9e69765",
   "lastOpenFiles": [
-    "Linux/K8S/部署k8S集群.md",
-    "Linux/K8S/部署Kuboard.md",
-    "Linux/Centos7-5源码安装postgresql-12.md",
-    "Database/MySQL/MySQL的MVCC机制.md",
-    "Database/MySQL/MySQL事务与锁机制.md",
-    "Database/MySQL/MySQL性能优化总结.md",
-    "Database/MySQL/MySQL索引原理.md",
-    "Database/MySQL/MySQL索引问题.md",
-    "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
-    "Obsdian/obsdian 插件.md"
+    "Web/CSS/CSS背景和边框.md",
+    "Linux/Centos7安装Apex.md",
+    "Linux/两台linux-互相传输文件.md",
+    "Linux/部署YoloV5.md",
+    "diary/2022-08-22.md",
+    "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.13.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.14.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.13_0.excalidraw.md",
+    "Python/Jupyter-notebook的安装与基本使用.md"
   ]
 }
