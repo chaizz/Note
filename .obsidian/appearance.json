@@ -1,9 +1,7 @@
 {
   "theme": "moonstone",
-  "cssTheme": "Blue Topaz",
+  "cssTheme": "Minimal",
   "translucency": false,
   "baseFontSizeAction": true,
-  "enabledCssSnippets": [
-    "color-Heading"
-  ]
+  "enabledCssSnippets": []
 }

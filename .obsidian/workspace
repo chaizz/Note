@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "537c829d4b2b6e85",
+        "id": "44f0aee8c9e69765",
         "type": "leaf",
         "state": {
+<<<<<<< HEAD
           "type": "markdown",
           "state": {
             "file": "README.md",
             "mode": "source",
             "source": false
           }
+=======
+          "type": "empty",
+          "state": {}
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
         }
       }
     ],
@@ -26,16 +31,6 @@
         "id": "e6750a3454029f9c",
         "type": "tabs",
         "children": [
-          {
-            "id": "0094eeed7de9900a",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md"
-              }
-            }
-          },
           {
             "id": "98c9c3b509dd4cd1",
             "type": "leaf",
@@ -52,20 +47,13 @@
             }
           },
           {
-            "id": "f0737c2c0d2fc27a",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {}
-            }
-          },
-          {
             "id": "6e093248b2ca9c82",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {}
             }
+<<<<<<< HEAD
           }
         ],
         "currentTab": 3
@@ -98,23 +86,15 @@
                 "unlinkedCollapsed": true
               }
             }
+=======
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
           },
           {
-            "id": "a9db84d4a13574c4",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "d5f90b9106e51797",
+            "id": "0c408781f41a6ba0",
             "type": "leaf",
             "state": {
               "type": "outline",
+<<<<<<< HEAD
               "state": {
                 "file": "README.md"
               }
@@ -125,6 +105,8 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
+=======
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
               "state": {}
             }
           }
@@ -132,6 +114,7 @@
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
     "width": 247
   },
   "active": "537c829d4b2b6e85",
@@ -146,5 +129,29 @@
     "Python/Django之美：dajngo的常用插件.md",
     "ProductManager/迭代思维与MVP产品的规划方法.md",
     "Linux/Ubuntu安装RabbitMQ.md"
+=======
+    "width": 226
+  },
+  "right": {
+    "id": "50b88b08f3ed1911",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 251.5,
+    "collapsed": true
+  },
+  "active": "44f0aee8c9e69765",
+  "lastOpenFiles": [
+    "Web/CSS/CSS背景和边框.md",
+    "Linux/Centos7安装Apex.md",
+    "Linux/两台linux-互相传输文件.md",
+    "Linux/部署YoloV5.md",
+    "diary/2022-08-22.md",
+    "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.13.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.14.excalidraw.md",
+    "Excalidraw/Drawing 2022-08-22 09.45.13_0.excalidraw.md",
+    "Python/Jupyter-notebook的安装与基本使用.md"
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
   ]
 }

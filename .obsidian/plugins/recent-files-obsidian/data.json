@@ -1,6 +1,7 @@
 {
   "recentFiles": [
     {
+<<<<<<< HEAD
       "basename": "README",
       "path": "README.md"
     },
@@ -71,14 +72,54 @@
     {
       "basename": "部署k8S集群",
       "path": "Linux/K8S/部署k8S集群.md"
+=======
+      "basename": "CSS背景和边框",
+      "path": "Web/CSS/CSS背景和边框.md"
+    },
+    {
+      "basename": "CDN工作原理",
+      "path": "Web/CDN工作原理.md"
+    },
+    {
+      "basename": "hexo",
+      "path": "Templates/hexo.md"
+    },
+    {
+      "basename": "obsdian 插件",
+      "path": "Obsdian/obsdian 插件.md"
+    },
+    {
+      "basename": "CSS层叠与继承",
+      "path": "Web/CSS/CSS层叠与继承.md"
+    },
+    {
+      "basename": "Centos7-5源码安装postgresql-12",
+      "path": "Linux/Centos7-5源码安装postgresql-12.md"
+    },
+    {
+      "basename": "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档",
+      "path": "Linux/aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md"
+    },
+    {
+      "basename": "两台linux-互相传输文件",
+      "path": "Linux/两台linux-互相传输文件.md"
+    },
+    {
+      "basename": "部署YoloV5",
+      "path": "Linux/部署YoloV5.md"
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
     },
     {
       "basename": "部署Kuboard",
       "path": "Linux/K8S/部署Kuboard.md"
     },
     {
-      "basename": "Centos7-5源码安装postgresql-12",
-      "path": "Linux/Centos7-5源码安装postgresql-12.md"
+      "basename": "部署k8S集群",
+      "path": "Linux/K8S/部署k8S集群.md"
+    },
+    {
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Python/Django之美：dajngo的常用插件.md"
     },
     {
       "basename": "MySQL的MVCC机制",
@@ -105,10 +146,6 @@
       "path": "Database/MySQL/Mysql 8.0 数据库无法远程连接.md"
     },
     {
-      "basename": "obsdian 插件",
-      "path": "Obsdian/obsdian 插件.md"
-    },
-    {
       "basename": "Pulasr知识总结",
       "path": "MessageQueue/Pulasr知识总结.md"
     },
@@ -117,14 +154,42 @@
       "path": "Interview/面试题汇总.md"
     },
     {
+<<<<<<< HEAD
       "basename": "Drawing 2022-07-25 17.40.32.excalidraw",
       "path": "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md"
+=======
+      "basename": "Python压缩图片作为缩略图",
+      "path": "Python/Python压缩图片作为缩略图.md"
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
     },
     {
       "basename": "Python代码规范（pep8-Google-style）",
       "path": "Python/Python代码规范（pep8-Google-style）.md"
     },
     {
+<<<<<<< HEAD
+=======
+      "basename": "Python-Elestatcsearch",
+      "path": "Python/Python-Elestatcsearch.md"
+    },
+    {
+      "basename": "Jupyter-notebook的安装与基本使用",
+      "path": "Python/Jupyter-notebook的安装与基本使用.md"
+    },
+    {
+      "basename": "flaskshell创建索引出错",
+      "path": "Python/flaskshell创建索引出错.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "Typora设置七牛云图床",
+      "path": "Web/Typora设置七牛云图床.md"
+    },
+    {
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
       "basename": "Ubuntu安装mysql-python插件",
       "path": "Linux/Ubuntu安装mysql-python插件.md"
     },
@@ -139,18 +204,6 @@
     {
       "basename": "Centos7安装Apex",
       "path": "Linux/Centos7安装Apex.md"
-    },
-    {
-      "basename": "aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档",
-      "path": "Linux/aarch64架构-Linux-编译安装rocketmq-client-cpp以及安装Python3.8文档.md"
-    },
-    {
-      "basename": "两台linux-互相传输文件",
-      "path": "Linux/两台linux-互相传输文件.md"
-    },
-    {
-      "basename": "部署YoloV5",
-      "path": "Linux/部署YoloV5.md"
     },
     {
       "basename": "连接Oracle数据库",
@@ -183,10 +236,6 @@
     {
       "basename": "两台linux-互相传输文件",
       "path": "两台linux-互相传输文件.md"
-    },
-    {
-      "basename": "连接Oracle数据库",
-      "path": "连接Oracle数据库.md"
     }
   ],
   "omittedPaths": [],
