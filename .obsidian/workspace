@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Python/Django之美：dajngo的常用插件.md",
+            "file": "README.md",
             "mode": "source",
             "source": false
           }
@@ -42,7 +42,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Django、后端",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -88,13 +88,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python/Django之美：dajngo的常用插件.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -116,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python/Django之美：dajngo的常用插件.md"
+                "file": "README.md"
               }
             }
           },
@@ -128,24 +128,23 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 449
+    "width": 247
   },
-  "active": "a9db84d4a13574c4",
+  "active": "537c829d4b2b6e85",
   "lastOpenFiles": [
-    "Linux/K8S/部署k8S集群.md",
-    "Linux/K8S/部署Kuboard.md",
-    "Linux/Centos7-5源码安装postgresql-12.md",
-    "Database/MySQL/MySQL的MVCC机制.md",
-    "Database/MySQL/MySQL事务与锁机制.md",
-    "Database/MySQL/MySQL性能优化总结.md",
-    "Database/MySQL/MySQL索引原理.md",
-    "Database/MySQL/MySQL索引问题.md",
-    "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
-    "Obsdian/obsdian 插件.md"
+    "Web/Typora设置七牛云图床.md",
+    "Web/CDN工作原理.md",
+    "Templates/hexo.md",
+    "Python/Python压缩图片作为缩略图.md",
+    "Python/Python-Elestatcsearch.md",
+    "Python/Jupyter-notebook的安装与基本使用.md",
+    "Python/flaskshell创建索引出错.md",
+    "Python/Django之美：dajngo的常用插件.md",
+    "ProductManager/迭代思维与MVP产品的规划方法.md",
+    "Linux/Ubuntu安装RabbitMQ.md"
   ]
 }
