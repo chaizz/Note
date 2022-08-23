@@ -183,7 +183,7 @@ button:first-child {
 grid-template-columns: 1fr 1fr 1fe;
 ```
 
-设置了fr，每一列的宽度们可以随着空间的变小而变小。
+设置了fr，每一列的宽度们可以随着空间的变化而变化。
 
 > **`fr`单位分配的是*可用*空间而非*所有*空间，所以如果某一格包含的内容变多了，那么整个可用空间就会减少，可用空间是不包括那些已经确定被占用的空间的。**
 
@@ -235,17 +235,50 @@ minmax函数
 
 
 
+ 自动使多列填充
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
+}
+```
+
+使用关键字`auto-fill`来代替重复的次数，使用minmax设置每行/列的最小值，最大值`1fr`。
 
 
 
 
 
+基于线的元素放置
+
+要把元素放置到网格中，是根据网格的分割线来定义的，第一条线的起始点与文档书写模式相关。在英文中，==第一条列分隔线（即网格边缘线）在网格的最左边==而第一条==行分隔线在网格的最上面==。而对于阿拉伯语，第一条列分隔线在网格的最右边，因为阿拉伯文是从右往左书写的。
+
+我们根据这些分隔线来放置元素，通过以下属性来指定从那条线开始到哪条线结束。
+
+- [`grid-column-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start)
+- [`grid-column-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end)
+- [`grid-row-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start)
+- [`grid-row-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end)
+
+这些属性的值均为分隔线序号，你也可以用以下缩写形式来同时指定开始与结束的线。
+
+- [`grid-column`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-column)
+- [`grid-row`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-row)
+
+注意开始与结束的线的序号要使用`/`符号分开。
 
 
 
+用[`grid-template-areas`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-template-areas)属性放置元素
 
-
-
+- 你需要填满网格的每个格子
+- 对于某个横跨多个格子的元素，重复写上那个元素`grid-area`属性定义的区域名字
+- 所有名字只能出现在一个连续的区域，不能在不同的位置出现
+- 一个连续的区域必须是一个矩形
+- 使用`.`符号，让一个格子留空
 
 
 
