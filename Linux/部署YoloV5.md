@@ -3,8 +3,8 @@ title: 部署YoloV5
 author: chiazz
 date: 2021-07-10 15:33:25
 tags: YoloV5
-photos: ["https://tc.chaizz.com/5e4e19f6e15111eb9d7c5254006b8f1d.jpeg"]
-
+categories: YoloV5
+photos: ["https://tc.chaizz.com/cc256ff022f111edb23e0242ac190002.png"]
 ---
 
 ​                                    

@@ -3,8 +3,8 @@ title: 记一次Docker镜像瘦身[Python]
 author: chaizz
 date: 2022-8-4 17:28:34
 tags: Docker
+categories: Docker
 photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
-
 ---
 
 ​      

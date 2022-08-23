@@ -3,6 +3,7 @@ title: MySQLMVCC机制
 author: chaizz
 date: 2021-10-8 22:10:00
 tags: MySQL
+categories: MySQL
 photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 

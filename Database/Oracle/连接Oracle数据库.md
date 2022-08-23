@@ -2,16 +2,20 @@
 title: Navicat连接Oracle数据库
 author: chaizz
 date: 2021-05-09 16:04:46
-tags: Navicat、Oracle
+categories: Oracle
+tags: Oracle
+photo: ["https://tc.chaizz.com/2782ef0022f011edb23e0242ac190002.png"]
 ---
+
+​    
+
+<!--more-->
 
 Navicat连接Oracle出现错误信息 ：
 
 ```shell
 oracle library is not loaded
 ```
-
-<!--more-->
 
 Navicat版本 ：12.1.11
 

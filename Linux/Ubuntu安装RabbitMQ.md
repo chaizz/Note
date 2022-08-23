@@ -3,16 +3,15 @@ title: Ubuntu安装RabbitMQ
 author: chaizz
 date: 2021-07-10 15:15:36
 tags: RabbitMQ
+categories: RabbitMQ
 photos: ["https://tc.chaizz.com/714976f0e15011eb9d7c5254006b8f1d.jpeg"]
 ---
 
 ​        
 
-> **RabbitMQ**是实现了高级消息队列协议（AMQP）的开源消息代理软件（亦称面向消息的中间件）。RabbitMQ服务器是用[Erlang](https://baike.baidu.com/item/Erlang)语言编写的，而集群和故障转移是构建在[开放电信平台](https://baike.baidu.com/item/开放电信平台)框架上的。所有主要的[编程语言](https://baike.baidu.com/item/编程语言/9845131)均有与代理接口通讯的[客户端](https://baike.baidu.com/item/客户端/101081)库。
-
-​                                    
-
 <!--more-->
+
+> **RabbitMQ**是实现了高级消息队列协议（AMQP）的开源消息代理软件（亦称面向消息的中间件）。RabbitMQ服务器是用[Erlang](https://baike.baidu.com/item/Erlang)语言编写的，而集群和故障转移是构建在[开放电信平台](https://baike.baidu.com/item/开放电信平台)框架上的。所有主要的[编程语言](https://baike.baidu.com/item/编程语言/9845131)均有与代理接口通讯的[客户端](https://baike.baidu.com/item/客户端/101081)库。
 
 安装前提：首先需要安装Erlang
 

@@ -3,13 +3,17 @@ title: Linux文件目录
 author: chaizz
 date: 2021-02-02 16:12:13
 tags: Linux
+categories: Linux
+photos: ["https://tc.chaizz.com/2a01872622f211edb23e0242ac190002.png"]
 ---
+
+   
+
+<!--more-->
 
 
 
 ![](linuxfile.jpg)
-
-<!--more-->
 
 - **/bin**：
   bin是Binary的缩写, 这个目录存放着最经常使用的命令。

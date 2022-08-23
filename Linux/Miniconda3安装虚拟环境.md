@@ -3,6 +3,7 @@ title: Miniconda3安装虚拟环境
 author: chaizz
 date: 2021-05-09 16:04:46
 tags: Miniconda
+categories: Miniconda
 photos: ["https://tc.chaizz.com/Snipaste_2021-05-09_16-08-33.png"]
 ---
 ​                   

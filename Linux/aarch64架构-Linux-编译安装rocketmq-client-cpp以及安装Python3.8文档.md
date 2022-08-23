@@ -1,4 +1,17 @@
-# 编译安装Rocketma-client-cpp
+---
+title: Aarch64架构-Linux-编译安装rocketmq-client-cpp
+author: chaizz
+date: 2021-02-02 15:42:51
+tags: rocketmq
+categories: rocketmq
+photos: ["https://tc.chaizz.com/8b22790222f211edb23e0242ac190002.png"]
+---
+
+​      
+
+<!--more-->
+
+# Aarch64架构-Linux-编译安装rocketmq-client-cpp
 
 
 

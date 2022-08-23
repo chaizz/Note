@@ -2,7 +2,8 @@
 title: DockerSwarm理解
 author: chaizz
 date: 2021-9-29 20:51:45
-tags: Docker、Linux
+tags: Docker
+categories: Docker
 photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 

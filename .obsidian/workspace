@@ -1,38 +1,49 @@
 {
   "main": {
-    "id": "ee87f42724128bb1",
+    "id": "1961a897f1355233",
     "type": "split",
     "children": [
       {
-        "id": "44f0aee8c9e69765",
+        "id": "6483a494036ec4c3",
         "type": "leaf",
         "state": {
-<<<<<<< HEAD
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "Web/Typora设置七牛云图床.md",
             "mode": "source",
             "source": false
           }
-=======
-          "type": "empty",
-          "state": {}
->>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "7b6680a92837e694",
+    "id": "4b6378d99e5e261a",
     "type": "split",
     "children": [
       {
-        "id": "e6750a3454029f9c",
+        "id": "25bb692e36d0825f",
         "type": "tabs",
         "children": [
           {
-            "id": "98c9c3b509dd4cd1",
+            "id": "844c406c305f5e00",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "22ac194122706564",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "54fac6d08aba9fdd",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -45,113 +56,60 @@
                 "sortOrder": "alphabetical"
               }
             }
-          },
-          {
-            "id": "6e093248b2ca9c82",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {}
-            }
-<<<<<<< HEAD
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 362
+    "width": 300
   },
   "right": {
-    "id": "50b88b08f3ed1911",
+    "id": "c99acccd97d0e7f8",
     "type": "split",
     "children": [
       {
-        "id": "928650d17f8fb05d",
+        "id": "231178b68e46095b",
         "type": "tabs",
         "children": [
           {
-            "id": "8ed67b293d7d1059",
+            "id": "fcd32da705b1e3d3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Web/Typora设置七牛云图床.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
-=======
->>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
           },
           {
-            "id": "0c408781f41a6ba0",
+            "id": "3b882bfd7cbcb6f9",
             "type": "leaf",
             "state": {
               "type": "outline",
-<<<<<<< HEAD
               "state": {
-                "file": "README.md"
+                "file": "Web/Typora设置七牛云图床.md"
               }
-            }
-          },
-          {
-            "id": "37c8248fa65e5de6",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-=======
->>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
-              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-<<<<<<< HEAD
-    "width": 247
-  },
-  "active": "537c829d4b2b6e85",
-  "lastOpenFiles": [
-    "Web/Typora设置七牛云图床.md",
-    "Web/CDN工作原理.md",
-    "Templates/hexo.md",
-    "Python/Python压缩图片作为缩略图.md",
-    "Python/Python-Elestatcsearch.md",
-    "Python/Jupyter-notebook的安装与基本使用.md",
-    "Python/flaskshell创建索引出错.md",
-    "Python/Django之美：dajngo的常用插件.md",
-    "ProductManager/迭代思维与MVP产品的规划方法.md",
-    "Linux/Ubuntu安装RabbitMQ.md"
-=======
-    "width": 226
-  },
-  "right": {
-    "id": "50b88b08f3ed1911",
-    "type": "split",
-    "children": [],
-    "direction": "horizontal",
-    "width": 251.5,
+    "width": 300,
     "collapsed": true
   },
-  "active": "44f0aee8c9e69765",
+  "active": "6483a494036ec4c3",
   "lastOpenFiles": [
-    "Web/CSS/CSS背景和边框.md",
-    "Linux/Centos7安装Apex.md",
-    "Linux/两台linux-互相传输文件.md",
-    "Linux/部署YoloV5.md",
-    "diary/2022-08-22.md",
-    "Excalidraw/Drawing 2022-07-25 17.40.32.excalidraw.md",
-    "Excalidraw/Drawing 2022-08-22 09.45.13.excalidraw.md",
-    "Excalidraw/Drawing 2022-08-22 09.45.14.excalidraw.md",
-    "Excalidraw/Drawing 2022-08-22 09.45.13_0.excalidraw.md",
-    "Python/Jupyter-notebook的安装与基本使用.md"
->>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
+    "Web/CDN工作原理.md",
+    "Web/Typora设置七牛云图床.md",
+    "Web/CSS/CSS背景和边框.md"
   ]
 }

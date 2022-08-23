@@ -2,8 +2,14 @@
 title: Centos7.5源码安装postgresql-12
 author: chaizz
 date: 2021-02-02 15:58:26
-tags: Centos、Postgresql
+tags: Postgresql
+categories: Postgresql
+photos: ["https://tc.chaizz.com/b894ccf022f211edb23e0242ac190002.png"]
 ---
+
+​          
+
+<!--more-->
 
 ### 源码安装
 
@@ -13,8 +19,6 @@ tags: Centos、Postgresql
    yum install readline 
    yum install readline-devel
    ```
-
-<!--more-->
 
 虽然已经安装了readline，但是不安装readlene-devel 在执行 `./configure --prefix=/opt/postgresql` 的时候会提示，`configure: error: readline library not found`。
 
@@ -123,13 +127,13 @@ tags: Centos、Postgresql
     设置执行权限
 
     ```shell
-chmod +x /etc/init.d/postgressql		
+    chmod +x /etc/init.d/postgressql		
     ```
     
     此后，执行以下命令可以方便的启停服务
 
     ```shell
-//手动启动服务
+    //手动启动服务
     service postgressql start
     
     //查看服务状态

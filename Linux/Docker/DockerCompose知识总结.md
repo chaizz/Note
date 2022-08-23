@@ -2,11 +2,14 @@
 title: DockerCompose知识总结
 author: chaizz
 date: 2021-9-29 20:51:45
-tags: Docker、Linux
+tags: Docker
+categories: Docker
 photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
+​     
 
+<!--more-->
 
 # 一、DockerCompose理解
 
@@ -16,7 +19,7 @@ photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 
 
 
-<!--more-->
+
 
 Docker compose 是来管理多个容器的一个工具。
 

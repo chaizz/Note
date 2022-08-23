@@ -3,6 +3,7 @@ title: Docker部署MySQL8
 date: 2022-2-19 21:00:00
 authoer: chaizz
 tags: MySQL
+categories: Docker
 photos: ["https://tc.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
 ---
 
@@ -12,7 +13,7 @@ photos: ["https://tc.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
 
 
 
-使用Docker 安装MySQL8 用于测试开发使用。
+s
 
 # 1、安装Docker
 

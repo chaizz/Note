@@ -3,9 +3,13 @@ title: 两台linux 互相传输文件
 author: chaizz
 date: 2021-02-02 15:42:51
 tags: Linux
+categories: Linux
+photos: ["https://tc.chaizz.com/2a01872622f211edb23e0242ac190002.png"]
 ---
 
+​          
 
+<!--more-->
 
 > #### 百度百科
 >
@@ -17,10 +21,8 @@ tags: Linux
 > - 可以很容易做到保持原来文件的权限、时间、软硬链接等等。
 > - 无须特殊权限即可安装。
 >
-> <!--more-->
->
 > - 快速：第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程中可以实行压缩及[解压缩](https://baike.baidu.com/item/解压缩)操作，因此可以使用更少的带宽。
-> - 安全：可以使用scp、ssh等方式来传输文件，当然也可以通过直接的socket连接。
+>- 安全：可以使用scp、ssh等方式来传输文件，当然也可以通过直接的socket连接。
 > - 支持匿名传输，以方便进行网站镜像。 
 
 

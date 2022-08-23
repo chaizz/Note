@@ -7,7 +7,9 @@ categories: MySQL
 photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
+​     
 
+<!--more-->
 
 针对以上索引问题，首先要知道什么是主键索引、非主键索引、聚簇索引、非聚簇索引。
 

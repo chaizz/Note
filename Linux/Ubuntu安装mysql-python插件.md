@@ -2,12 +2,16 @@
 title: Ubuntu安装mysql-python插件
 author: chaizz
 date: 2021-02-02 16:04:56
-tags: Ubuntu、Mysql-Python
+tags: Mysql-Python
+categories: Mysql-Python
+photos:["httpstc.chaizz.combdf5bb7222ee11edb23e0242ac190002.jpg"]
 ---
 
-#### 运行FLASk 提示 ：ERROR:flask.app:No module named MySQLdb
+​      
 
 <!--more-->
+
+#### 运行FLASK 提示 ：ERROR:flask.app:No module named MySQLdb
 
 ### 1.安装 mysql-python
 

@@ -1,13 +1,15 @@
 ---
- title: Redis底层原理
+title: Redis底层原理
 author: chaizz
 date: 2021-11-18 09:31:33
 tags: redis
-photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
 categories: Redis
+photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
 ---
 
 
+
+<!--more-->
 
 # Redis 数据结构底层实现
 

@@ -2,7 +2,8 @@
 title: Dockerfile
 author: chaizz
 date: 2021-11-20 17:24:11
-tags: Docker、Linux
+tags: Docker
+categories: Docker
 photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
