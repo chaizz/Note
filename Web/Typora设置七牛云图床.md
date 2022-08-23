@@ -27,7 +27,7 @@ Typora 版本：0.11.8|
 - 秘钥SK：dDFGSasdfxxxxxxxxxxxxxxxxxxxiZiOVu
 - 存储空间名称：cz-tuchuang
 - 自定义域名：https://tc.chaizz.com
-- 存储区域代码：我的是华北  所以就是 ：z0
+- 存储区域代码：我的是华北  所以就是 ：z1
   ![](https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-22-09.png)
 
 

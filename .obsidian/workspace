@@ -7,8 +7,17 @@
         "id": "44f0aee8c9e69765",
         "type": "leaf",
         "state": {
+<<<<<<< HEAD
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source",
+            "source": false
+          }
+=======
           "type": "empty",
           "state": {}
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
         }
       }
     ],
@@ -44,20 +53,83 @@
               "type": "file-explorer",
               "state": {}
             }
+<<<<<<< HEAD
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 362
+  },
+  "right": {
+    "id": "50b88b08f3ed1911",
+    "type": "split",
+    "children": [
+      {
+        "id": "928650d17f8fb05d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ed67b293d7d1059",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+=======
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
           },
           {
             "id": "0c408781f41a6ba0",
             "type": "leaf",
             "state": {
               "type": "outline",
+<<<<<<< HEAD
+              "state": {
+                "file": "README.md"
+              }
+            }
+          },
+          {
+            "id": "37c8248fa65e5de6",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+=======
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
+    "width": 247
+  },
+  "active": "537c829d4b2b6e85",
+  "lastOpenFiles": [
+    "Web/Typora设置七牛云图床.md",
+    "Web/CDN工作原理.md",
+    "Templates/hexo.md",
+    "Python/Python压缩图片作为缩略图.md",
+    "Python/Python-Elestatcsearch.md",
+    "Python/Jupyter-notebook的安装与基本使用.md",
+    "Python/flaskshell创建索引出错.md",
+    "Python/Django之美：dajngo的常用插件.md",
+    "ProductManager/迭代思维与MVP产品的规划方法.md",
+    "Linux/Ubuntu安装RabbitMQ.md"
+=======
     "width": 226
   },
   "right": {
@@ -80,5 +152,6 @@
     "Excalidraw/Drawing 2022-08-22 09.45.14.excalidraw.md",
     "Excalidraw/Drawing 2022-08-22 09.45.13_0.excalidraw.md",
     "Python/Jupyter-notebook的安装与基本使用.md"
+>>>>>>> dc5ed0a42ddae882bef282d8ae82fe9f8d16b200
   ]
 }
