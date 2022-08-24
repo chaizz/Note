@@ -19,4 +19,4 @@ bin-release/
 
 
 # 添加Obsdian插件最近文件的忽略
-.bsidian/plugins/recent-files-obsidian/
+.obsidian/plugins/recent-files-obsidian/
