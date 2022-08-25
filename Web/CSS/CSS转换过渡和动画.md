@@ -1,5 +1,5 @@
 ---
-title: CSS 转换、过渡和动画
+title: CSS转换过渡和动画
 author: chaizz
 date: 2022-8-24
 tags: CSS
@@ -10,7 +10,7 @@ photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 
 <!--more-->
 
-# CSS 转换、过渡和动画
+# CSS转换过渡和动画
 
 转换可以对元素进行移动、缩放、转动、拉伸。转换的效果是让某个元素改变形状，大小和位置。可以使用2D和3D来转换元素，
 
