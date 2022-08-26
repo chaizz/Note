@@ -1,17 +1,20 @@
 ---
 title: Django之美：dajngo的常用插件
 date: 2021-2-1 14:45:39
-authoer: chaizz
-tags: Django、后端
+author: chaizz
+tags: Django
+photos: ["https://tc.chaizz.com/13a29924250a11ed94870242ac190002.jpg"]
 ---
+
+​       
+
+<!--more-->
 
 - [django_debug_toolbar ](https://django-debug-toolbar.readthedocs.io/en/latest/)：提供一个可以查看debug信息的面板（包括SQL执行时间，页面耗时）
 
   
 
 - [django-silk](https://github.com/jazzband/django-silk)：django性能瓶颈分析
-
-<!--more-->
 
 - [Simple-UI](https://simpleui.72wo.com/docs/simpleui/doc.html) ：于Element UI 和 VUE 的django admin 主题。
 

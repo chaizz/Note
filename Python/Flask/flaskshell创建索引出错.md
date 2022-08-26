@@ -2,12 +2,15 @@
 title: flaskshell创建索引出错
 author: chaizz
 date: 2021-02-02 15:51:12
-tags: Flask、shell
+tags: Flask
+photos: ["https://tc.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
 ---
 
-遇到的问题：flask 环境中使用 flask shell  使用flask Whoosh 创建索引失败
+​    
 
 <!--more-->
+
+遇到的问题：flask 环境中使用 flask shell  使用flask Whoosh 创建索引失败
 
 ### 解决办法 ：
 

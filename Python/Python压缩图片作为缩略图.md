@@ -2,7 +2,7 @@
 title: Python压缩图片作为缩略图
 author: chaizz
 date: 2021-2-2 15:54:36
-tags: Python、压缩图片
+tags: Python压缩图片
 ---
 
 将图片压缩，作为缩略图，代码如下
