@@ -4,16 +4,16 @@ author: chaizz
 date: 2021-02-02 16:04:56
 tags: MySQL-Python
 categories: MySQL-Python
-photos:["httpstc.chaizz.combdf5bb7222ee11edb23e0242ac190002.jpg"]
+photos: ["https://tc.chaizz.combdf5bb7222ee11edb23e0242ac190002.jpg"]
 ---
 
 ​      
 
 <!--more-->
 
-#### 运行FLASK 提示 ：ERROR:flask.app:No module named MySQLdb
+> 运行FLASK 提示 ：ERROR:flask.app:No module named MySQLdb
 
-### 1.安装 mysql-python
+### 安装 mysql-python
 
 ```shell
 pip install mysql-python

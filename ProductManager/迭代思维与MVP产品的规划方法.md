@@ -5,6 +5,7 @@ author: chaizz
 tags: OOPD
 categories: 产品思维
 top: ture
+photos: ["https://tc.chaizz.com/d8a077522de611ed9d170242ac190002.jpg"]
 ---
 
 ​              
