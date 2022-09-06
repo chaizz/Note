@@ -2,8 +2,8 @@
 title: Centos7.5源码安装postgresql-12
 author: chaizz
 date: 2021-02-02 15:58:26
-tags: Postgresql
-categories: Postgresql
+tags: PostgreSQL
+categories: PostgreSQL
 photos: ["https://tc.chaizz.com/b894ccf022f211edb23e0242ac190002.png"]
 ---
 

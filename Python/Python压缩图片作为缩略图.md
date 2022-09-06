@@ -3,7 +3,13 @@ title: Python压缩图片作为缩略图
 author: chaizz
 date: 2021-2-2 15:54:36
 tags: Python压缩图片
+categories: Python
+photos: ["https://tc.chaizz.com/1c078eb22dca11ed9d170242ac190002.jpg"]
 ---
+
+​           
+
+<!--more-->
 
 将图片压缩，作为缩略图，代码如下
 
@@ -12,8 +18,6 @@ tags: Python压缩图片
 from PIL import Image
 import shutil
 ```
-
-<!--more-->
 
 ```python
 import os

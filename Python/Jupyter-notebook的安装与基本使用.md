@@ -2,7 +2,8 @@
 title: Jupyter-notebook的安装与基本使用
 author: chaizz
 date: 2021-03-13 11:41:22
-tags: Jupyter notebook
+tags: Jupyter-notebook
+categories: Jupyter-notebook
 photos: ["https://tc.chaizz.com/ddec75de4ad011ec9d7c5254006b8f1d.jpeg"]
 ---
 

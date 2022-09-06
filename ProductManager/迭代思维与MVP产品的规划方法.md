@@ -2,7 +2,8 @@
 title: 迭代思维与MVP产品的规划方法
 date: 2021-2-4 11:35:04
 author: chaizz
-tags: 快速迭代、OOPD
+tags: OOPD
+categories: 产品思维
 top: ture
 ---
 

@@ -2,8 +2,14 @@
 title: Python代码规范（pep8/Google-style）
 author: chaizz
 date: 2021-03-19 15:51:15
-tags: pep8，Google style
+tags: PEP8
+categories: PEP8
+photos: ["https://tc.chaizz.com/06a04f142dca11ed9d170242ac190002.jpeg"]
 ---
+
+​    
+
+<!--more-->
 
 > Guido van Rossum（吉多·范罗苏姆，Python 创始人 ）说过，代码的阅读频率远高于编写代码的频率。
 
@@ -12,8 +18,6 @@ tags: pep8，Google style
 本文来自极客时间规范篇学习总结。
 
 [《Python核心技术实战》]: https://time.geekbang.org/column/article/104689	"27 | 学会合理分解代码，提高代码可读性"
-
-<!--more-->
 
 ## PEP8规范：
 

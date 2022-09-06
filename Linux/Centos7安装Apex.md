@@ -2,8 +2,8 @@
 title: Centos7安装Apex
 author: chaizz
 date: 2021-04-24 10:15:22
-tags: ORACLE APEX
-categories: ORACLE APEX
+tags: ORACLE-APEX
+categories: ORACLE-APEX
 photos: ["https://tc.chaizz.com/city-4679928_640.png"]
 ---
 

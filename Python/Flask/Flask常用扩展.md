@@ -3,6 +3,7 @@ title: flask常用扩展
 author: chaizz
 date: 2022-8-30 11:23:12
 tags: Flask
+categories: Flask
 photos: ["https://tc.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
 ---
 

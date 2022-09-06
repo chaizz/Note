@@ -3,6 +3,7 @@ title: Python + Elestatcsearch
 date: 2021-2-2 15:45:49
 author: chaizz
 tags: Elestaticsearch
+categories: Elestaticsearch
 photos: ["https://tc.chaizz.com/344d34bc250b11ed94870242ac190002.png"]
 ---
 

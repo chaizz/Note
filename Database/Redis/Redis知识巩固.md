@@ -2,9 +2,9 @@
 title: Redis知识巩固
 author: chaizz
 date: 2021-9-26 16:11:59
-tags: redis
-photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
+tags: Redis
 categories: Redis
+photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
 ---
 
 ​                
