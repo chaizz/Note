@@ -1,6 +1,7 @@
 ---
 title: 虚拟机K8s集群搭建
-author: 2022-7-28 09:33:02
+author: chaizz 
+date: 2022-7-28 09:33:02
 tags: Kubernets
 categories: Kubernets
 photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
