@@ -111,7 +111,7 @@ video.onclick = function(e) {
 
 ### 事件委托
 
-正式因为冒泡的机制， 所以我们可以利用该机制，实现下面这样的行为：如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并让子节点上发生的事件冒泡到父节点上，而不是每个子节点单独设置事件监听器。这种行为称之为事件委托。这个概念的跟多的例子-[How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)。
+正式因为冒泡的机制， 所以我们可以利用该机制，实现下面这样的行为：如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并让子节点上发生的事件冒泡到父节点上，而不是每个子节点单独设置事件监听器。这种行为称之为事件委托。这个概念的更多的例子-[How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)。
 
 
 
