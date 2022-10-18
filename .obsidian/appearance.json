@@ -3,5 +3,6 @@
   "cssTheme": "Minimal",
   "translucency": false,
   "baseFontSizeAction": true,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "accentColor": ""
 }

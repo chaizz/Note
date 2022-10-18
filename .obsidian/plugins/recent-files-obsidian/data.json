@@ -1,6 +1,38 @@
 {
   "recentFiles": [
     {
+      "basename": "js笔记之Js代码调用策略",
+      "path": "Web/Javascript/js笔记之Js代码调用策略.md"
+    },
+    {
+      "basename": "js笔记之js事件",
+      "path": "Web/Javascript/js笔记之js事件.md"
+    },
+    {
+      "basename": "CSS选择器",
+      "path": "Web/CSS/CSS选择器.md"
+    },
+    {
+      "basename": "CSS盒模型",
+      "path": "Web/CSS/CSS盒模型.md"
+    },
+    {
+      "basename": "CSS层叠与继承",
+      "path": "Web/CSS/CSS层叠与继承.md"
+    },
+    {
+      "basename": "CSS布局-浮动与定位多列布局",
+      "path": "Web/CSS/CSS布局-浮动与定位多列布局.md"
+    },
+    {
+      "basename": "CSS布局-弹性盒子与网格布局",
+      "path": "Web/CSS/CSS布局-弹性盒子与网格布局.md"
+    },
+    {
+      "basename": "CSS背景和边框",
+      "path": "Web/CSS/CSS背景和边框.md"
+    },
+    {
       "basename": "Django之美：dajngo的常用插件",
       "path": "Python/Django/Django之美：dajngo的常用插件.md"
     },
@@ -11,10 +43,6 @@
     {
       "basename": "CDN工作原理",
       "path": "Web/CDN工作原理.md"
-    },
-    {
-      "basename": "CSS背景和边框",
-      "path": "Web/CSS/CSS背景和边框.md"
     }
   ],
   "omittedPaths": [],

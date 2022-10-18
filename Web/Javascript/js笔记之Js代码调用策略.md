@@ -1,5 +1,5 @@
 ---
-title: js笔记之Js代码调用策略
+title: Js笔记之Js代码调用策略
 author: chaizz
 date: 2022-10-12 17:40:18
 tags: Javascript
