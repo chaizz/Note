@@ -1,6 +1,7 @@
 {
+  "accentColor": "",
   "promptDelete": false,
-  "defaultViewMode": "source",
+  "defaultViewMode": "preview",
   "legacyEditor": false,
   "trashOption": "local",
   "alwaysUpdateLinks": true,
@@ -9,5 +10,10 @@
   "attachmentFolderPath": "/files",
   "readableLineLength": false,
   "livePreview": true,
-  "communityThemeSortOrder": "download"
+  "communityThemeSortOrder": "download",
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showLineNumber": false,
+  "showIndentGuide": true
 }

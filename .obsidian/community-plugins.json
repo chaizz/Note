@@ -2,11 +2,8 @@
   "table-editor-obsidian",
   "recent-files-obsidian",
   "cm-editor-syntax-highlight-obsidian",
-  "file-explorer-note-count",
   "obsidian-pandoc",
   "obsidian-excalidraw-plugin",
-  "obsidian-style-settings",
-  "obsidian-minimal-settings",
-  "obsidian-outliner",
-  "obsidian-hider"
+  "file-explorer-note-count",
+  "obsidian-outliner"
 ]

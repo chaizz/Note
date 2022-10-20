@@ -1,8 +1,11 @@
 {
   "theme": "moonstone",
   "cssTheme": "Minimal",
-  "translucency": false,
+  "translucency": true,
   "baseFontSizeAction": true,
   "enabledCssSnippets": [],
-  "accentColor": ""
+  "interfaceFontFamily": "阿里巴巴普惠体 2.0",
+  "textFontFamily": "阿里巴巴普惠体 2.0",
+  "monospaceFontFamily": "",
+  "baseFontSize": 18
 }

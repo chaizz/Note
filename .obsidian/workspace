@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "6483a494036ec4c3",
+        "id": "e35a2cbcb0b97faf",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Python/Django/Django之美：dajngo的常用插件.md",
-            "mode": "source",
+            "file": "Web/Javascript/JS笔记之JS异步编程之Promise.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -43,6 +43,16 @@
             }
           },
           {
+            "id": "3b882bfd7cbcb6f9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Web/Javascript/JS笔记之JS异步编程之Promise.md"
+              }
+            }
+          },
+          {
             "id": "54fac6d08aba9fdd",
             "type": "leaf",
             "state": {
@@ -56,29 +66,14 @@
                 "sortOrder": "alphabetical"
               }
             }
-          }
-        ],
-        "currentTab": 1
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300
-  },
-  "right": {
-    "id": "c99acccd97d0e7f8",
-    "type": "split",
-    "children": [
-      {
-        "id": "231178b68e46095b",
-        "type": "tabs",
-        "children": [
+          },
           {
             "id": "fcd32da705b1e3d3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python/Django/Django之美：dajngo的常用插件.md",
+                "file": "Web/Javascript/JS笔记之JS异步编程之Promise.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,26 +85,39 @@
             }
           },
           {
-            "id": "3b882bfd7cbcb6f9",
+            "id": "41d7f6f5eedeeade",
             "type": "leaf",
             "state": {
-              "type": "outline",
-              "state": {
-                "file": "Python/Django/Django之美：dajngo的常用插件.md"
-              }
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
+    "direction": "horizontal",
+    "width": 179
+  },
+  "right": {
+    "id": "c99acccd97d0e7f8",
+    "type": "split",
+    "children": [],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
   "active": "22ac194122706564",
   "lastOpenFiles": [
-    "Web/Typora设置七牛云图床.md",
-    "Web/CDN工作原理.md",
-    "Web/CSS/CSS背景和边框.md"
+    "Web/Javascript/JS笔记之JS代码调用策略.md",
+    "Web/Javascript/JS笔记之JS事件.md",
+    "Web/Javascript/JS笔记之JS异步编程之Promise.md",
+    "README.md",
+    "Web/CSS/CSS布局-弹性盒子与网格布局.md",
+    "Python/Python-Elestatcsearch.md",
+    "Python/Python代码规范（pep8-Google-style）.md",
+    "Templates/hexo.md",
+    "Python/Jupyter-notebook的安装与基本使用.md",
+    "Python/Django/Django之美：dajngo的常用插件.md"
   ]
 }

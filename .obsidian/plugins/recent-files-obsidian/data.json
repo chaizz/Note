@@ -1,6 +1,50 @@
 {
   "recentFiles": [
     {
+      "basename": "JS笔记之JS异步编程之Promise",
+      "path": "Web/Javascript/JS笔记之JS异步编程之Promise.md"
+    },
+    {
+      "basename": "JS笔记之JS代码调用策略",
+      "path": "Web/Javascript/JS笔记之JS代码调用策略.md"
+    },
+    {
+      "basename": "JS笔记之JS事件",
+      "path": "Web/Javascript/JS笔记之JS事件.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "CSS布局-弹性盒子与网格布局",
+      "path": "Web/CSS/CSS布局-弹性盒子与网格布局.md"
+    },
+    {
+      "basename": "Python-Elestatcsearch",
+      "path": "Python/Python-Elestatcsearch.md"
+    },
+    {
+      "basename": "Python代码规范（pep8-Google-style）",
+      "path": "Python/Python代码规范（pep8-Google-style）.md"
+    },
+    {
+      "basename": "hexo",
+      "path": "Templates/hexo.md"
+    },
+    {
+      "basename": "Jupyter-notebook的安装与基本使用",
+      "path": "Python/Jupyter-notebook的安装与基本使用.md"
+    },
+    {
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Python/Django/Django之美：dajngo的常用插件.md"
+    },
+    {
+      "basename": "Drawing 2022-10-20 21.48.12.excalidraw",
+      "path": "Excalidraw/Drawing 2022-10-20 21.48.12.excalidraw.md"
+    },
+    {
       "basename": "js笔记之Js代码调用策略",
       "path": "Web/Javascript/js笔记之Js代码调用策略.md"
     },
@@ -25,16 +69,8 @@
       "path": "Web/CSS/CSS布局-浮动与定位多列布局.md"
     },
     {
-      "basename": "CSS布局-弹性盒子与网格布局",
-      "path": "Web/CSS/CSS布局-弹性盒子与网格布局.md"
-    },
-    {
       "basename": "CSS背景和边框",
       "path": "Web/CSS/CSS背景和边框.md"
-    },
-    {
-      "basename": "Django之美：dajngo的常用插件",
-      "path": "Python/Django/Django之美：dajngo的常用插件.md"
     },
     {
       "basename": "Typora设置七牛云图床",
