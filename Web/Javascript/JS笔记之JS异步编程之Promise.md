@@ -2,7 +2,7 @@
 title: JS笔记之JS异步编程之Promise
 author: chaizz
 date: 2022-10-13 17:40:18
-tags: Javascript
+tags: JavaScript
 photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 

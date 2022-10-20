@@ -1,8 +1,8 @@
 ---
-title: js笔记之Js事件
+title: JS笔记之JS事件
 author: chaizz
 date: 2022-10-13 17:40:18
-tags: Javascript
+tags: JavaScript
 photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
@@ -14,7 +14,7 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 
 
-js的事件冒泡和捕获是两种机制，主要描述一个元素上有两个相同类型的事件处理器被激活会发生什么。
+JS的事件冒泡和捕获是两种机制，主要描述一个元素上有两个相同类型的事件处理器被激活会发生什么。
 
 例如该例子：[源码](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/events/show-video-box.html)
 

@@ -1,8 +1,8 @@
 ---
-title: Js笔记之Js代码调用策略
+title: JS笔记之JS代码调用策略
 author: chaizz
 date: 2022-10-12 17:40:18
-tags: Javascript
+tags: javaScript
 photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
@@ -10,9 +10,9 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-# Js代码调用策略
+# JS代码调用策略
 
-javascript代码位置和css一样，可以设置为内部样式、内联样式、外部样式。HTML代码渲染是由上而下加载，js代码的位置可能会导致js获取DOM元素时，无法获取未渲染的HTML标签，从而引发错误。
+javaScript代码位置和css一样，可以设置为内部样式、内联样式、外部样式。HTML代码渲染是由上而下加载，js代码的位置可能会导致js获取DOM元素时，无法获取未渲染的HTML标签，从而引发错误。
 
 想要脚本调用的时候符合预期，需要解决一系列问题。
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ## 2 使用 async 解决
 
-在调用外部js代码时可以使用js的一项现代技术（async）来解决这一问题，他告知浏览器在遇到<javascript> 元素时不用中断后续HTML内容的加载。
+在调用外部js代码时可以使用js的一项现代技术（async）来解决这一问题，他告知浏览器在遇到<javaScript> 元素时不用中断后续HTML内容的加载。
 
 ```html
 <script src="script.js" async></script>
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-一般解决此问题的旧方法是：把脚本元素放在底部，这样脚本就可以再HTML内容解析之后加载了。这种方案和上面 DOMContentLoaded 的问题是：==只有在所有 HTML DOM 加载完成后才开始脚本的加载/解析过程。对于有大量 JavaScript 代码的大型网站，可能会带来显著的性能损耗。这也是 async 属性诞生的初衷。==
+一般解决此问题的旧方法是：把脚本元素放在底部，这样脚本就可以再HTML内容解析之后加载了。这种方案和上面 DOMContentLoaded 的问题是：==只有在所有 HTML DOM 加载完成后才开始脚本的加载/解析过程。对于有大量 javaScript 代码的大型网站，可能会带来显著的性能损耗。这也是 async 属性诞生的初衷。==
 
 ## 3 async 和 defer
 
