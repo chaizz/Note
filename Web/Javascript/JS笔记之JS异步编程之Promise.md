@@ -188,6 +188,12 @@ Promise 术语
 - **已兑现（fulfilled）**：意味着操作成功完成。当 Promise 完成时，它的then()处理函数被调用。
 - **已拒绝（rejected）**：意味着操作失败。当一个 Promise 失败时，它的catch()处理函数被调用。
 
+有时我们用 **已敲定（settled）** 这个词来同时表示 **已兑现（fulfilled）** 和 **已拒绝（rejected）** 两种情况。
+
+如果一个 Promise 处于已决议（resolved）状态，或者它被“锁定”以跟随另一个 Promise 的状态，那么它就是 **已兑现（fulfilled）**。
+
+文章 [Let's talk about how to talk about promises](https://thenewtoys.dev/blog/2021/02/08/lets-talk-about-how-to-talk-about-promises/) 对这些术语的细节做了很好的解释。
+
 > 注：这里的成功或者失败取决于使用的API。例如：fetch()认为服务器返回一个错误（如[404 Not Found](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/404)）时请求成功，但如果网络错误阻止请求被发送，则认为请求失败。
 
 
