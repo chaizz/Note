@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "ecf5d3ef35786fc2",
+        "id": "45023fa7bd5d7bf8",
         "type": "tabs",
         "children": [
           {
-            "id": "62bba032bb896926",
+            "id": "12fb316d1afe90cc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Database/MySQL/MySQL的MVCC机制.md",
-                "mode": "preview",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -55,9 +51,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Database/MySQL/MySQL的MVCC机制.md"
-              }
+              "state": {}
             }
           },
           {
@@ -89,7 +83,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database/MySQL/MySQL的MVCC机制.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c99acccd97d0e7f8",
@@ -118,8 +112,9 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "62bba032bb896926",
+  "active": "12fb316d1afe90cc",
   "lastOpenFiles": [
+    "Database/MySQL/MySQL的MVCC机制.md",
     "Web/Javascript/js笔记之Js代码调用策略.md",
     "Web/Javascript/js笔记之js事件.md",
     "Web/CSS/CSS选择器.md",
@@ -128,7 +123,6 @@
     "Web/CSS/CSS布局-浮动与定位多列布局.md",
     "Web/CSS/CSS布局-弹性盒子与网格布局.md",
     "Web/CSS/CSS背景和边框.md",
-    "Python/Django/Django之美：dajngo的常用插件.md",
-    "Web/Typora设置七牛云图床.md"
+    "Python/Django/Django之美：dajngo的常用插件.md"
   ]
 }
