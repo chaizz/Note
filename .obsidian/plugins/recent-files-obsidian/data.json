@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "MySQL的MVCC机制",
+      "path": "Database/MySQL/MySQL的MVCC机制.md"
+    },
+    {
       "basename": "JS笔记之JS异步编程之Promise",
       "path": "Web/Javascript/JS笔记之JS异步编程之Promise.md"
     },

@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "966bd114fe63457e",
+        "id": "ecf5d3ef35786fc2",
         "type": "tabs",
         "children": [
           {
-            "id": "d3723331ad413486",
+            "id": "62bba032bb896926",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Database/MySQL/MySQL的MVCC机制.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           }
         ]
@@ -47,6 +51,16 @@
             }
           },
           {
+            "id": "3b882bfd7cbcb6f9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Database/MySQL/MySQL的MVCC机制.md"
+              }
+            }
+          },
+          {
             "id": "54fac6d08aba9fdd",
             "type": "leaf",
             "state": {
@@ -60,29 +74,22 @@
                 "sortOrder": "alphabetical"
               }
             }
-          }
-        ],
-        "currentTab": 1
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
-  },
-  "right": {
-    "id": "c99acccd97d0e7f8",
-    "type": "split",
-    "children": [
-      {
-        "id": "231178b68e46095b",
-        "type": "tabs",
-        "children": [
+          },
+          {
+            "id": "a5a771faa39e0fec",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
           {
             "id": "fcd32da705b1e3d3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Database/MySQL/MySQL的MVCC机制.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,34 +99,26 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "3b882bfd7cbcb6f9",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "a5a771faa39e0fec",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
+  "right": {
+    "id": "c99acccd97d0e7f8",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "a5a771faa39e0fec",
+  "active": "62bba032bb896926",
   "lastOpenFiles": [
     "Web/Javascript/js笔记之Js代码调用策略.md",
     "Web/Javascript/js笔记之js事件.md",
