@@ -1,8 +1,32 @@
 {
   "recentFiles": [
     {
+      "basename": "Flask常用扩展",
+      "path": "Python/Flask/Flask常用扩展.md"
+    },
+    {
+      "basename": "Django之美：dajngo的常用插件",
+      "path": "Python/Django/Django之美：dajngo的常用插件.md"
+    },
+    {
+      "basename": "Celery-Beat源码解析",
+      "path": "Python/Celery/Celery-Beat源码解析.md"
+    },
+    {
+      "basename": "MySQL索引原理",
+      "path": "Database/MySQL/MySQL索引原理.md"
+    },
+    {
+      "basename": "MySQL事务与锁机制",
+      "path": "Database/MySQL/MySQL事务与锁机制.md"
+    },
+    {
       "basename": "MySQL的MVCC机制",
       "path": "Database/MySQL/MySQL的MVCC机制.md"
+    },
+    {
+      "basename": "Mysql 8.0 数据库无法远程连接",
+      "path": "Database/MySQL/Mysql 8.0 数据库无法远程连接.md"
     },
     {
       "basename": "JS笔记之JS异步编程之Promise",
@@ -39,10 +63,6 @@
     {
       "basename": "Jupyter-notebook的安装与基本使用",
       "path": "Python/Jupyter-notebook的安装与基本使用.md"
-    },
-    {
-      "basename": "Django之美：dajngo的常用插件",
-      "path": "Python/Django/Django之美：dajngo的常用插件.md"
     },
     {
       "basename": "Drawing 2022-10-20 21.48.12.excalidraw",

@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "45023fa7bd5d7bf8",
+        "id": "3a93dd94697094f9",
         "type": "tabs",
         "children": [
           {
-            "id": "12fb316d1afe90cc",
+            "id": "78f65885570eea6f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Python/Flask/Flask常用扩展.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           }
         ]
@@ -51,7 +55,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Python/Flask/Flask常用扩展.md"
+              }
             }
           },
           {
@@ -83,6 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Python/Flask/Flask常用扩展.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,8 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c99acccd97d0e7f8",
@@ -112,17 +118,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "12fb316d1afe90cc",
+  "active": "78f65885570eea6f",
   "lastOpenFiles": [
+    "Python/Django/Django之美：dajngo的常用插件.md",
+    "Python/Celery/Celery-Beat源码解析.md",
+    "Database/MySQL/MySQL索引原理.md",
+    "Database/MySQL/MySQL事务与锁机制.md",
     "Database/MySQL/MySQL的MVCC机制.md",
+    "Database/MySQL/Mysql 8.0 数据库无法远程连接.md",
     "Web/Javascript/js笔记之Js代码调用策略.md",
     "Web/Javascript/js笔记之js事件.md",
     "Web/CSS/CSS选择器.md",
-    "Web/CSS/CSS盒模型.md",
-    "Web/CSS/CSS层叠与继承.md",
-    "Web/CSS/CSS布局-浮动与定位多列布局.md",
-    "Web/CSS/CSS布局-弹性盒子与网格布局.md",
-    "Web/CSS/CSS背景和边框.md",
-    "Python/Django/Django之美：dajngo的常用插件.md"
+    "Web/CSS/CSS盒模型.md"
   ]
 }
