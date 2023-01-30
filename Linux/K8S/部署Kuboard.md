@@ -11,19 +11,21 @@ photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
 
 <!--more-->
 
+# 安装 K8S 可视化界面 Kuboard
+
 参考链接
 
 > [安装 Kuboard v3 - 内建用户库 | Kuboard](https://www.kuboard.cn/install/v3/install-built-in.html)
 
 > Kuboard 是一款专为 Kubernetes 设计的免费管理界面，兼容 Kubernetes 版本 1.13 及以上。Kuboard 每周发布一个 beta 版本，最长每月发布一个正式版本，经过两年的不断迭代和优化，已经具备多集群管理、权限管理、监控套件、日志套件等丰富的功能，并且有 1000+ 的企业将 Kuboard 应用于其生产环境。
 
-一、前期准备
+## 一、前期准备
 
 - 搭建完成Kubernetes 集群。 
 
 - Docker 安装完毕
 
-二、安装Kuboard
+## 二、安装Kuboard
 
 ```shell
 sudo docker run -d \
@@ -37,7 +39,7 @@ sudo docker run -d \
   eipwork/kuboard:v3
 ```
 
-三、访问 Kuboard
+## 三、访问 Kuboard
 
 在浏览器输入 `http://your-host-ip:80` 即可访问 Kuboard v3.x 的界面，登录方式：
 
