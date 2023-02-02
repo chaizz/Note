@@ -12,21 +12,21 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 
 
-JS笔记之JS数据类型(二)
+# JS笔记之JS数据类型(二)
 
-字符串
+## 1 字符串
 
 在 JavaScript 中，文本数据被以字符串形式存储，单个字符没有单独的类型。 字符串是不可变的。
 
 字符串的内部格式始终是 [UTF-16](https://en.wikipedia.org/wiki/UTF-16)，它不依赖于页面编码。
 
-引号
+### 1.1 引号
 
 在字符串中有三种引号，单引号和双引号基本相同。但是，反引号允许我们通过 `${…}` 将任何表达式嵌入到字符串中。 使用反引号允许字符串跨行。
 
 反引号还允许我们在第一个反引号之前指定一个“模版函数”。语法是：`func`string``。函数 `func` 被自动调用，接收字符串和嵌入式表达式，并处理它们。你可以在 [docs](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) 中阅读更多关于它们的信息。这叫做 “tagged templates”。此功能可以更轻松地将字符串包装到自定义模版或其他函数中，但这很少使用。
 
-特殊字符
+### 1.2 特殊字符
 
 在上述的反引号能够换行，特殊字符也可以达到目的。
 
@@ -52,7 +52,7 @@ alert( "\u{1F60D}" ); // 😍，笑脸符号（另一个长 Unicode）
 
 
 
-length 字符串长度
+### 1.3 length 字符串长度
 
 ```js
 console.log( `My\n`.length ); // 3  \n 是一个单独的“特殊”字符，所以长度确实是 3。
@@ -62,7 +62,7 @@ length 是一个属性。
 
 
 
-访问字符
+### 1.4 访问字符
 
 要获取在pos位置的一个字符，可以使用`[]` 或者调用`str.charAt(pos)`，第一个字符串位置从0开始。
 
@@ -91,7 +91,7 @@ for (let char of "Hello") {
 
 
 
-字符串常用方法：
+### 1.5 字符串常用方法
 
 - **改变大小写**：[toLowerCase()](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) 和 [toUpperCase()](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)。
 
@@ -107,9 +107,12 @@ for (let char of "Hello") {
   }
   ```
 
+- 删除字符串前后的空格：`str.trim()`
+- 重复字符串n次：`str.repeat(n)`
 
 
-[按位（bitwise）NOT 技巧](https://zh.javascript.info/string#an-wei-bitwisenot-ji-qiao)
+
+### 1.6 [按位（bitwise）NOT 技巧](https://zh.javascript.info/string#an-wei-bitwisenot-ji-qiao)
 
 这里使用的一个老技巧是 [bitwise NOT](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_NOT) `~` 运算符。它将数字转换为 32-bit 整数（如果存在小数部分，则删除小数部分），然后对其二进制表示形式中的所有位均取反。
 
@@ -146,7 +149,7 @@ if (~str.indexOf("Widget")) {
 
 
 
-includes，startsWith，endsWith
+### 1.7 includes，startsWith，endsWith
 
 str.includes(substr, pos) 根据str 中是否包含 substr 来返回true或者false。
 
@@ -166,7 +169,7 @@ alert( "Widget".endsWith("get") ); // true，"Widget" 以 "get" 结束
 
 
 
-获取子字符串
+### 1.8 获取子字符串
 
 JS中有三种获取子字符串的方法， substring、substr、slice
 
@@ -210,7 +213,7 @@ alert( str.substr(2, 4) ); // 'ring'，从位置 2 开始，获取 4 个字符
 
 
 
-比较字符串
+### 1.9 比较字符串
 
 字符串的比较按照字母的顺序逐字比较，但是有特殊情况：
 
@@ -234,9 +237,53 @@ alert( "z".codePointAt(0) ); // 122
 alert( "Z".codePointAt(0) ); // 90
 ```
 
+也可以通过数字去创建字符
+
+```js
+alert( String.fromCodePoint(90) ); // Z
+```
+
+将65到220的数字代表的字符串全部打出来，我们可以看到先是大写字母，再是小写字母，明显a是大于Z的。结合上面的输出：
+
+- 小写字母要比大写字母要大。
+- 一些带有音标的特殊字母(Ö)比大写或者小写的字母都要大。
+
+```js
+let str = '';
+
+for (let i = 65; i <= 220; i++) {
+  str += String.fromCodePoint(i);
+}
+console.log( str );
+// ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+// ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜ
+```
 
 
 
+### 1.10 正确的比较字符串
+
+现代的浏览器提供了一种特殊的方法来比较不同语言的字符串：`str.localComparse(str2)` 他会根据语言规则返回一个整数，这个整数能指示字符串str在排序顺序中排在str2的前面还是后面或者相同。
+
+- str在str2的前面则返回负数。
+- str在str2的后面则返回正数。
+- 位置相等，则返回0。
+
+```js
+console.log( 'Österreich'.localeCompare('Zealand') ); // -1 代表 Österreich 小于 Zealand
+```
+
+
+
+## 2 总结
+
+有三种类型的引号，反引号允许跨行显示并且可以使用${}在字符串中钳入表达式。
+
+JS中的字符串使用的是UTF-16编码。
+
+获取字符时使用：[], 获取子字符串使用slice和substring。
+
+当根据语言比较字符串时使用`str.localcomparse(str2)`,否则则按照字符代码比较。
 
 
 
