@@ -10,11 +10,17 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-# 事件冒泡及捕获
+# JS笔记之JS事件
+
+## 1 DOM事件流
+
+![](https://tc.chaizz.com/tc/无标题-2023-02-07-2212.png)
 
 
 
 JS的事件冒泡和捕获是两种机制，主要描述一个元素上有两个相同类型的事件处理器被激活会发生什么。
+
+
 
 例如该例子：[源码](https://github.com/mdn/learning-area/blob/main/javascript/building-blocks/events/show-video-box.html)
 
@@ -76,7 +82,7 @@ video.addEventListener('click', () => video.play());
 
 在捕获阶段：
 
-- 浏览器检查元素的最外层祖先`html`，是否在捕获阶段中注册了一个onclick事件处理程序，如果是，则运行它。
+- 浏览器检查元素的最外层祖先`html`，是否在捕获阶段中注册了一个`onclick`事件处理程序，如果是，则运行它。
 - 然后，他移动到`html`中点击元素的下一个祖先元素，并执行相同的操作，接下来是点击元素再下一个祖先元素，以此类推，直到到达实际点击的元素。
 
 在冒泡阶段恰恰相反：
@@ -89,7 +95,7 @@ video.addEventListener('click', () => video.play());
 - 首先发现了`video.onclick...`事件处理器并且运行它，因此这个视频`<video>`第一次开始播放。
 - 接着还发现了`videoBox.onclick...`事件处理器并且运行它，因此这个视频`<video>`也隐藏起来了。
 
-## 2 解决方法：
+## 2 解决方法
 
 标准事件对象具有可用的名为 [`stopPropagation()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation)的函数，当在事件对象上调用该函数时，它只会让当前事件处理程序运行，但事件不会在**冒泡**链上进一步扩大，因此将不会有更多事件处理器被运行 (不会向上冒泡)。所以，我们可以通过改变前面代码块中的第二个处理函数来解决当前的问题：
 
@@ -109,9 +115,39 @@ video.onclick = function(e) {
 
 ## 3 延伸
 
-### 事件委托
+### 3.1 事件委托
 
-正式因为冒泡的机制， 所以我们可以利用该机制，实现下面这样的行为：如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并让子节点上发生的事件冒泡到父节点上，而不是每个子节点单独设置事件监听器。这种行为称之为事件委托。这个概念的更多的例子-[How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)。
+正式因为冒泡的机制， 所以我们可以利用该机制，实现下面这样的行为：如果你想要在大量子元素中单击任何一个都可以运行一段代码，**您可以将事件监听器设置在其父节点上，并让子节点上发生的事件冒泡到父节点上，而不是每个子节点单独设置事件监听器。这种行为称之为事件委托。**这个概念的更多的例子-[How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)。
+
+示例：给ul添加点击事件， 当点击li标签时， li会冒泡到他的父标签ul，所以会执行ul的点击事件。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+
+    <ul>
+        <li>点我1</li>
+        <li>点我2</li>
+        <li>点我3</li>
+        <li>点我4</li>
+    </ul>
+
+    <script>
+        // 事件委托的核心原理：给父节点添加事件监听器，利用冒泡原理来影响每一个子节点。
+        let ul = document.querySelector('ul')
+        ul.addEventListener('click', e => {
+            // alert('点击快乐')
+            e.target.style.backgroundColor = 'red'
+        })
+    </script>
+</body>
+</html>
+```
 
 
 
