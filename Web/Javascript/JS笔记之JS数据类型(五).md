@@ -26,7 +26,7 @@ map 是一个带键的数据项的集合，他和object很像， 但是map允许
 - map.clear()：清空map。
 - map.size：返回当前元素的个数。
 
-在使用map获取key的值或者设置值时 应该使用map.get() 或者 map.set()。
+在使用map获取key的值或者设置值时 应该使用 map.get() 或者 map.set() 。
 
 ```js
 let map = new Map();
@@ -48,9 +48,9 @@ visitsCountMap.set('john', 123)
 
 ```
 
-map比较键的方法：使用sameValueZero算法来比较键是否相等，他和严格等于 === 差不多，但区别是 NaN 是等于NaN的，索引NaN也可以被用作键。
+map比较键的方法：使用sameValueZero算法来比较键是否相等，他和严格等于 === 差不多，但区别是 NaN是等于NaN的，所以NaN也可以被用作键。
 
-map 在设置key的时候返回的是他自身，索引可以被链式调用，例如：
+map 在设置key的时候返回的是他自身，所以可以被链式调用，例如：
 
 ```js
 let mapObj = new Map();
