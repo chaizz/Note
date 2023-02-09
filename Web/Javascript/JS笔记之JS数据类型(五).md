@@ -45,7 +45,6 @@ alert( map.size ); // 3
 let username = {'name':'john'};
 let visitsCountMap = new Map();
 visitsCountMap.set('john', 123)
-
 ```
 
 map比较键的方法：使用sameValueZero算法来比较键是否相等，他和严格等于 === 差不多，但区别是 NaN是等于NaN的，所以NaN也可以被用作键。
@@ -75,7 +74,7 @@ mapObj.set('name', ‘张三).set('age', 18).set('sex', 'm');
 
 
 
-### 1.3 将对象转化为Map Object.entries
+### 1.3 将对象转化为Map -> Object.entries
 
 当new 一个Map() 对象时，我们可以使用一个带键值对的数组（或者其他的可迭代对象）进行初始化，例如：
 
@@ -90,7 +89,7 @@ let map = new Map([
 alert( map.get('1') ); // str1
 ```
 
-如果使用普通的对象来创建map，我们可以使用内建方法 Object.entries()obj，该方法返回对象的键值对数组。
+如果使用普通的对象来创建map，我们可以使用内建方法 Object.entries(obj)，该方法返回对象的键值对数组。
 
 
 
@@ -151,6 +150,8 @@ set.forEach((value, valueAgain, set) => {
 
 ## 3 WeakMap 
 
+在JS中 数组或者对象中的key 或者value，他们都是认为是可达的，如果一个对象被传入数组中，那么我们认为如果这个数组存在，那么这个对象也一定是可达的。在 map 中的 key或者是value 也是同样的道理。
+
 JS垃圾回收中JS引擎在值可达和被可能引用的时候，会将值保存在内存中。
 
 ```js
@@ -178,7 +179,93 @@ john = null; // 覆盖引用
 // 我们可以使用 map.keys() 来获取它，所以他不会被垃圾回收
 ```
 
+WeakMap 和 Map 的区别
+
+- 在键上的区别
+  - WeakMap  的键必须是对象，不能是原始值。
+- 方法上的区别
+  - 只支持 has()  get () set() delete() 方法， 不支持 keys() values() entries()
+  - 不能迭代。
+
+WeakMap  的使用场景主要的使用场景：
+
+**额外数据的存储**。
+
+> 假如要处理另一些代码的数据，或者是第三方库的数据并且要存储一些相关的数据，那么这时候这些数据就应该和这个对象共存亡。将这些数据存储到WeakMap 中，并使用该对象作为这些数据的键，当改对象对垃圾回收后，这些数据也会被回收。
+>
+> ```js
+> let weakMap = new WeakMap();
+> // 如果 john
+> weakMap.set(john, 'some data');
+> ```
+>
+> 
+
+**做数据缓存**
+
+>  可以缓存函数返回的结果，一遍多次电泳不需要重新计算。
+>
+> ```js
+> let cache = new WeakMap();
+> 
+> // 计算并记结果
+> function process(obj) {
+>   if (!cache.has(obj)) {
+>     let result = /* calculate the result for */ obj;
+>     cache.set(obj, result);
+>   }
+>   return cache.get(obj);
+> }
+> 
+> // 📁 main.js
+> let obj = {/* some object */};
+> 
+> let result1 = process(obj);
+> let result2 = process(obj);
+> 
+> // ……稍后，我们不再需要这个对象时：
+> obj = null;
+> 
+> // 无法获取 cache.size，因为它是一个 WeakMap，
+> // 要么是 0，或即将变为 0
+> // 当 obj 被垃圾回收，缓存的数据也会被清除
+> ```
+>
+> 
+
 ## 4 WeakSet
+
+WeakSet 和 Set 的区别
+
+- WeakSet 的元素只能是对象。
+- 对象只有在其他某个地方能被访问的时候，再能六在 WeakSet中。
+- 只支持add() has() delete() 不支持size和 keys() ，并且不可迭代。
+
+weakSet也可以作为额外的空间，但是只能是针对**是/否**的事实。例如：
+
+```js
+let visitedSet = new WeakSet();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john); // John 访问了我们
+visitedSet.add(pete); // 然后是 Pete
+visitedSet.add(john); // John 再次访问
+
+// visitedSet 现在有两个用户了
+
+// 检查 John 是否来访过？
+alert(visitedSet.has(john)); // true
+
+// 检查 Mary 是否来访过？
+alert(visitedSet.has(mary)); // false
+
+john = null;
+
+// visitedSet 将被自动清理(即自动清除其中已失效的值 john)
+```
 
 
 
@@ -189,3 +276,10 @@ john = null; // 覆盖引用
 - set 是一组唯一值的集合。
 
 - 在map和set 迭代总是按照插入的顺序，所以不能说他们的元素是无序的，但也不能对元素重新排序，也不能按照编号来取数据。
+
+- WeakMap 类似于Map ，但是只能设置键为对象，并且这些对象一旦在其他地方无法访问，则这个对象就会被垃圾回收，且WeakMap 对应的值也会被删除回收。
+
+- WeakSet 类似于Set，但是只能存储对象，并且这些对象一旦在其他地方无法访问，那么也会在WeakSet中删除回收。
+
+- WeakMap WeakSet 被用作主要对象存储之外的辅助数据结构。例如缓存的使用场景。
+
