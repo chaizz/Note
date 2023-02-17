@@ -10,9 +10,9 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
+# JS笔记之JS数据类型(八)
 
-
-JSON.stringify(obj)
+## 1 JSON.stringify(obj)
 
 JSON编码的对象与JS对象的字面量有一些区别：
 
@@ -48,9 +48,7 @@ console.log( JSON.stringify(user) ); // {}（空对象）
 
 > **Tips：在使用JSON.stringify(obj) 时（仅包含单个参数），对象中不能有循环引用。**
 
-
-
-排除和转换 replacer
+## 2 排除和转换 replacer
 
 JSON.stringify 的完整语法是：
 
@@ -118,7 +116,7 @@ console.log( JSON.stringify(meetup, function replacer(key, value) {
 
 
 
-格式化 space
+## 3 格式化 space
 
 JSON.stringif 的第三个参数是优化格式的空格数量。也可以是字符串，字符串用于缩进而不是空格的数量。spaces 参数仅用于日志记录和美化输出。
 
@@ -154,7 +152,7 @@ console.log(JSON.stringify(meetup, null, "===="))
 
 
 
-自定义 toJson
+## 4 自定义 toJson
 
 toString 可以进行字符串转化， 对象也可以自定义toJson来进行JSON转换，如果可用，JSON.stringify 则会自动调用它。 在Python 输出类的字符串形式， 使用魔术方法`__str__`和`__repr__`。
 
@@ -178,7 +176,7 @@ toJson 既可以用于直接调用JSON.stringify， 也可以在嵌套在另一�
 
 
 
-JSON.parse
+## 5 JSON.parse
 
 将JSON字符串要解码JS对象
 
@@ -218,7 +216,7 @@ console.log( schedule.meetups[1].date.getDate() ); // 正常运行了！
 
 
 
-总结
+## 6 总结
 
 - JSON 支持 object，array，string，number，boolean 和 null。
 - 如果独享具有toJson方法，那么会被 JSON.stringify 调用。
