@@ -8,11 +8,11 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS函数进阶(三)
+# JS笔记之JS函数进阶(三)
 
 在JS中 函数也是一种值，函数的类型就是Object，函数本身也包含自己的属性。
 
-name 属性
+## 1 name 属性
 
 在创建一个函数时，我们可以根据函数名获取对应函数的name属性，直接创建一个具名函数或者使用命名表达式，来创建函数，函数名和命名表达式的变量名就是函数的name属性。
 
@@ -39,7 +39,7 @@ console.log( arr[0].name ); // <空字符串>
 
 
 
-length 属性
+## 2 length 属性
 
 该属性返回的是函数入参的个数，但是不包含...rest的参数，属性 length 有时在操作其它函数的函数中用于做 内省/运行时检查（introspection）。
 
@@ -55,7 +55,7 @@ alert(many.length); // 2
 
 
 
-自定义属性
+## 3 自定义属性
 
 在函数内部还可以直接自定义属性，直接使用函数名.属性名， 这里的属性名和函数内部的变量名，是两个概念，他们之间没有关系。
 
@@ -80,7 +80,7 @@ function sayHi() {
 
 
 
-函数命名表达式
+## 4 函数命名表达式
 
 带有函数 (NFE，Named Function Expression) 指带有名字的表达式的术语。
 
@@ -122,7 +122,7 @@ func(); // Error, func is not defined（在函数外不可见）
 
 
 
-使用 new Function 来创建函数
+## 5 使用 new Function 来创建函数
 
 语法
 
@@ -146,7 +146,7 @@ sayHi(); // Hello
 
 
 
-闭包
+## 6 闭包
 
 闭包是指使用一个特殊的属性，来记录函数自身得创建时的环境的函数，他具体执行了函数创建时的此法环境，但是我们使用 new Function 创建的函数，他并不指向当前的词法环境，而是全局环境。
 
@@ -154,7 +154,7 @@ new Function 这种特性在实际中非常使用，想象一下我们必须通�
 
 
 
-总结
+## 7 总结
 
 - new Function 语法：`let func = new Function ([arg1, arg2, ...argN], functionBody);`
 
