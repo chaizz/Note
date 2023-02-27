@@ -1,7 +1,7 @@
 ---
 title: CSS弹性盒模型Flex知识巩固
 author: chaizz
-date 2023-2-27
+date: 2023-2-27
 tags: CSS
 photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
