@@ -292,12 +292,301 @@ article * {
 
 ## 7 多行元素在交叉轴的排列
 
+如果交叉轴的元素有`margin`属性是`auto`，则会忽略`align-self`。
+
+```css
+article :nth-child(2) {
+	/* 
+        对单个元素的交叉轴进行控制
+        flex-end：反向排列
+        flex-start：默认排列
+        center：居中对齐排列
+        stretch：将元素拉伸 （没有高度或者自动的高度）
+
+    */
+	align-self: baseline;
+}
+```
+
+
+
+## 8 弹性元素在弹性盒可用空间的分配
+
+```css
+article {
+	display: flex;
+	width: 600px;
+	height: 600px;
+	border: 1px solid red;
+	flex-flow: row nowrap;
+}
+
+article :first-child {
+    /* 
+    lex-grow：按比例在弹性盒中分配，
+        当只为一个元素设置lex-grow 属性时，他的值可以是任意值，其他的元素没有设置，代表其余的模型宽度不变。
+        当前设置的元素占据剩下盒子宽度的所有。
+    */
+    flex-grow: 1;    
+}
+
+article :nth-child(2) {
+    /* 
+    lex-grow 当其他的元素也设置 lex-grow 属性时， 就会按照弹性盒的宽度记性等分。
+    例如第二个元素设置了1， 第一个元素也设置了1，那么弹性盒除去未设置的元素的大小 100px,
+    剩下的500px 将 元素1 和 元素2 等分，都是250px，因为他们的flex-grow 都是1。
+
+    如果第二个元素设置为2，那么弹性盒除去未设置的元素的大小100px,剩下的500px 设置为三等分，第二个元素占用
+    
+    */
+    flex-grow: 2;
+}
+
+article :last-child {
+    flex-grow: 3;
+}
+```
 
 
 
 
 
+## 9 关于第八点的案例
+
+在手机应用中，常常会有顶部导航栏，底部菜单栏，中间全部时内容区域。切会根据不同的手机分辨率，自适用伸缩。
+
+```html
+<body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+</body>
+```
+
+```css
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    /* 设置 高度和视口高度一致 */
+    height: 100vh;
+    /* 设置body为弹性盒模型 */
+	display: flex;
+    /* 设置为列对齐， 主轴为竖直方向 */
+	flex-direction: column;
+    /* 设置上下元素贴边，中间居中 */
+	justify-content: space-between;
+}
+
+header {
+	height: 60px;
+	background-color: aquamarine;
+}
+
+main {
+    /* 设置该弹性盒模型的元素占用剩余弹性盒的所有区域 */
+	flex-grow: 1;
+	background-color: blueviolet;
+}
+
+footer {
+	height: 60px;
+	background-color: forestgreen;
+}
+```
 
 
 
- 
+## 10 元素在单行的缩小关系（弹性盒空间不够，但是元素不换行）
+
+`flex-shrink`：控制元素在弹性盒空间不足以容纳弹性元素且不换行时的弹性元素的伸缩比例。
+
+当`flex-shirk`为0时，弹性元素不进行缩放，如果设置某个元素的缩放比例。
+
+元素缩小比例的计算规则：(可以缩小的总宽度/((A元素*flex-shrink的值) + (B元素*flex-shrink的值) + ...) * 对应flex-shrink的值) * 元素的本身的宽度。这个属性用的比较少。。。。
+
+```css
+article :first-child {
+    /* 控制某个弹性元素的缩放比例 */
+    flex-shrink: 0;
+}
+
+
+article :nth-child(2) {
+    flex-shrink: 2;
+}
+
+
+article :nth-child(3) {
+    flex-shrink: 3;
+}
+```
+
+
+
+ ## 11 主轴的基准尺寸
+
+`flex-basis` 的主轴的基准尺寸，来设置元素的宽度或者高度，当主轴为水平轴时，基准尺寸为元素的宽度，如果是竖直排列，基准尺寸为元素的高度。
+
+基准尺寸会覆盖元素的宽度。但是当元素有`max-width`或者`min-width`时，他的优先级要比基准尺寸要高。所以优先级为：`max/min-width`>`flex-basis`>`width`。
+
+
+
+## 12 结合弹性元素的放大、缩放、主轴组合定义
+
+`flex: 放大 缩放 主轴基准`
+
+```css
+artile div {
+    flex-grow: 1;
+    flex-shrink: 2;
+    flex-basis: 100px;
+	/* 以上的三种属性可以直接在flex上直接定义，依次是 flex-grow flex-shrink flex-basis */
+    /* 更推荐这种写法 */
+    flex: 1 2 100px;
+}
+```
+
+
+
+## 13 控制弹性盒模型的弹性元素顺序
+
+`order`属性的值为整数，代表按照顺序排列元素， 按照该整数（最低的值）首先按照视觉顺序放置项目。如果多个项目具有相同的整数值，则在该组中按照源顺序对项目进行布局。
+
+值越低顺序越在前，越高越往后。
+
+## 14 弹性盒模型中的文本
+
+文本同样适用于弹性盒模型。
+
+## 15 定位元素在弹性布局中的效果
+
+1. 绝对定位
+   1. 和普通的绝对定位一致，直接浮动于其他的元素之上，其他的元素无法感知到他的位置。可以使用top left 等进行控制。
+2. 相对定位
+   1. 相对定位，原来的空间位是保存的，其他的元素能够感知到他，不会占据他的空间，也可以top left 等进行控制。
+
+## 16 案例(一)
+
+移动端的弹出菜单栏
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+                font-size: 30px;
+			}
+
+			main {
+				flex: 1;
+				background-color: #f3f3f3;
+			}
+
+			footer {
+				height: 100px;
+				display: flex;
+				border-top: 1px solid #ccc;
+				justify-content: space-between;
+				background-color: rgb(145, 145, 149);
+			}
+
+			footer section {
+				flex: 1;
+				background-color: rgb(174, 171, 171);
+				border-right: 1px solid seagreen;
+
+                display: flex;
+                flex-direction: column-reverse;
+			}
+
+            footer section  h4 {
+                flex: 0 0 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+
+            footer section  ul {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ccc;
+                text-align: center;
+            }
+
+
+            footer section  ul  li {
+                border: 1px solid #ccc;
+                flex:  1 0 70px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                cursor: pointer;
+            }
+		</style>
+	</head>
+	<body>
+		<header></header>
+
+		<main></main>
+		<footer>
+			<section>
+                <h4>后端</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Flask</li>
+                </ul>
+            </section>
+			<section>
+                <h4>AI</h4>
+                <ul>
+                    <li>Pytorch</li>
+                    <li>TensorFlow</li>
+                </ul>
+            </section>
+			<section>
+                <h4>大前端</h4>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>CSS</li>
+                    <li>Vue</li>
+                    <li>React</li>
+                </ul>
+            </section>
+		</footer>
+	</body>
+</html>
+```
+
+
+
+效果：
+
+![image-20230228235044543](https://tc.chaizz.com/tc/image-20230228235044543.png)
+
+## 17 案例(二)
+
+```html
+```
+
