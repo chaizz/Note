@@ -216,6 +216,38 @@ console.log("Again " + worker.slow(3, 5)); // same (cached)
 
 
 
+func.apply
+
+使用`func.apply()` 同样可以实现`func.call()`的方法，使用的方法为：`func.apply(this, arguments)` 代替 `func.call(this, ...arguments`。
+
+```js
+func.call(context, ...args);
+func.apply(context, args);
+```
+
+`apply `和 `call` 只有一个关于 `args` 的细微的差别：
+
+- Spread 语法 `...` 允许将 **可迭代对象** `args` 作为列表传递给 `call`。
+- `apply` 只接受 **类数组** `args`。
+
+对于一个即可迭代又是类数组的对象，例如一个真正的数组，我是用apply可能会更快，因为大多数JS引擎内部对其进行了优化。
+
+
+
+呼叫转移
+
+将所有的参数连同上下文一起传递给另一个函数被称为"呼叫转移（call fowarding）"
+
+最简单的语法为：
+
+```js
+let wrapper = function() {
+  return func.apply(this, arguments);
+};
+```
+
+
+
 
 
 
