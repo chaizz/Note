@@ -587,6 +587,82 @@ artile div {
 
 ## 17 案例(二)
 
+导航栏的左右靠边
+
 ```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			nav {
+				width: 1200px;
+				height: 60px;
+				background-color: #f3f3f3;
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+			}
+			ul {
+				list-style: none;
+				display: flex;
+				/* 交叉轴居中 */
+				align-items: center;
+			}
+
+			ul:nth-child(1) {
+				/*
+            使用flex：1 代表让第一个ul占满弹性盒， 
+            剩下的元素按照他自身的宽度占据弹性盒的宽度
+            margin-right：auto也可以达到 flex:1 同样的效果
+            */
+				flex: 1;
+				/* margin-right: auto; */
+			}
+
+			ul:nth-child(1) > li {
+				margin: 0 20px;
+			}
+
+			ul:nth-child(2) > li {
+				width: 50px;
+				height: 50px;
+				margin-right: 20px;
+				background: chartreuse;
+				border-radius: 100% 100%;
+				justify-content: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="">Python</a></li>
+				<li><a href="">Go</a></li>
+				<li><a href="">JavScript</a></li>
+			</ul>
+			<ul>
+				<li>JS</li>
+			</ul>
+		</nav>
+	</body>
+</html>
 ```
 
+
+
+效果：
+
+![image-20230302214940526](https://tc.chaizz.com/tc/image-20230302214940526.png)

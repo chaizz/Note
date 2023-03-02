@@ -4,20 +4,19 @@ author: chaizz
 date: 2023-2-20
 tags: JavaScript
 photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
-
 ---
 
 ​    
 
 <!--more-->
 
-JS笔记之JS函数进阶(五)
+# JS笔记之JS函数进阶(五)
 
 
 
 
 
-JS函数应用缓存之透明缓存
+## 1 JS函数应用缓存之透明缓存
 
 当我们有一个函数运行非常慢且每次结果都一致的时候，可以用到包装器函数，用来保存他的运行结果。我们可以使用一个Map 对象，来保存函数第一次运行的结果。
 
@@ -114,7 +113,7 @@ func(2); // TypeError: this.someMethod is not a function
 
 
 
-使用 “func.call” 设定上下文
+## 2 使用 “func.call” 设定上下文
 
 他允许调用一个显示设置this的函数，运行func，提供第一参数作为该函数的this对象，后端面的作为参数。
 
@@ -171,7 +170,7 @@ console.log(worker.slow(2)); // 工作正常，没有调用原始函数（使用
 
 
 
-传递多个参数
+## 3 传递多个参数
 
 上述中的装饰器只接受一个参数，我们使用一个参数作为Map对象的key，但是当有多个参数时如何存储缓存呢？
 
@@ -216,7 +215,7 @@ console.log("Again " + worker.slow(3, 5)); // same (cached)
 
 
 
-func.apply
+## 4 func.apply
 
 使用`func.apply()` 同样可以实现`func.call()`的方法，使用的方法为：`func.apply(this, arguments)` 代替 `func.call(this, ...arguments`。
 
@@ -234,7 +233,7 @@ func.apply(context, args);
 
 
 
-呼叫转移
+## 5 呼叫转移
 
 将所有的参数连同上下文一起传递给另一个函数被称为"呼叫转移（call fowarding）"
 
@@ -248,7 +247,7 @@ let wrapper = function() {
 
 
 
-借用一种方法
+## 6 借用一种方法
 
 针对上文中的`hash`函数做一个改进，他只接受两个参数，如果是任意数量的参数如何处理呢？
 
@@ -264,13 +263,13 @@ function hash(args) {
 
 
 
-装饰器和函数属性
+## 7 装饰器和函数属性
 
 在使用装饰器的时候，注意一点如果原始函数有属性，则装饰后的函数不在提供这些属性。如果需要保留原始函数的属性等信息，需要使用特殊的`Proxy`对象来包装函数。
 
 
 
-总结
+## 8 总结
 
 装饰器是一个围绕改变函数行为的包装器，主要工作还是由函数来完成。
 
