@@ -209,6 +209,8 @@ user.sayNow("Hello");
 
 - 方法`func.bind(context, ...args)`返回函数`func`的“绑定变体”，它绑定了上下文 this 和第一个参数（如果给定了）。我们一般使用`bind`绑定`this`传递到其他地方用，例如传递给`setTimeout`。
 - 当绑定现有函数的一些参数后，绑定的函数被称为 partially  applied或者偏函数（自创）。
+- bind 绑定的结果是一个新的对象，他没有原来函数的属性。
+- 一个函数不能被重绑定（re-bound）。
 
 
 
