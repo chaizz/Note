@@ -10,7 +10,7 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS原型继承(一)
+# JS笔记之JS原型继承(一)
 
 
 
@@ -20,7 +20,7 @@ JS笔记之JS原型继承(一)
 
 当我们从对象中读取一个缺失的的属性时，JS会自动从原型中回去该属性，这种特性被称为继。
 
-设置 `[[Prototype]]`
+## 1 设置 `[[Prototype]]`
 
 使用特殊的名字`__proto__`。
 
@@ -55,7 +55,7 @@ console.log(rabbit.eats); // true
 
 
 
-写入时不使用原型
+## 2 写入时不使用原型
 
 原型仅用于读取属性，在写入删除操作直接在对象上操作。
 
@@ -111,7 +111,7 @@ console.log(user.fullName);  // John Smith，user 的内容被保护了
 
 
 
-原型中的this的值
+## 3 原型中的this的值
 
 在原型中，this的不受影响，在一个方法调用中，this的值始终都是点符号(.)的前面的对象。
 
@@ -144,27 +144,72 @@ console.log(animal.isSleeping); // undefined（原型中没有此属性）
 
 
 
-for...in 循环
+## 4 for...in 循环
 
-循环也会迭代继承中的属性，
+for...in循环也会迭代继承中的属性，例如：
+
+```js
+let animal = {
+    eats: true
+};
+
+let rabbit = {
+    jumps: true,
+    __proto__: animal
+};
+
+// Object.keys 只返回自己的 key
+console.log(Object.keys(rabbit)); // jumps
+
+// for..in 会遍历自己以及继承的键
+for (let prop in rabbit) console.log(prop); // jumps，然后是 eats
+```
+
+如果我们向排除掉继承中的key，JS有一个内建的方法：`obj.hasOwnProperty(key)`，如果obj有自己的key（非继承），则返回true。
+
+可以使用这个内建方法过滤掉继承的属性：
+
+```js
+
+let animal = {
+    eats: true
+};
+
+let rabbit = {
+    jumps: true,
+    __proto__: animal
+};
+
+for (let prop in rabbit) {
+    let isOwn = rabbit.hasOwnProperty(prop);
+
+    if (isOwn) {
+        console.log(`Our: ${prop}`); // Our: jumps
+    } else {
+        console.log(`Inherited: ${prop}`); // Inherited: eats
+    }
+}
+```
 
 
 
+> 值得注意的是：上述代码中的`rabbit.hasOwnProperty` 方法也是继承自2`Object`的方法，但是当我们在使用for...in循环是为什么没有列出这个属性呢？
+>
+> 
+>
+> 这是因为`hasOwnProperty`这个属性是不可枚举的。`enumerable:false`。
 
 
 
+几乎所有其他键/值获取方法，像是`Object.keys`或者是`Object.values` 都会忽略继承的属性。他们只会对对象自身操作。
 
 
 
+## 5 总结
 
+- 在JS中所有的对象多有一个隐藏的属性：`[[Prototype]]`属性，他要么是一个对象要么是`null`。
 
+- `[[Prototype]]`引用的对象成为原型。
 
-
-
-
-
-
-
-
-
-
+- 如果我们调用 obj.method()，而且 method 是从原型中获取的，this 仍然会引用 obj。因此，方法始终与当前对象一起使用，即使方法是继承的。
+- `for..in` 循环在其自身和继承的属性上进行迭代。所有其他的键/值获取方法仅对对象本身起作用。
