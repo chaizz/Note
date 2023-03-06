@@ -1,5 +1,5 @@
 ---
-title: JS笔记之JS原型继承(二)
+title: 
 author: chaizz
 date: 2023-3-06
 tags: JavaScript
@@ -10,113 +10,70 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-# JS笔记之JS原型继承(二)
+# JS笔记之JS原型继承(三)
 
-JS在一开始就有了原型继承，但是在过去只是没有直接对其的访问当时，唯一的方法就是通过构造函数的`prototype`属性。
+`prototype`属性在JS的自身的核心部分，被广泛的应用，所有的内建函数都用到了他。
 
+## 1 原生的原型
 
-
-## 1 构造器创建原型对象
-
-使用`F.prototype`去创建一个对象的常规属性，例如：
+首先我们看看原生原型的详细信息，例如我们输出一个空对象：
 
 ```js
-let animal = {
-    eats: true
-};
-
-function Rabbit(name) {
-    this.name = name;
-}
-Rabbit.prototype = animal;
-
-// 设置 Rabbit.prototype = animal 的字面意思是：“当创建了一个 new Rabbit 时，把它的 [[Prototype]] 赋值为 animal”。
-let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
-console.log(rabbit.eats); // true
+let obj = {};
+alert( obj ); // "[object Object]" ?
 ```
 
-`F.prototype`仅在`new F` 时被调用，他为新对象的`[[prototype]]`赋值，如果再创建之后`F.prototype`有了变化（`F.prototype = <another object>`），那么通过 `new F` 创建的新对象也将随之拥有新的对象作为 `[[Prototype]]`，但已经存在的对象将保持旧有的值。
+这个对象弹出的结果是[object Object]，name为什么会输出这样的信息，那些代码输出了这些信息。其实就是一个内建的toString方法，但是他在哪里呢?
 
+在我们学习创建对象时 有两种方法：使用字面量`= {}` 和 使用构造器 `new Object()`，他们两个是一个意思，`Object`就是一个内建的对象构造函数。其自身的`prototype`指向一个带有toString和其他方法的一个巨大对象。
 
+![image-20230306230056903](https://tc.chaizz.com/tc/image-20230306230056903.png)
 
-## 2 默认的`F.prototype`构造器属性。
+当 new Object() 被调用(或者是一个字面量被创建 ={})，这个对象的`[[prototype]]`属性被设置为`Object.prototype`。
 
-每个函数都有`prototype`属性，即使没有提供他。默认的`prototype`是一个只有`constructor`属性的对象。属性`constructor`指向自身。像这样：
+![image-20230306230648166](https://tc.chaizz.com/tc/image-20230306230648166.png)
 
-```js
-function Rabbit() {}
-// 默认：Rabbit.prototype = { constructor: Rabbit }
-console.log( Rabbit.prototype.constructor == Rabbit ); // true
-```
-
-如果对函数什么都不做，`constructor `属性可以通过`[[Prototype]]`给所`rabbits `使用：
+所以之后当 `obj.toString()` 被调用时，这个方法是从`object.prototype`中获取的。我们可以验证一下：
 
 ```js
-function Rabbit() { }
-// 默认：
-// Rabbit.prototype = { constructor: Rabbit }
+let obj = {};
 
-let rabbit = new Rabbit(); // 继承自 {constructor: Rabbit}
-
-console.log(rabbit.constructor == Rabbit); // true (from prototype)
+console.log(obj.__proto__ === Object.prototype); // true
+console.log(obj.toString === obj.__proto__.toString); //true
+console.log(obj.toString === Object.prototype.toString); //true
 ```
 
 
 
-当我们有一个对象，但不知道它使用了哪个构造器（例如它来自第三方库），并且我们需要创建另一个类似的对象时，可以使用 `constructor` 属性来创建一个新对象，该对象使用与现有对象相同的构造器，用这种方法就很方便：
+## 2 其他内建原型
 
-```js
-function Rabbit(name) {
-    this.name = name;
-    console.log(name);
-}
+其他的对象Array、Date、Function及其他，都早`prototype`上挂在了方法。
 
-let rabbit = new Rabbit("White Rabbit");
-let rabbit2 = new rabbit.constructor("Black Rabbit");
-```
+例如，当我们创建一个数组，[1, 2, 3]，内部会默认使用new Array() 构造器，因此`Array。prototype`变成了这个数组对象的`protrotype`。并为这个数组对象提供了数组的操作方法，这个的内存的存储效率是很高的。
+
+按照规范所有的内建原型的顶端都是`Object.prototype`，这就是==一切都从对象继承而来==。三个内建对象的示意图：
+
+![image-20230306232008728](https://tc.chaizz.com/tc/image-20230306232008728.png)
 
 
 
-但是 **……JavaScript 自身并不能确保正确的 `"constructor"` 函数值。**我们可以对`prototype`的值，进行任意更改：
-
-```js
-function Rabbit() { }
-Rabbit.prototype = {
-    jumps: true
-};
-
-let rabbit = new Rabbit();
-console.log(rabbit.constructor === Rabbit); // false
-```
+有些对象的方法可能会重叠，比如array的toString方法，和Object的toString方法，当对象调用的时候会根据就近原则进行调用。
 
 
 
-所以我们为了确保`constructor`的正确性，我们可以选择添加/删除属性到默认 `"prototype"`，而不是整个将其覆盖。
-
-```js
-Rabbit.prototype = {
-  jumps: true,
-  constructor: Rabbit
-};
-// 这样的 constructor 也是正确的，因为我们手动添加了它
-```
 
 
 
-## 3 总结
 
-- `F.prototype`只是一个函数的普通的属性，他是为了`new F` 被调用时为新对象`[[prototype]]`赋值。
 
-- `F.prototype` 的值要么是一个对象，要么就是 `null`：其他值都不起作用。
 
-- `"prototype"` 属性仅当设置在一个构造函数上，并通过 `new` 调用时，才具有这种特殊的影响。在常规对象上，`prototype` 没什么特别的。
 
-  ```js
-  let user = {
-    name: "John",
-    prototype: "Bla-bla" // 这里只是普通的属性
-  };
-  ```
 
-  
+
+
+
+
+
+
+
 
