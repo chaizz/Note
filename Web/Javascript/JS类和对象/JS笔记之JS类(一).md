@@ -10,11 +10,11 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS类(一)
+# JS笔记之JS类(一)
 
 在日常的开发中，京城需要构建许多类型相同的对象，例如 Users, Goods ，我们可以使用构造器来完成这样的操作，但是在现代JS中可以是使用类这种方式来创建相同类型的对象。
 
-类基本语法
+## 2 类基本语法
 
 ```js
 class MyClass {
@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
 
 
-所以class到底是什么？
+## 2 所以class到底是什么？
 
 在JS中类是一种函数，class User(...) 实际上做了如下的事情：
 
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 
 
-class 不仅仅是语法糖
+## 3 class 不仅仅是语法糖
 
 声明上述的User对象不使用类也可以声明一个同样的对象：`
 
@@ -128,7 +128,7 @@ user.sayHi();
 
 
 
-类表达式
+## 4 类表达式
 
 类会像函数一样可以在另外一个表达式中被定义，被传递，返回，赋值等。如果类表达式有名字，那么该名字仅在类内部可见。且可以动态的创建类。
 
@@ -173,7 +173,7 @@ new User().sayHi(); // Hello
 
 
 
-getters/setters
+## 5 getters/setters
 
 类同样可能包括getters/setters，以及计算属性 （computed properties）等。
 
@@ -207,7 +207,7 @@ user = new User(""); // Name is too short.
 
 
 
-计算属性
+## 6 计算属性
 
 计算属性的方法名称使用中括号声明：
 
@@ -225,7 +225,7 @@ new User().sayHi();
 
 
 
-类字段
+## 7 类字段
 
 类字段是一种允许添加任何属性的语法，类字段的重要的不同之处在于他们会在每个对立对象中被设置好，而不是在User.prototype：
 
@@ -241,7 +241,7 @@ console.log(User.prototype.name); // undefined
 
 
 
-使用类字段实现绑定方法
+## 8 使用类字段实现绑定方法
 
 在JS中具有动态的this，它取决于调用上下文，如果一个对象方法被传递到某处，或者在另一个上下文中被调用，则this不在是起对象的引用。例如：
 
@@ -287,7 +287,7 @@ setTimeout(button.click, 1000); // hello
 
 
 
-总结
+## 9 总结
 
 类的基本语法
 
