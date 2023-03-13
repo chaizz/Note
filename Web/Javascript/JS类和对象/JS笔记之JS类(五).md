@@ -10,9 +10,9 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS类(五)
+# JS笔记之JS类(五)
 
-类检查 instanceof
+## 1 类检查 instanceof
 
 instanceof 操作符用于检查一个对象是否属于某个特定的 class。同时，它还考虑了继承。
 
@@ -52,7 +52,7 @@ alert( arr instanceof Object ); // true
 
 
 
-obj instanceof Class 的 算法逻辑如下：
+## 2 obj instanceof Class 的 算法逻辑如下：
 
 1. 如果Class 有静态方法：Symbol.hasInstance，那么就直接调用这个方法，例如：
    ```js
@@ -113,7 +113,7 @@ console.log(rabbit instanceof Rabbit); // false
 
 
 
-使用 Object.prototype.toString 方法来揭示类型
+## 3 使用 Object.prototype.toString 方法来揭示类型
 
 一个普通的对象被转化为字符串时得到的结果是：[Object Object]，这是通过toString方法实现的，但是此处有一个隐藏功能，可以使toString变得更加强大，可以将其作为 typeof 的增强版或者 instanceof 的替代方法来使用。
 

@@ -10,9 +10,9 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS类(四)
+# JS笔记之JS类(四)
 
-私有的和受保护的属性和方法
+## 1 私有的和受保护的属性和方法
 
 面向对象编程最重要的原则之一 —— 将内部接口与外部接口分隔开来。
 
@@ -42,7 +42,7 @@ coffeeMachine.waterAmount = 200;
 
 现在咖啡机的 waterAmount 和  power 是公共的属性，我们可以从外部轻易的修改，我们将 `waterAmount` 属性更改为受保护的属性，以对其进行更多控制。
 
-受保护的属性
+## 2 受保护的属性
 
 **受保护的属性通常以下划线 `_` 作为前缀。**这并不是强制的，但是是程序的约个约定俗称的。
 
@@ -127,7 +127,7 @@ new CoffeeMachine().setWaterAmount(100);
 
 
 
-私有的属性
+## 3 私有的属性
 
 **私有属性和方法应该以 `#` 开头。它们只在类的内部可被访问。**
 
@@ -208,7 +208,7 @@ alert(machine.#waterAmount); // Error
 
 
 
-扩展内建类
+## 4 扩展内建类
 
 内建的 Array, Map 对象也是可以扩展的。例如我们扩展了一个内建的Array 对象：
 
@@ -263,7 +263,7 @@ console.log(filteredArr.isEmpty()); // Error: filteredArr.isEmpty is not a funct
 
 
 
-内建类没有静态方法继承
+## 5 内建类没有静态方法继承
 
 内建对象有它们自己的静态方法，例如 `Object.keys`，`Array.isArray` 等。
 
@@ -275,7 +275,7 @@ console.log(filteredArr.isEmpty()); // Error: filteredArr.isEmpty is not a funct
 
 
 
-总结
+## 6 总结
 
 就面向对象编程（OOP）而言，内部接口与外部接口的划分被称为 [封装](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming))。
 
