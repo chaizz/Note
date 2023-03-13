@@ -1,7 +1,7 @@
 ---
 title: JS笔记之JS类(四)
 author: chaizz
-date: 2023-3-10
+date: 2023-3-13
 tags: JavaScript
 photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
