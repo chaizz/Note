@@ -10,9 +10,9 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS类(二)
+# JS笔记之JS类(二)
 
-类的继承, 使用“extends” 关键字
+## 1 类的继承, 使用“extends” 关键字
 
 语法
 
@@ -24,7 +24,7 @@ class Child extends Parent {
 }
 ```
 
-例字：
+例如：
 
 ```js
 // 构建一个动物类，有动物的一些方法属性，
@@ -78,7 +78,7 @@ new User().sayHi(); // Hello
 
 根据许多条件使用函数生成类，并继承它们时来说可能很有用。
 
-重写类的方法
+## 2 重写类的方法
 
 完全重新类的方法， 直接在子类中定义名称相同的方法名即可，
 
@@ -123,7 +123,7 @@ rabbit.stop(); // White Rabbit stands still. White Rabbit hides!
 > }
 > ```
 
-重写 constructor
+## 3 重写 constructor
 
 如果一个类继承了一个父类，但是没有重写constructor，那么他的constructor，默认是：
 
@@ -155,7 +155,7 @@ class Rabbit extends Animal {
 
 
 
-重写类字段
+## 4 重写类字段
 
 一般错误的实现方法：
 
@@ -189,7 +189,7 @@ new Rabbit(); // animal
 
 
 
-总结
+## 5 总结
 
 想要扩展一个类：`class Child extends Parent`。
 
