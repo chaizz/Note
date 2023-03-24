@@ -1,7 +1,7 @@
 ---
 title: Typora设置七牛云图床
 author: chaizz
-date: 2021-09-26 19:14:52
+date: 2021-09-26
 tags: Typora
 photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
 ---

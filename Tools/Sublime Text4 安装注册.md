@@ -1,7 +1,7 @@
 ---
 title: Sublime Text 4 安装注册
 author: chaizz
-date: 2022-10-11 16:05:50
+date: 2022-10-11
 tags: Sublime Text
 photos: ["https://tc.chaizz.com/e868d1cc493c11edac080242ac190002.png"]
 ---
