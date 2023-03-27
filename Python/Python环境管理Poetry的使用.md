@@ -11,15 +11,15 @@ photos: ["https://tc.chaizz.com/8aa11db4ca1611ed8b330242ac190002.png"]
 
 <!--more-->
 
-
+# Python环境管理Poetry的使用
 
 >Poetry 是 Python 中依赖管理和打包的工具。他可以管理项目中的第三包的依赖（安装/更新）。T同时也提供了一个锁定文件以确保可重复安装，并且可以构建项目以供分发。
 
 poetry的Python版本要求为 3.7+，且是多平台的。
 
+## 1 安装 (在windows平台下)
 
-
-安装Poetry (在windows平台下)
+### 1.1 安装Poetry 
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
@@ -29,19 +29,19 @@ poetry的Python版本要求为 3.7+，且是多平台的。
 
 使用 `poetry --version` 检查版本， 如果提示版本号则安装成功。
 
-更新Poetry (在windows平台下)
+### 1.2 更新Poetry
 
 ```powershell
 poetry self update
 ```
 
-卸载Poetry (在windows平台下)
+### 1.3 卸载Poetry 
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python - --uninstall
 ```
 
-
+### 1.4 配置poetry
 
 poetry 安装后默认的缓存路径个虚拟环境路径在:
 
@@ -52,13 +52,11 @@ poetry 安装后默认的缓存路径个虚拟环境路径在:
 poetry config cache-dir D:\\poetry_enev 
 ```
 
-
-
 通过 `poetry config --list` 查看已经修改成功
 
 ![](https://tc.chaizz.com/33b9dcacca2011ed8b330242ac190002.png)
 
-> 取消设置：
+> 取消之前的修改：
 >
 > ```powershell
 > poetry config cache-dir --unset
@@ -68,7 +66,7 @@ poetry config cache-dir D:\\poetry_enev
 
 
 
-使用poetry创建一个新项目
+## 2 使用poetry创建一个新项目
 
 1. 直接使用poetry 创建项目 
 
@@ -101,7 +99,7 @@ poetry config cache-dir D:\\poetry_enev
 
    
 
-在新现有项目中使用poetry
+## 3 在现有项目中使用poetry
 
 1. 在某个目录下 使用poetry init
 
@@ -111,11 +109,11 @@ poetry config cache-dir D:\\poetry_enev
 
    使用这种交互式的方式创建项目，根据选项设置完成之后，在对应的目录下同样会生成 pyproject.toml 文件。
 
-2. 添加依赖和运行项目和与 poetry new 一致。
+2. 添加依赖和运行项目和==使用poetry创建一个新项目==与一致。
 
 
 
-拿到一个使用poetry管理依赖的项目
+## 4 拿到一个使用poetry管理依赖的新项目
 
 1. 在pyproject.toml同目录下
 
@@ -135,9 +133,7 @@ poetry config cache-dir D:\\poetry_enev
 
  
 
-
-
-手动管理依赖
+## 5 手动管理依赖
 
 1. 在 pyproject.toml文件同目录下，进入虚拟环境
 
@@ -156,5 +152,69 @@ poetry config cache-dir D:\\poetry_enev
 
 
 
-管理环境
+## 6 管理环境
 
+1. 获取当前的虚拟环境的基本信息
+
+   ```powershell
+   poetry env info
+   ```
+
+2. 切换虚拟环境
+
+   ```powershell
+   poetry env use 具体的环境的python可执行文件路径
+   ```
+
+3. 删除环境
+
+   ```powershell
+   poetry env remove 
+   ```
+
+   
+
+
+
+## 7 在Pycharm中配置poetry环境
+
+1. 一般拿到一个含有poetry环境的项目，使用pycharm打开，会自动识别poetry解释器。如果没有识别 需要手动添加，如下图所示：
+
+   1. 基础解释器：选择对应虚拟环境的Python可执行文件。
+   2. Poetry可执行文件，选择安装在本地的Poetry可执行文件。
+
+   ![](https://tc.chaizz.com/tc/image-20230327103659866.png)
+
+2. 配置完毕，打开pycharm底部导航栏控制台，即可显示当前虚拟环境前缀，接下来就可以操作就按照正常的流程执行了。
+
+
+
+## 8 更改poetry的pypi源 
+
+通常国内下载一些包比较慢，这时我们可以更新poetry的源来使用国内的镜像。默认的情况下poetry使用的是pypi来下载包.
+
+```powershell
+# --default 设置为默认源
+# 阿里源：
+poetry source add ali https://mirrors.aliyun.com/pypi/simple/ --default
+# 腾讯源：
+poetry source add tencent https://mirrors.cloud.tencent.com/pypi/simple/ 
+# 清华源：
+poetry source add  tsinghua  https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+```
+
+删除源
+
+```powershell
+poetry source remove 源的名字
+```
+
+
+
+
+
+## 9 总结
+
+一般情况下我们使用poetry管理项目，无非就是两种情况：新建项目，可以使用`poetry new 项目名称`, 或者是在旧的项目上使用poetry，那么就是用`poetry init ` 使用交互式初始化一个项目。
+
+平常安装依赖或者是更新依赖 就使用 `poetry add/update 依赖名`
