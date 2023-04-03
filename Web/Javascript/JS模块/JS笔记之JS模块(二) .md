@@ -10,11 +10,11 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之JS模块(二)
+# JS笔记之JS模块(二)
 
 
 
-在声明前导出
+## 1 在声明前导出
 
 我们可以在声明表达式前使用export 来导出我们要声明的对象，可以是类、变量、还是函数，例如：
 
@@ -39,7 +39,7 @@ export class User {
 
 
 
-导出与声明分开
+## 2 导出与声明分开
 
 也可以将导出和声明分开 【从技术上讲，我们也可以把 `export` 放在函数上面。】
 
@@ -57,7 +57,7 @@ export { sayHi, sayBye }; // 导出变量列表
 
 
 
-Import *
+## 3 Import *
 
 通常我们把要导入的东西列在花括号中，但是如果有很多的要导入的内容，我们可以首映`import * as <obj>` 将所有的内容倒入味一个对象，例如：
 
@@ -97,7 +97,7 @@ say.sayBye('John');
 
 
 
-import as 
+## 4 import as 
 
 使导入具有不同的名字，例如，简洁起见，我们将 `sayHi` 导入到局部变量 `hi`，将 `sayBye` 导入到 `bye`：
 
@@ -131,7 +131,7 @@ say.bye('John'); // Bye, John!
 
 
 
-export default
+## 5 export default
 
 在实际使用中，主要有两种模块。
 
@@ -214,7 +214,7 @@ import func from '/path/to/func.js';
 
 
 
-重新导出
+## 6 重新导出
 
 “重新导出（Re-export）”语法 `export ... from ...` 允许导入内容，并立即将其导出（可能是用的是其他的名字），就像这样：
 
@@ -241,9 +241,31 @@ export {default as User} from './user.js'; // 重新导出 default
   export {default} from './user.js'; // 重新导出默认的导出
   ```
 
+## 7 动态导入
+
+`import(module)` 表达式加载模块并返回一个 promise，该 promise resolve 为一个包含其所有导出的模块对象。我们可以在代码中的任意位置调用这个表达式。 例如：
+
+```js
+let modulePath = prompt("Which module to load?");
+
+import(modulePath)
+    .then(obj => <module object>)
+  .catch(err => <loading error, e.g. if no such module>)
 
 
-总结：
+// 也可以在异步函数中调用 
+let module = await import(modulePath)
+```
+
+> 动态导入在常规脚本中工作时，它们不需要 `script type="module"`。
+>
+> 尽管 `import()` 看起来像一个函数调用，但它只是一种特殊语法，只是恰好使用了括号（类似于 `super()`）。
+>
+> 因此，我们不能将 `import` 复制到一个变量中，或者对其使用 `call/apply`。因为它不是一个函数。
+
+
+
+## 8 总结
 
 - 导出：
   - 在声明一个 class/function/… 之前：
@@ -274,8 +296,4 @@ if (something) {
   import {sayHi} from "./say.js"; // Error: import must be at top level
 }
 ```
-
-
-
-
 
