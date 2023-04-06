@@ -97,7 +97,7 @@ innerHTML：将元素中的 HTML 获取为字符串形式，是更改页面最�
 
 textContent 获取元素的纯文本。**它允许以“安全方式”写入文本。**
 
-
+“hidden” 属性，hidden 与 style="display:none" 做的是相同的事。但 hidden 写法更简洁。
 
 
 
