@@ -10,11 +10,11 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 <!--more-->
 
-JS笔记之DOM(三)
+# JS笔记之DOM(三)
 
 通过JS实时的创建DOM元素，是实时更新页面的关键。
 
-创建元素
+## 1 创建元素
 
 创建元素有两种方法：
 ```js
@@ -61,7 +61,7 @@ insertAdjacentHTML/Text/Element
 
 
 
-节点移除
+## 2 节点移除
 
 语法：`node.remove()`
 
@@ -71,7 +71,7 @@ insertAdjacentHTML/Text/Element
 
 
 
-克隆节点
+## 3 克隆节点
 
 语法：`elem.cloneNode(true)`
 
@@ -79,7 +79,7 @@ insertAdjacentHTML/Text/Element
 
 
 
-DocumentFragment
+## 4 DocumentFragment
 DocumentFragment 是一个特殊的 DOM 节点，用作来传递节点列表的包装器（wrapper）。例如我们要创建一个li标签列表。例如：
 
 ```html
@@ -104,7 +104,7 @@ DocumentFragment 是一个特殊的 DOM 节点，用作来传递节点列表的�
 
 
 
-样式和类
+## 5 样式和类
 
 elem.className 将替换类中的整个字符串。
 
@@ -116,7 +116,7 @@ elem.classList 是一个特殊的对象，它具有 `add/remove/toggle` 单个�
 
 
 
-元素样式
+## 6 元素样式
 
 ele.style 它对应于 `"style"` 特性（attribute）中所写的内容。`elem.style.width="100px"` 的效果等价于我们在 `style` 特性中有一个 `width:100px` 字符串。
 
@@ -137,7 +137,7 @@ button.style.WebkitBorderRadius = '5px';
 
 
 
-重置样式属性
+## 7 重置样式属性
 
 如果我们要分配一个样式属性，然后再删掉，例如style.display , 先进行设置值， 然后在将display的值设置为空字符串。
 
@@ -178,7 +178,7 @@ pseudo：伪元素（如果需要），例如 `::before`。空字符串或无参
 
 结果是一个具有样式属性的对象，像 `elem.style`，但现在对于所有的 CSS 类来说都是如此。
 
-**计算值和解析值**
+##  8 **计算值和解析值**
 
 在 [CSS](https://drafts.csswg.org/cssom/#resolved-values) 中有两个概念：
 
@@ -201,7 +201,9 @@ pseudo：伪元素（如果需要），例如 `::before`。空字符串或无参
 
 
 
-总结：
+## 9 总结
+
+节点的操作
 
 - 创建新节点的方法：
 
@@ -243,10 +245,6 @@ pseudo：伪元素（如果需要），例如 `::before`。空字符串或无参
   - `document.write(html)`
 
   页面加载完成后，这样的调用将会擦除文档。多见于旧脚本。
-
-
-
-
 
 要管理 class，有两个 DOM 属性：
 
