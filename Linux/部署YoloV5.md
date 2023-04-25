@@ -4,7 +4,7 @@ author: chiazz
 date: 2021-07-10 15:33:25
 tags: YoloV5
 categories: YoloV5
-photos: ["https://tc.chaizz.com/cc256ff022f111edb23e0242ac190002.png"]
+photos: ["https://origin.chaizz.com/cc256ff022f111edb23e0242ac190002.png"]
 ---
 
 ​                                    

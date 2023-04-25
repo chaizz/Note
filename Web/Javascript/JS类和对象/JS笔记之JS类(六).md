@@ -3,7 +3,7 @@ title: JS笔记之JS类(六)
 author: chaizz
 date: 2023-3-18
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​         
@@ -96,7 +96,7 @@ new User("Dude").sayHi(); // Hello Dude!
 
 在sayHiMixin内部对父类的方法，super.say()的调用会在mixin的原型中查找方法，而不是在class中查找。
 
-![image-20230318164932986](https://tc.chaizz.com/tc/image-20230318164932986.png)
+![image-20230318164932986](https://origin.chaizz.com/tc/image-20230318164932986.png)
 
 
 

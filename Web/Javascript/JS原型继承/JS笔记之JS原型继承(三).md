@@ -3,7 +3,7 @@ title: JS笔记之JS原型继承(三)
 author: chaizz
 date: 2023-3-06
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​         
@@ -27,11 +27,11 @@ alert( obj ); // "[object Object]" ?
 
 在我们学习创建对象时 有两种方法：使用字面量`= {}` 和 使用构造器 `new Object()`，他们两个是一个意思，`Object`就是一个内建的对象构造函数。其自身的`prototype`指向一个带有toString和其他方法的一个巨大对象。
 
-![image-20230306230056903](https://tc.chaizz.com/tc/image-20230306230056903.png)
+![image-20230306230056903](https://origin.chaizz.com/tc/image-20230306230056903.png)
 
 当 new Object() 被调用(或者是一个字面量被创建 ={})，这个对象的`[[prototype]]`属性被设置为`Object.prototype`。
 
-![image-20230306230648166](https://tc.chaizz.com/tc/image-20230306230648166.png)
+![image-20230306230648166](https://origin.chaizz.com/tc/image-20230306230648166.png)
 
 所以之后当 `obj.toString()` 被调用时，这个方法是从`object.prototype`中获取的。我们可以验证一下：
 
@@ -53,7 +53,7 @@ console.log(obj.toString === Object.prototype.toString); //true
 
 按照规范所有的内建原型的顶端都是`Object.prototype`，这就是==一切都从对象继承而来==。三个内建对象的示意图：
 
-![image-20230306232008728](https://tc.chaizz.com/tc/image-20230306232008728.png)
+![image-20230306232008728](https://origin.chaizz.com/tc/image-20230306232008728.png)
 
 
 

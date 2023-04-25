@@ -3,7 +3,7 @@ title: JS笔记之DOM(四)
 author: chaizz
 date: 2023-4-13
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​         
@@ -18,7 +18,7 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 ## 1 [offsetParent，offsetLeft/Top](https://zh.javascript.info/size-and-scroll#offsetparentoffsetlefttop)
 
-![image-20230413205407832](https://tc.chaizz.com/tc/image-20230413205407832.png)
+![image-20230413205407832](https://origin.chaizz.com/tc/image-20230413205407832.png)
 
 这些属性很少使用。
 
@@ -42,7 +42,7 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 ## 2 [offsetWidth/Height](https://zh.javascript.info/size-and-scroll#offsetwidthheight)
 
-![image-20230413205347622](https://tc.chaizz.com/tc/image-20230413205347622.png)
+![image-20230413205347622](https://origin.chaizz.com/tc/image-20230413205347622.png)
 
 这两个属性是元素的本身，它们提供了元素的“外部” width/height。就是元素的大小，包含边框。
 
@@ -64,7 +64,7 @@ function isHidden(elem) {
 
 ## 3 [clientTop/Left](https://zh.javascript.info/size-and-scroll#clienttopleft)
 
-![image-20230413205317632](https://tc.chaizz.com/tc/image-20230413205317632.png)
+![image-20230413205317632](https://origin.chaizz.com/tc/image-20230413205317632.png)
 
 在元素的内部有边框，可以使用clientTop/Left 来测量。准确的说这些属性，不是边框的width/height，而是内侧与外侧的相对坐标。
 
@@ -74,7 +74,7 @@ function isHidden(elem) {
 
 ## 4 [clientWidth/Height](https://zh.javascript.info/size-and-scroll#clientwidthheight)
 
-![image-20230413205254196](https://tc.chaizz.com/tc/image-20230413205254196.png)
+![image-20230413205254196](https://origin.chaizz.com/tc/image-20230413205254196.png)
 
 
 
@@ -88,7 +88,7 @@ function isHidden(elem) {
 
 这两个属性就像 `clientWidth/clientHeight`，但它们还包括滚动出（隐藏）的部分。
 
-![image-20230413205736320](https://tc.chaizz.com/tc/image-20230413205736320.png)
+![image-20230413205736320](https://origin.chaizz.com/tc/image-20230413205736320.png)
 
 一个案例就是我们可以将隐藏的元素全部展开：
 
@@ -105,7 +105,7 @@ element.style.height = `${element.scrollHeight}px`;
 
 这两个属性是元素的隐藏、滚动部分的 width/height。也就是说在一个上下滚动的框中，scrollTop的值就是元素的内容往上滚动的多少。
 
-![image-20230413210248597](https://tc.chaizz.com/tc/image-20230413210248597.png)
+![image-20230413210248597](https://origin.chaizz.com/tc/image-20230413210248597.png)
 
 大多数的几何属性是只读的，但是scrollLeft/scrollTop是可以修改的，所以当我们修改scrollTop时，代表着内容向上滚动了，将 scrollTop 设置为 0 或一个大的值，例如 1e9，将会使元素滚动到顶部/底部。
 

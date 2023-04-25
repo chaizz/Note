@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-2-2 15:54:36
 tags: Python压缩图片
 categories: Python
-photos: ["https://tc.chaizz.com/1c078eb22dca11ed9d170242ac190002.jpg"]
+photos: ["https://origin.chaizz.com/1c078eb22dca11ed9d170242ac190002.jpg"]
 ---
 
 ​           

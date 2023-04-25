@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-11-20 17:24:11
 tags: Docker
 categories: Docker
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
 ​            
@@ -77,7 +77,7 @@ WORKDIR bb
 # 用来从Dockerfile的当前目录中复制文件，目录，或者下载URL,并将他们添加到位于容器内指定的文件中
 
 ADD bb.txt /aaa/bb
-ADD https://tc.chaizz.com/497261de494511ec9d7c5254006b8f1d.png /aaa/bb
+ADD https://origin.chaizz.com/497261de494511ec9d7c5254006b8f1d.png /aaa/bb
 # 可以将文件复制到容器中，也可以通过URL下载文件到容器中
 
 

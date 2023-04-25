@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-11-18 09:31:33
 tags: Redis
 categories: Redis
-photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
+photos: ["https://origin.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
 ---
 
 
@@ -41,11 +41,11 @@ struct__attribute__ ((__packed__)) sdshdr8{
 
 
 
-![](https://tc.chaizz.com/61cb3042481111ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/61cb3042481111ec9d7c5254006b8f1d.png)
 
 
 
-![](https://tc.chaizz.com/a48dbb8e481111ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/a48dbb8e481111ec9d7c5254006b8f1d.png)
 
 如上图，在底层sdshdr5 是这样定义的：==一个flags 占用一个字节，它又有八bit，前三位表示数据类型，后五位描述数据长度。buffer 是存储的实际数据。==
 
@@ -204,7 +204,7 @@ List 的数据结构是一个双端链表 ：quicklist 。 在Redis 的底层是
 首先在列表元素较少的情况下会使用一块连续的内存存储，这个结构是ziplist，即压缩列表。他将所有的元素紧挨着一块存储，分配的是一块连续的内存。
 当数据量比较多的时候，才会改为quicklist，因为普通的链表需要的附加的指针空间更大，会比较浪费空间。
 比如列表里面存储的只是Int的类型的数据，结构上还需要两个额外的指针：prev和next。
-![](https://tc.chaizz.com/4e0057b4450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/4e0057b4450e11ec9d7c5254006b8f1d.png)
 
 
 Redis 将链表和ziplist结合起来组成了quicklist，也就是将多个ziplist 使用双向指针串起来，这样既满足了插入删除性能，又不会出现太大的空间冗余。如上图所示。

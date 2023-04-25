@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-10-8 22:10:00
 tags: MySQL
 categories: MySQL
-photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
+photo: ["https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
 ​          
@@ -67,7 +67,7 @@ C（Consistency）一致性：事务开始前后没数据没有被破坏，开�
 
 在MySQL的InnoDB的存储引擎中实现的隔离级别如下图所示：(全部解决)
 
-![图片](https://tc.chaizz.com/640.jpg)
+![图片](https://origin.chaizz.com/640.jpg)
 
 
 
@@ -173,7 +173,7 @@ show open tables;
 In_use 为1 代表该表被锁定
 ```
 
-![](https://tc.chaizz.com/254cc64a420c11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/254cc64a420c11ec9d7c5254006b8f1d.png)
 
 
 
@@ -183,7 +183,7 @@ show status like 'tables%';
 
 
 
-![](https://tc.chaizz.com/ab54b6ee420c11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/ab54b6ee420c11ec9d7c5254006b8f1d.png)
 
 这里有两个状态变量记录MySQL表锁定的情况：
 
@@ -217,7 +217,7 @@ Next-key Lock：（临建锁）行锁和间隙锁的组合，同时锁住记录�
 show status like 'innodb_row_lock%';
 ```
 
-![](https://tc.chaizz.com/15c2bdb2421411ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/15c2bdb2421411ec9d7c5254006b8f1d.png)
 
 **Innodb_row_lock_current_waits：当前正在等待锁定的数量 （比较重要）**
 

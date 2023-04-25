@@ -3,7 +3,7 @@ title: Sublime Text 4 安装注册
 author: chaizz
 date: 2022-10-11
 tags: Sublime Text
-photos: ["https://tc.chaizz.com/e868d1cc493c11edac080242ac190002.png"]
+photos: ["https://origin.chaizz.com/e868d1cc493c11edac080242ac190002.png"]
 ---
 
 ​                     
@@ -24,7 +24,7 @@ photos: ["https://tc.chaizz.com/e868d1cc493c11edac080242ac190002.png"]
 4. 点击网站上面导航栏中的另存为，直接替换原有的`sublime_text.exe`文件。
 5. 再次打开 sublime text 4 即可查看已注册成功。
 
-![](https://tc.chaizz.com/tc/Snipaste_2023-02-07_09-37-52.png)
+![](https://origin.chaizz.com/tc/Snipaste_2023-02-07_09-37-52.png)
 
 
 

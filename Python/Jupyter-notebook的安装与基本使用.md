@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-03-13 11:41:22
 tags: Jupyter-notebook
 categories: Jupyter-notebook
-photos: ["https://tc.chaizz.com/ddec75de4ad011ec9d7c5254006b8f1d.jpeg"]
+photos: ["https://origin.chaizz.com/ddec75de4ad011ec9d7c5254006b8f1d.jpeg"]
 ---
 
 ​              
@@ -72,11 +72,11 @@ c.NotebookApp.notebook_dir = 'C:/Users/xxx/Desktop/Project/Jupyter Notebook'
 
 新建一个页面。 点击右上角的 new 按钮可以新建一个工程文件或者文本文件或者文件夹。
 
-![](https://tc.chaizz.com/717fe24c4ade11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/717fe24c4ade11ec9d7c5254006b8f1d.png)
 
 例如 新建一个python3文件。新页面样式如图所示。
 
-![](https://tc.chaizz.com/7fcf69304ade11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/7fcf69304ade11ec9d7c5254006b8f1d.png)
 
 可在单元格（cell）中输入代码并执行。
 
@@ -120,13 +120,13 @@ jupyter contrib nbextension install --user
 
 此时 Jupyter notebook 界面就会出现一个新的菜单栏。
 
-![](https://tc.chaizz.com/8a881e4e4ade11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/8a881e4e4ade11ec9d7c5254006b8f1d.png)
 
 选中此按钮进入配置插件的页面。
 
 取消勾选此按钮。否则无法选择插件。
 
-![](https://tc.chaizz.com/941816a84ade11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/941816a84ade11ec9d7c5254006b8f1d.png)
 
 推荐插件：
 

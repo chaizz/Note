@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-02-02 15:42:51
 tags: rocketmq
 categories: rocketmq
-photos: ["https://tc.chaizz.com/8b22790222f211edb23e0242ac190002.png"]
+photos: ["https://origin.chaizz.com/8b22790222f211edb23e0242ac190002.png"]
 ---
 
 ​      

@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-11-18 20:28:17
 tags: MySQL
 categories: MySQL
-photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
+photo: ["https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
 ​     
@@ -77,11 +77,11 @@ select * from user where name like '张%' and age = 20;
 
 在关闭索引下推的时候，InnoDB引擎会根据只name找到复合条件的索引字段，如下图中的左边绿色，然后就将数据返回给MySQL服务器，由MySQL服务器去判断其他的符合条件的数据。MySQL服务器会拿着查到的ID：1、2  在进行回表查询。
 
-![](https://tc.chaizz.com/161026e0486011ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/161026e0486011ec9d7c5254006b8f1d.png)
 
 在使用索引下推的时候，InnoDB会直接找出符合索引条件的字段的ID，将符合条件的结果发送给MySQL服务器，这个过程只需要回表一次。如下图。
 
-![](https://tc.chaizz.com/a47dc42c486b11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/a47dc42c486b11ec9d7c5254006b8f1d.png)
 
 
 

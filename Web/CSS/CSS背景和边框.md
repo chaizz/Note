@@ -3,7 +3,7 @@ title: CSS背景和边框
 author: chaizz
 date: 2022-8-18
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          
@@ -20,7 +20,7 @@ photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 
 定义了CSS中任何元素的背景颜色，属性接受的是有效的color值，==背景会扩展到元素的内容和内边距的下面==。
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-18_09-57-45.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-18_09-57-45.png)
 
 ```css
 .box {
@@ -74,7 +74,7 @@ span {
 </div>
 ```
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-18_10-14-47.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-18_10-14-47.png)
 
 #### 1.2.1 控制背景的平铺行为：`background-repeat`
 

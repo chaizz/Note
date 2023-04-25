@@ -4,7 +4,7 @@ author: chaizz
 date: 2022-8-4 17:28:34
 tags: Docker
 categories: Docker
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
 ​      
@@ -133,4 +133,4 @@ mysqlclient的依赖库在debian系统中是 `libmariadb.so` 也复制到 `/usr/
 
 至此Python项目镜像大小由原来的**3.1G**缩小为**567M**
 
-![](https://tc.chaizz.com/Snipaste_2022-08-04_18-05-28.png)
+![](https://origin.chaizz.com/Snipaste_2022-08-04_18-05-28.png)

@@ -3,7 +3,7 @@ title: CSS弹性盒模型Flex知识巩固
 author: chaizz
 date: 2023-2-27
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​               
@@ -16,11 +16,11 @@ photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 
 例如盒子中有两个元素水平排列时，他们自动等宽排列。我们同样可以使其（弹性元素）竖直排列。
 
-![image-20230227202922436](https://tc.chaizz.com/tc/image-20230227202922436.png)
+![image-20230227202922436](https://origin.chaizz.com/tc/image-20230227202922436.png)
 
 当增加了一个盒子，会自动变为三个元素水平等宽排列。
 
-![image-20230227203140920](https://tc.chaizz.com/tc/image-20230227203140920.png)
+![image-20230227203140920](https://origin.chaizz.com/tc/image-20230227203140920.png)
 
 ## 1 声明弹性盒子
 
@@ -59,7 +59,7 @@ article * {
 
 
 
-![image-20230227204707086](https://tc.chaizz.com/tc/image-20230227204707086.png)
+![image-20230227204707086](https://origin.chaizz.com/tc/image-20230227204707086.png)
 
 ## 2 弹性元素排列
 
@@ -79,7 +79,7 @@ article {
 
 
 
-![image-20230227205029209](https://tc.chaizz.com/tc/image-20230227205029209.png)
+![image-20230227205029209](https://origin.chaizz.com/tc/image-20230227205029209.png)
 
 弹性盒中的弹性元素默认为水平排列，当元素的个数发生变化，元素宽度会自适应伸缩。我们仍然可以使用`flex-direction`来改变弹性元素的排列方式。
 
@@ -147,11 +147,11 @@ article {
 
 在弹性元素水平竖直排列时候，会有一个轴的概念。弹性盒主要根据轴来区分弹性元素排列的方向。弹性盒内部会有一个主轴副轴之分，如果是默认排列方式：`flex-flow:row nowarp` 此时水平方向的轴为弹性盒的主轴。当元素换行的时候元素就会根据副轴（即竖直方向的轴）进行排列。
 
-![image-20230227212850381](https://tc.chaizz.com/tc/image-20230227212850381.png)
+![image-20230227212850381](https://origin.chaizz.com/tc/image-20230227212850381.png)
 
 如果是排列方式为：`flex-flow:column nowarp` 此时竖直方向的轴为弹性盒的主轴。当元素换行的时候元素就会根据副轴（即水平方向的轴）进行排列。
 
-![image-20230227213340600](https://tc.chaizz.com/tc/image-20230227213340600.png)
+![image-20230227213340600](https://origin.chaizz.com/tc/image-20230227213340600.png)
 
 所以根据上面的图例，可以说明在弹性盒模型中，主轴并不一定是水平方向或者是垂直方向，是要根据弹性盒模型的`flex-direction`属性决定的。
 
@@ -193,7 +193,7 @@ article {
 
 
 
-![image-20230227221805554](https://tc.chaizz.com/tc/image-20230227221805554.png)
+![image-20230227221805554](https://origin.chaizz.com/tc/image-20230227221805554.png)
 
 当主轴为竖直方向也是相同的排列规则。
 
@@ -583,7 +583,7 @@ artile div {
 
 效果：
 
-![image-20230228235044543](https://tc.chaizz.com/tc/image-20230228235044543.png)
+![image-20230228235044543](https://origin.chaizz.com/tc/image-20230228235044543.png)
 
 ## 17 案例(二)
 
@@ -665,4 +665,4 @@ artile div {
 
 效果：
 
-![image-20230302214940526](https://tc.chaizz.com/tc/image-20230302214940526.png)
+![image-20230302214940526](https://origin.chaizz.com/tc/image-20230302214940526.png)

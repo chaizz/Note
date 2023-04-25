@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-9-29 20:51:45
 tags: Docker
 categories: Docker
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
 
@@ -23,7 +23,7 @@ photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 
 [官网地址](https://docs.docker.com/engine/swarm/)
 
-![](https://tc.chaizz.com/tc/swarm-diagram.png)
+![](https://origin.chaizz.com/tc/swarm-diagram.png)
 
 ## 1、Swarm 中有两种类型的节点：
 

@@ -3,7 +3,7 @@ title: JS笔记之JS对象基础知识(三)
 author: chaizz
 date: 2023-1-17 14:33:50
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​          
@@ -54,13 +54,13 @@ let user = {
 };
 ```
 
-![image-20230117154427386](https://tc.chaizz.com/tc/image-20230117154427386.png)
+![image-20230117154427386](https://origin.chaizz.com/tc/image-20230117154427386.png)
 
 user 指的的时这个 Object的对象的引用，全局变量 `"user"` 引用了对象 `{name："John"}`。
 
 如果 user 被重写，赋予了其他的值，那么这个引用就没了，
 
-![image-20230117155148312](https://tc.chaizz.com/tc/image-20230117155148312.png)
+![image-20230117155148312](https://origin.chaizz.com/tc/image-20230117155148312.png)
 
 现在这个 Object 变成不可达的了，垃圾收集器就会将它视为垃圾，然后进行回收。
 

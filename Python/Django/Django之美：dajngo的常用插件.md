@@ -4,7 +4,7 @@ date: 2021-2-1 14:45:39
 author: chaizz
 tags: Django
 categories: Django
-photos: ["https://tc.chaizz.com/13a29924250a11ed94870242ac190002.jpg"]
+photos: ["https://origin.chaizz.com/13a29924250a11ed94870242ac190002.jpg"]
 ---
 
 ​       

@@ -4,7 +4,7 @@ author: chaizz
 date: 2022-7-28 09:33:02
 tags: Kuboard
 categories: Kubernets
-photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
+photos: ["https://origin.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
 ---
 
 ​           

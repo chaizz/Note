@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-11-13 17:50:17
 tags: MySQL
 categories: MySQL
-photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
+photo: ["https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
 ​                
@@ -25,7 +25,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 
 
 
-![图片](https://tc.chaizz.com/f387e3b8447411ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/f387e3b8447411ec9d7c5254006b8f1d.png)
 
 
 
@@ -52,7 +52,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 
 
 
-![图片](https://tc.chaizz.com/09ef2b34447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/09ef2b34447511ec9d7c5254006b8f1d.png)
 
 <center>二叉查找树（图源网络）</center>
 
@@ -69,7 +69,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 - 树的左右两边的层级数相差不会大于1;
 - 没有值相等重复的节点;
 
-![图片](https://tc.chaizz.com/1d670808447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/1d670808447511ec9d7c5254006b8f1d.png)
 
 <center>平衡二叉树（图源网络）</center>
 
@@ -96,7 +96,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 
 
 
-![图片](https://tc.chaizz.com/4b99132e447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/4b99132e447511ec9d7c5254006b8f1d.png)
 
 <center>左旋（图源网络）</center>
 
@@ -104,7 +104,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 
 右旋：以某个结点作为支点(旋转结点)，其左子结点变为旋转结点的父结点，左子结点的右子结点变为旋转结点的左子结点，右子结点保持不变。如下图所示。
 
-![图片](https://tc.chaizz.com/5da9ea52447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/5da9ea52447511ec9d7c5254006b8f1d.png)
 
 <center>右旋（图源网络）</center>
 
@@ -120,7 +120,7 @@ photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 - 所有的叶子结点都位于同一层。
 - 每个节点中的元素从小到大排列，节点当中k-1个元素正好是k个孩子包含的元素的值域分划。
 
-![图片](https://tc.chaizz.com/7a76deec447511ec9d7c5254006b8f1d.jpeg)
+![图片](https://origin.chaizz.com/7a76deec447511ec9d7c5254006b8f1d.jpeg)
 
 <center>B 树（图源网络）</center>
 
@@ -139,7 +139,7 @@ B+树的特点:
 3. 非叶子节点不存储数据。
 4. 非叶子节点的元素,在叶子节点上都冗余了,也就是叶子结点存储了所有的元素,并且已经排好序。
 
-![图片](https://tc.chaizz.com/8e88e36c447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/8e88e36c447511ec9d7c5254006b8f1d.png)
 
 <center>B+树（图源网络）</center>
 
@@ -151,7 +151,7 @@ B+树的特点:
 
 MyISAM 引擎的**主键**索引实现是B+树，存放在.myi 文件中。索引文件和数据文件是分开存储的。（非聚集索引）
 
-![图片](https://tc.chaizz.com/9a83ff08447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/9a83ff08447511ec9d7c5254006b8f1d.png)
 
 
 
@@ -159,7 +159,7 @@ InnoDB 引擎**主键**索引实现（聚集索引）。
 
 表数据文件本身就是按照一个B+树组织的一个索引文件结构，存储在 .idb 文件中。
 
-![图片](https://tc.chaizz.com/a92ff2a0447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/a92ff2a0447511ec9d7c5254006b8f1d.png)
 
 
 
@@ -208,7 +208,7 @@ InnoDB 引擎**主键**索引实现（聚集索引）。
 
 
 
-![图片](https://tc.chaizz.com/b71e58b6447511ec9d7c5254006b8f1d.png)
+![图片](https://origin.chaizz.com/b71e58b6447511ec9d7c5254006b8f1d.png)
 
 
 
@@ -226,7 +226,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
 
 联合索引又叫复合索引。对于复合索引:MySQL从左到右的使用索引中的字段，一个查询可以只使用索引中的一部分，但只能是最左侧部分。例如索引是key index (a,b,c). 可以支持a |  a,b | a,b,c 3种组合进行查找，但不支持 b,c进行查找 ，当最左侧字段是常量引用时，索引就十分有效。
 
-![图片](https://tc.chaizz.com/tc/640)
+![图片](https://origin.chaizz.com/tc/640)
 
 
 
@@ -301,7 +301,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    show index from index_user;
    ```
 
-3. ![图片](https://tc.chaizz.com/tc/640)
+3. ![图片](https://origin.chaizz.com/tc/640)
 
 4. 
 
@@ -312,7 +312,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    CREATE TABLE index_user_1 ( id INT PRIMARY KEY, NAME VARCHAR ( 20 ), KEY ( NAME ) );
    ```
 
-8. ![图片](https://tc.chaizz.com/tc/640)
+8. ![图片](https://origin.chaizz.com/tc/640)
 
 9. 
 
@@ -323,7 +323,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    CREATE UNIQUE INDEX id_card_index ON index_user_2 ( id_card );
    ```
 
-3. ![图片](https://tc.chaizz.com/tc/640)
+3. ![图片](https://origin.chaizz.com/tc/640)
 
 4. 
 
@@ -332,7 +332,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    CREATE TABLE index_user_2 ( id INT PRIMARY KEY, NAME VARCHAR ( 20 ), id_card VARCHAR ( 18 ), UNIQUE ( NAME ) );
    ```
 
-7. ![图片](https://tc.chaizz.com/tc/640)
+7. ![图片](https://origin.chaizz.com/tc/640)
 
 8. 
 
@@ -343,7 +343,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    CREATE TABLE index_user_3 ( id INT PRIMARY KEY, NAME VARCHAR ( 20 ), id_card VARCHAR ( 18 ), KEY ( NAME, id_card ) );
    ```
 
-3. ![图片](https://tc.chaizz.com/tc/640)
+3. ![图片](https://origin.chaizz.com/tc/640)
 
 4. 
 
@@ -352,7 +352,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
    CREATE INDEX name_idcard_index ON index_user_3 ( NAME, id_card );
    ```
 
-7. ![图片](https://tc.chaizz.com/tc/640)
+7. ![图片](https://origin.chaizz.com/tc/640)
 
 8. 
 
@@ -376,7 +376,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
 
 **若是对name列进行查找，则需要两个步骤，第一步在辅助索引B+树中检索name，到达辅助索引的叶子结点获得主键索引的ID，第二步在主键索引B+树上根据主键ID进行查找，到达叶子结点节课获取数据行。**
 
-![图片](https://tc.chaizz.com/tc/640)
+![图片](https://origin.chaizz.com/tc/640)
 
 
 
@@ -386,7 +386,7 @@ Hash 索引结构和B+树索引结构的区别就是 hash索引结构的特点�
 
 **MyISAM 使用的是非聚集索引，B+树结构没什么不同只不过叶子节点上存储的内容不同，主键索引存储了主键，辅助索引存储了辅助键，表数据存储在了独立的地方。以下图中B+树的叶子结点都使用一个内存指针指==向了真正的数据，对于表数据来说，这两个键没有任何差别。由于索引是独立的，通过辅助索引检索无需访问主键索引树。==（索引MyISAM 引擎用来做只含有大量的找找的功能比较合适。）**
 
-![图片](https://tc.chaizz.com/tc/640)
+![图片](https://origin.chaizz.com/tc/640)
 
 
 

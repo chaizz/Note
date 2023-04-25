@@ -3,7 +3,7 @@ title: js笔记之Promise(一)
 author: chaizz
 date: 2023-3-22
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​          
@@ -40,7 +40,7 @@ let promise = new Promise(function (resolve, reject) {
 
 所以executor最终将promise移至一下状态之一：
 
-![image-20230322204449440](https://tc.chaizz.com/tc/image-20230322204449440.png)
+![image-20230322204449440](https://origin.chaizz.com/tc/image-20230322204449440.png)
 
 一个简单的例子：
 

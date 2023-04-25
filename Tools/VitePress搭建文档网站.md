@@ -3,7 +3,7 @@ title: VitePress搭建文档网站
 author: chaizz
 date: 2022-11-30
 tags: VitePress
-photo: ["https://tc.chaizz.com/438d4290709311edb4470242ac190002.svg"]
+photo: ["https://origin.chaizz.com/438d4290709311edb4470242ac190002.svg"]
 ---
 
 ​            
@@ -99,7 +99,7 @@ module.exports = {
 
 其中 `themeConfig.logo `配置可以配置网站首页的图标, 需要指定图标文件在公共文件夹下。即在 `docs` 文件夹下新建 `public` 文件，然后将 `logo.svg` 存放在此文件夹下。一些公共图片等也都可以放在此文件夹下。
 
-![](https://tc.chaizz.com/d963f51c709711edb4470242ac190002.png)
+![](https://origin.chaizz.com/d963f51c709711edb4470242ac190002.png)
 
 目录结构为：
 

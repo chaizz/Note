@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-9-29 20:51:45
 tags: Docker
 categories: Docker
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
 ​     
@@ -149,7 +149,7 @@ docker compose up
 
 出现错误 ：
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-29_19-51-36.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-29_19-51-36.png)
 
 
 
@@ -180,7 +180,7 @@ CMD ["flask", "run"]
 
 ### 2.5 运行成功
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-29_20-48-16.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-29_20-48-16.png)
 
 
 

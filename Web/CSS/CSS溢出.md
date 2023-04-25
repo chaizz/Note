@@ -3,7 +3,7 @@ title: CSS溢出
 author: chaizz
 date: 2022-8-18
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          
@@ -37,7 +37,7 @@ scroll：既不裁剪也不希望溢出，他会在原本的盒子上加一个�
 <p>This content is outside of the box.</p>
 ```
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-18_14-22-00.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-18_14-22-00.png)
 
 以上的情况确实显示滚动条，但是横向也显示了滚动条，如果只希望在Y轴上显示可以使用`overflow-y: scroll`。同理x轴：`overflow-x: scroll`。
 

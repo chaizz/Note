@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-02-02 16:04:56
 tags: MySQL-Python
 categories: MySQL-Python
-photos: ["https://tc.chaizz.combdf5bb7222ee11edb23e0242ac190002.jpg"]
+photos: ["https://origin.chaizz.combdf5bb7222ee11edb23e0242ac190002.jpg"]
 ---
 
 ​      

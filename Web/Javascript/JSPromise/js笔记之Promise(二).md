@@ -3,7 +3,7 @@ title: js笔记之Promise(二)
 author: chaizz
 date: 2023-3-25
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​          
@@ -90,7 +90,7 @@ promise.then(function (result) {
 
 ## 3 总结：
 
-![image-20230325231946264](https://tc.chaizz.com/tc/image-20230325231946264.png)
+![image-20230325231946264](https://origin.chaizz.com/tc/image-20230325231946264.png)
 
 
 

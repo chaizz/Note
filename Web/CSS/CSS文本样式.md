@@ -3,7 +3,7 @@ title: CSS样式化文本
 author: chaizz
 date: 2022-8-19
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          
@@ -183,7 +183,7 @@ ul {
 </ol>
 ```
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-19_14-52-03.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-19_14-52-03.png)
 
 [`reversed`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ol#attr-reversed) 属性将启动列表倒计数。
 
@@ -196,7 +196,7 @@ ul {
 </ol>
 ```
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-19_14-53-32.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-19_14-53-32.png)
 
 [`value`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ol#attr-value) 属性允许设置列表项指定数值。
 
@@ -209,7 +209,7 @@ ul {
 </ol>
 ```
 
-![](https://tc.chaizz.com/tc/Snipaste_2022-08-19_14-54-25.png)
+![](https://origin.chaizz.com/tc/Snipaste_2022-08-19_14-54-25.png)
 
 
 

@@ -3,7 +3,7 @@ title: JS笔记之JS事件
 author: chaizz
 date: 2022-10-13 17:40:18
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​          
@@ -14,7 +14,7 @@ photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 
 ## 1 DOM事件流
 
-![](https://tc.chaizz.com/tc/无标题-2023-02-07-2212.png)
+![](https://origin.chaizz.com/tc/无标题-2023-02-07-2212.png)
 
 
 

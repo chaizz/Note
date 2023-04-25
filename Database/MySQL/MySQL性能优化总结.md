@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-11-13 17:50:17
 tags: MySQL
 categories: MySQL
-photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
+photo: ["https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
 ​                

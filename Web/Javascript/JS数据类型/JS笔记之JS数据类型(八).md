@@ -3,7 +3,7 @@ title: JS笔记之JS数据类型(八)
 author: chaizz
 date: 2023-2-10 
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​                    

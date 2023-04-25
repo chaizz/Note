@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-10-8 22:10:00
 tags: MySQL
 categories: MySQL
-photo: ["https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
+photo: ["https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-12-28.png"]
 ---
 
 ​       
@@ -67,7 +67,7 @@ delete  #(排它锁)
 
 ### 一张图理解undo log
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-43-53.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-43-53.png)
 
  
 
@@ -79,7 +79,7 @@ delete  #(排它锁)
 
 就是根据事务ID查找对应的数据。那些事务应该读取到那些数据。
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-10-08_22-56-42.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-10-08_22-56-42.png)
 
 
 

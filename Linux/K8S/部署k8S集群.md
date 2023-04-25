@@ -4,7 +4,7 @@ author: chaizz
 date: 2022-7-28 09:33:02
 tags: Kubernets
 categories: Kubernets
-photos: ["https://tc.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
+photos: ["https://origin.chaizz.com/5a5bc3060e3d11ed90590242ac140002.png"]
 ---
 
 ​       
@@ -263,7 +263,7 @@ kubectl get nodes
 
 目前是只能看到master节点，状态是NotReady，下面是子节点加入后的状态，且网络集群网络联通后的状态。
 
-![](https://tc.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png)
+![](https://origin.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png)
 
 ### 2.2.6 子节点加入集群
 
@@ -279,7 +279,7 @@ kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discove
 kubectl get nodes
 ```
 
-<img title="" src="https://tc.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png" alt="" data-align="inline">
+<img title="" src="https://origin.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png" alt="" data-align="inline">
 
 ### 2.2.7 安装flannel网络插件
 
@@ -307,7 +307,7 @@ kubectl apply -f kube-flannel.yaml
 kubectl -n kube-system get pods -o wide
 ```
 
-![](https://tc.chaizz.com/f296cd5a0e3811ed90590242ac140002.png)
+![](https://origin.chaizz.com/f296cd5a0e3811ed90590242ac140002.png)
 
 再次查看各个node的状态
 
@@ -315,7 +315,7 @@ kubectl -n kube-system get pods -o wide
 kubectl get nodes
 ```
 
-![](https://tc.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png)
+![](https://origin.chaizz.com/cc6c5fa20e3611ed90590242ac140002.png)
 
 至此集群方式的Kubernetes 安装完成。
 

@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-07-10 15:15:36
 tags: Obsdian
 categories: Obsdian
-photos: ["https://tc.chaizz.com/6ce45c7022f311edb23e0242ac190002.png"]
+photos: ["https://origin.chaizz.com/6ce45c7022f311edb23e0242ac190002.png"]
 ---
 
 ​        

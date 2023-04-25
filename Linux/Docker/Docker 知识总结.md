@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-9-27 15:33:15
 tags: Docker
 categories: Docker
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 ---
 
 ​    
@@ -31,7 +31,7 @@ Docker 能方便的将开发环境打包起来，包括Python、Nginx 、Redis�
 
 > https://zhuanlan.zhihu.com/p/271846374
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-27_16-03-32.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-27_16-03-32.png)
 
 传统的虚拟机技术：由于虚拟机是把这个系统内核、系统依赖、硬件资源配置全部打包，组成一个新的系统。他是在硬件的基础上实现虚拟化。所以虚拟机占用的资源比较大，切换比较耗时。
 
@@ -55,7 +55,7 @@ Docker的优点：
 
 # 三、Docker 的基本组成
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-27_16-23-06.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-27_16-23-06.png)
 
 ## Docker的三大组件：
 
@@ -141,7 +141,7 @@ sudo rm -rf /var/lib/containerd
 
 直接在阿里云首页搜索**容器镜像服务**，登录注册后 --> 进入镜像工具 --> 镜像加速器。具体页面如下：
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-27_17-03-26.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-27_17-03-26.png)
 
 ```shell
 sudo mkdir -p /etc/docker
@@ -452,7 +452,7 @@ docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 -
 
 使用docker ps 查看，发现elasticsearch没有正在运行， 使用docker logs -f  容器ID 提示一下错误：大致就是没有足够的内存供 Java 运行时环境继续使用。
 
-![](https://tc.chaizz.com/497261de494511ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/497261de494511ec9d7c5254006b8f1d.png)
 
 解决办法：
 

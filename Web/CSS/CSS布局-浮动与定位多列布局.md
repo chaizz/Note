@@ -3,7 +3,7 @@ title: CSS布局-浮动与定位与多列布局
 author: chaizz
 date: 2022-8-22
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          

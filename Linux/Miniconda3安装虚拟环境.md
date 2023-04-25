@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-05-09 16:04:46
 tags: Miniconda
 categories: Miniconda
-photos: ["https://tc.chaizz.com/Snipaste_2021-05-09_16-08-33.png"]
+photos: ["https://origin.chaizz.com/Snipaste_2021-05-09_16-08-33.png"]
 ---
 ​                   
 
@@ -40,7 +40,7 @@ jupyter notebook 使用的还是原来的python 包，无法使用新的虚拟�
 
 点击 jupyter notebook 的new 查看是否能够找到新创建的环境。
 
-![](https://tc.chaizz.com/Snipaste_2021-05-08_18-59-42.png)
+![](https://origin.chaizz.com/Snipaste_2021-05-08_18-59-42.png)
 
 解决办法：
 
@@ -60,7 +60,7 @@ python -m ipykernel install --user --name 环境名称 --display-name "环境名
 
 在Pycharm 上提示的错误为 ：
 
-![](https://tc.chaizz.com/Snipaste_2021-05-08_19-10-19.png)
+![](https://origin.chaizz.com/Snipaste_2021-05-08_19-10-19.png)
 
 解决办法：
 

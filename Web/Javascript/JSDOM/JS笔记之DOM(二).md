@@ -3,7 +3,7 @@ title: JS笔记之DOM(二)
 author: chaizz
 date: 2023-4-3
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​         

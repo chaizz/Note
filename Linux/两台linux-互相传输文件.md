@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-02-02 15:42:51
 tags: Linux
 categories: Linux
-photos: ["https://tc.chaizz.com/2a01872622f211edb23e0242ac190002.png"]
+photos: ["https://origin.chaizz.com/2a01872622f211edb23e0242ac190002.png"]
 ---
 
 ​          

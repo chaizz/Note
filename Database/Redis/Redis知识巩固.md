@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-9-26 16:11:59
 tags: Redis
 categories: Redis
-photos: ["https://tc.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
+photos: ["https://origin.chaizz.com/Snipaste_2021-09-26_19-50-26.png"]
 ---
 
 ​                
@@ -160,7 +160,7 @@ getset <key> <value>
 ### 1.2 String 的数据结构
 
 String 的数据结构为简单的动态的字符串（Simple Dynamic String 缩写SDS），是可以修改的字符串，采用预分配冗余空间的方式，来减少内存的频繁分配。
-![](https://tc.chaizz.com/44e5fba2450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/44e5fba2450e11ec9d7c5254006b8f1d.png)
 
 
 
@@ -215,7 +215,7 @@ List 的数据结构为quicklist。
 首先在列表元素较少的情况下会使用一块连续的内存存储，这个结构是ziplist，即压缩列表。他将所有的元素紧挨着一块存储，分配的是一块连续的内存。
 当数据量比较多的时候，才会改为quicklist，因为普通的链表需要的附加的指针空间更大，会比较浪费空间。
 比如列表里面存储的只是Int的类型的数据，结构上还需要两个额外的指针：prev和next。
-![](https://tc.chaizz.com/4e0057b4450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/4e0057b4450e11ec9d7c5254006b8f1d.png)
 
 
 Redis 将链表和ziplist结合起来组成了quicklist，也就是将多个ziplist 使用双向指针串起来，这样既满足了插入删除性能，又不会出现太大的空间冗余。如上图所示。
@@ -447,7 +447,7 @@ Redis的事务的主要作用就是**串联多个命令防止别的命令插队*
 从输入Multi 开始，输入的命令都会依次进入命令队列中，但不会执行，直到输入Exec后，Redis会将之前的命令队列中的命令依次执行。组队的过程中可以通过Discard来放弃组队。
 
 
-![](https://tc.chaizz.com/5c2866ec450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/5c2866ec450e11ec9d7c5254006b8f1d.png)
 
 ## 1  Redis 事务的错误处理
 
@@ -456,13 +456,13 @@ Redis的事务的主要作用就是**串联多个命令防止别的命令插队*
 
 ### 1.1 组队中某个命令出现了报告错误，执行时所有的队列都会被取消。
 
-**![](https://tc.chaizz.com/62e8c936450e11ec9d7c5254006b8f1d.png)**
+**![](https://origin.chaizz.com/62e8c936450e11ec9d7c5254006b8f1d.png)**
 
 
 ### 1.2 组队中所有的命令成功，执行时只有失败的命令失败，其他的命令成功。
 
 
-![](https://tc.chaizz.com/6a3b5302450e11ec9d7c5254006b8f1d.png) 
+![](https://origin.chaizz.com/6a3b5302450e11ec9d7c5254006b8f1d.png) 
 
 
 
@@ -475,7 +475,7 @@ Redis的事务的主要作用就是**串联多个命令防止别的命令插队*
 每次去获取数据都认为别人会修改，所以每次拿数据的时候都会上锁，这样别人就只能等到锁释放才能能拿到数据。传统的关系型数据库很多地方都用到了悲观锁：比如行锁、表锁、读锁、写锁等。
 
 
-![](https://tc.chaizz.com/751786ec450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/751786ec450e11ec9d7c5254006b8f1d.png)
 
 #### 1.3.2 乐观锁
 
@@ -483,7 +483,7 @@ Redis的事务的主要作用就是**串联多个命令防止别的命令插队*
 每次拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有更新这数据，可以使用版本号等机制。乐观锁适用于多读的场景，这样可以以高吞吐量，Redis 就是利用这用check-and-set的机制实现事务的。实际应用场景：例如买票，很多人都可以抢到，但是付款只有一个人可以付款成功。
 
 
-![](https://tc.chaizz.com/7bd4e6be450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/7bd4e6be450e11ec9d7c5254006b8f1d.png)
 
 在Redis 中使用乐观锁
 在执行Multi 之前先执行 watch key 可以监听一个或者多个key，如果事务执行之前这个key被其他的命令所修改，那么事务将会被打断。
@@ -615,7 +615,7 @@ AOF持久化的流程：
 # 六、Redis主从复制
 
 
-![](https://tc.chaizz.com/84964932450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/84964932450e11ec9d7c5254006b8f1d.png)
 
 
 
@@ -636,7 +636,7 @@ info relication
 ```
 
 
-![](https://tc.chaizz.com/9167c1cc450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/9167c1cc450e11ec9d7c5254006b8f1d.png)
 
 
 
@@ -656,7 +656,7 @@ info relication
 
 Redis 主从模式为 一个主，其他的为从。其中第三个从为第二个从的主，类似于排队的节点，每一节点都是前面的从。也可以多个从节点。 
 
-![](https://tc.chaizz.com/9c1ab480450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/9c1ab480450e11ec9d7c5254006b8f1d.png)
 
 
 ```shell
@@ -745,7 +745,7 @@ cluster-node-timeout 15000
 # 确保集群配置文件没有出错，查看Redis 服务是否正常启动，以及Redis对应的几点文件是否生成。
 ```
 
-**![](https://tc.chaizz.com/a51f728c450e11ec9d7c5254006b8f1d.png)**
+**![](https://origin.chaizz.com/a51f728c450e11ec9d7c5254006b8f1d.png)**
 
 
 
@@ -768,7 +768,7 @@ redis-cli --cluster create --cluster-replicas 1 127.0.0.1:6379 127.0.0.1:6380 12
 ```
 
 设置成功如下图所示：
-![](https://tc.chaizz.com/abdb9a88450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/abdb9a88450e11ec9d7c5254006b8f1d.png)
 
 
 ## 2 Redis 集群连接
@@ -783,7 +783,7 @@ cluster nodes
 ```
 
 
-![](https://tc.chaizz.com/b7277e5c450e11ec9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/b7277e5c450e11ec9d7c5254006b8f1d.png)
 
 
 Redis 如何分配至少三个主节点？

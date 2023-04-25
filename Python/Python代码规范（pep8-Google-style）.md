@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-03-19 15:51:15
 tags: PEP8
 categories: PEP8
-photos: ["https://tc.chaizz.com/06a04f142dca11ed9d170242ac190002.jpeg"]
+photos: ["https://origin.chaizz.com/06a04f142dca11ed9d170242ac190002.jpeg"]
 ---
 
 ​    

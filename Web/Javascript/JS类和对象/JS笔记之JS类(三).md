@@ -3,7 +3,7 @@ title: JS笔记之JS类(三)
 author: chaizz
 date: 2023-3-10
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​         
@@ -105,7 +105,7 @@ alert( Article.publisher ); // Levi Ding
 
 类的静态属性和方法同样可以继承，也是通过原型链进行查找。extends 让 Rabbit 的 [[Prototype]] 指向了 Animal。
 
-![image-20230313151407307](https://tc.chaizz.com/tc/image-20230313151407307.png)
+![image-20230313151407307](https://origin.chaizz.com/tc/image-20230313151407307.png)
 
 
 

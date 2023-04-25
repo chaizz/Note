@@ -4,7 +4,7 @@ author: chaizz
 date: 2023-1-30 14:40:25
 tags: Dynaconf
 categories: Dynaconf
-photos: ["https://tc.chaizz.com/f72d3a2aa07d11eda20f0242ac190002.svg"]
+photos: ["https://origin.chaizz.com/f72d3a2aa07d11eda20f0242ac190002.svg"]
 ---
 
 ​    

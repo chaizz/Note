@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-07-10 15:15:36
 tags: RabbitMQ
 categories: RabbitMQ
-photos: ["https://tc.chaizz.com/714976f0e15011eb9d7c5254006b8f1d.jpeg"]
+photos: ["https://origin.chaizz.com/714976f0e15011eb9d7c5254006b8f1d.jpeg"]
 ---
 
 ​        

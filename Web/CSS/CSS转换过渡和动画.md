@@ -3,7 +3,7 @@ title: CSS转换过渡和动画
 author: chaizz
 date: 2022-8-24
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​                 

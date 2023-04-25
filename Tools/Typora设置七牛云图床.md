@@ -3,7 +3,7 @@ title: Typora设置七牛云图床
 author: chaizz
 date: 2021-09-26
 tags: Typora
-photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
+photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
 ---
 
 ​             
@@ -21,12 +21,12 @@ photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
 - 秘钥AK ：virqOxxxxxxxxxxxxxxxxxxxxxxxxMnNIK
 - 秘钥SK：dDFGSasdfxxxxxxxxxxxxxxxxxxxiZiOVu
 - 存储空间名称：cz-tuchuang
-- 自定义域名：https://tc.chaizz.com
+- 自定义域名：https://origin.chaizz.com
 - 存储区域代码：我的是华北  所以就是 ：z1
 
 存储区域对应代码图片
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-22-09.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-26_19-22-09.png)
 
 ## 2 开始设置
 
@@ -45,7 +45,7 @@ photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
 			"accessKey": "virqOxxxxxxxxxxxxxxxxxIK",  // 你的七牛云AK
 			"secretKey": "dDFGSxxxxxxxxxxxxxxxxxVu",  // 你的七牛云SK
 			"bucket": "cz-tuchuang",                  // 你的七牛云存储空间名
-			"url": "https://tc.chaizz.com",           // 你的七牛云自定义域名
+			"url": "https://origin.chaizz.com",           // 你的七牛云自定义域名
 			"area": "z1",                             // 存储区域编号
 			"options": "",                            // 网址后缀,可不填
 			"path": "tc/",                            // 自定义存储路径，比如 img/ 可不填
@@ -60,7 +60,7 @@ photos: ["https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-43-27.png"]
 接下来点击 **验证图片上传选项** 按钮。上传成功会提示图下图所示：
 
 
-![](https://tc.chaizz.com/tc/Snipaste_2021-09-26_19-35-24.png)
+![](https://origin.chaizz.com/tc/Snipaste_2021-09-26_19-35-24.png)
 
 点击OK ，重启Typora上传图片即可上传到七牛云了。
 

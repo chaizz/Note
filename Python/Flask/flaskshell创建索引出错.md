@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-02-02 15:51:12
 tags: Flask
 categories: Flask
-photos: ["https://tc.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
+photos: ["https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
 ---
 
 ​    

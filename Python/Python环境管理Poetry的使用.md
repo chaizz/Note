@@ -4,7 +4,7 @@ author: chaizz
 date: 2023-03-23
 tags: Poetry
 categories: Poetry
-photos: ["https://tc.chaizz.com/8aa11db4ca1611ed8b330242ac190002.png"]
+photos: ["https://origin.chaizz.com/8aa11db4ca1611ed8b330242ac190002.png"]
 ---
 
 ​    
@@ -54,7 +54,7 @@ poetry config cache-dir D:\\poetry_enev
 
 通过 `poetry config --list` 查看已经修改成功
 
-![](https://tc.chaizz.com/33b9dcacca2011ed8b330242ac190002.png)
+![](https://origin.chaizz.com/33b9dcacca2011ed8b330242ac190002.png)
 
 > 取消之前的修改：
 >
@@ -184,7 +184,7 @@ poetry env remove
 
 - Poetry可执行文件，选择安装在本地的Poetry可执行文件。
 
-![](https://tc.chaizz.com/tc/image-20230327103659866.png)
+![](https://origin.chaizz.com/tc/image-20230327103659866.png)
 
 配置完毕，打开pycharm底部导航栏控制台，即可显示当前虚拟环境前缀，接下来就可以操作就按照正常的流程执行了。
 

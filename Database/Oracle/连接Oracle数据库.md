@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-05-09 16:04:46
 categories: Oracle
 tags: Oracle
-photo: ["https://tc.chaizz.com/2782ef0022f011edb23e0242ac190002.png"]
+photo: ["https://origin.chaizz.com/2782ef0022f011edb23e0242ac190002.png"]
 ---
 
 ​    
@@ -23,7 +23,7 @@ Navicat 连接Oracle数据库需要配下载Oracle 官方提供的插件 ：[ins
 
 然后打开Navicat 的 ：工具->选项->环境->OCI 如下图所示。
 
-![](https://tc.chaizz.com/3b0b7af0e15211eb9d7c5254006b8f1d.png)
+![](https://origin.chaizz.com/3b0b7af0e15211eb9d7c5254006b8f1d.png)
 
 将instantclient_19_9 路径下的oci.dll 文件路径复制到此路径下。
 

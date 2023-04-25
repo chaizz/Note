@@ -3,7 +3,7 @@ title: CSS盒模型
 author: chaizz
 date: 2022-8-17
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          
@@ -51,7 +51,7 @@ photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 
 如下图：
 
-![](https://tc.chaizz.com/tc/box-model.png)
+![](https://origin.chaizz.com/tc/box-model.png)
 
 ## 4 标准盒模型
 

@@ -3,7 +3,7 @@ title: CSS布局-弹性盒子与网格布局
 author: chaizz
 date: 2022-8-22
 tags: CSS
-photo: ["https://tc.chaizz.com/760e75941d1511edb5630242ac190002.png"]
+photo: ["https://origin.chaizz.com/760e75941d1511edb5630242ac190002.png"]
 ---
 
 ​          
@@ -66,7 +66,7 @@ display：默认的一些属性`inline`、`block`、`inline-block`在正常布�
 
 当元素表现为 flex 框时，它们沿着两个轴来布局：
 
-![flex_terms.png](https://tc.chaizz.com/tc/flex_terms.png)
+![flex_terms.png](https://origin.chaizz.com/tc/flex_terms.png)
 
 - **主轴**（main axis）是沿着 flex 元素放置的方向延伸的轴（比如页面上的横向的行、纵向的列）。该轴的开始和结束被称为 **main start** 和 **main end**。
 - **交叉轴**（cross axis）是垂直于 flex 元素放置方向的轴。该轴的开始和结束被称为 **cross start** 和 **cross end**。
@@ -163,7 +163,7 @@ button:first-child {
 
 一个网格通常还有许多的列与行，以及行与行、列与列之间的间隙，间隙一般称为沟槽。
 
-![img](https://tc.chaizz.com/tc/grid.png)
+![img](https://origin.chaizz.com/tc/grid.png)
 
 
 

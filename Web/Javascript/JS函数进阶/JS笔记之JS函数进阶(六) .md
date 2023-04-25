@@ -3,7 +3,7 @@ title: JS笔记之JS函数进阶(六)
 author: chaizz
 date: 2023-3-02
 tags: JavaScript
-photo: ["https://tc.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
+photo: ["https://origin.chaizz.com/ec55444c4a1211edac740242ac190002.png"]
 ---
 
 ​        

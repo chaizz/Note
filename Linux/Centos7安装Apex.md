@@ -4,7 +4,7 @@ author: chaizz
 date: 2021-04-24 10:15:22
 tags: ORACLE-APEX
 categories: ORACLE-APEX
-photos: ["https://tc.chaizz.com/city-4679928_640.png"]
+photos: ["https://origin.chaizz.com/city-4679928_640.png"]
 ---
 
 封面图片由<a href="https://pixabay.com/zh/users/khirulislam898-12875647/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4679928">MD KHIRUL ISLAM</a>在<a href="https://pixabay.com/zh/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4679928">Pixabay</a>上发布。
@@ -19,7 +19,7 @@ photos: ["https://tc.chaizz.com/city-4679928_640.png"]
 
 安装高版本的JDK和Tomcat会导致出现下面这个问题。建议选择低版本进行安装，低版本和高版本安装大致方法一直，或者采用以下脚本执行。
 
-![](https://tc.chaizz.com/%E6%89%93%E5%BC%80ords%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98.png)
+![](https://origin.chaizz.com/%E6%89%93%E5%BC%80ords%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98.png)
 
 ### 一、脚本文件方式安装JDK和tomcat
 
