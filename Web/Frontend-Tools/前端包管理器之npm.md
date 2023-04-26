@@ -2,7 +2,7 @@
 title: 前端包管理器之npm
 author: chaizz
 date: 2022-8-18
-tags: CSS
+tags: npm
 photo: ["https://origin.chaizz.com/npm_run.png"]
 ---
 
