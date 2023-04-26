@@ -10,7 +10,7 @@ photo: ["https://origin.chaizz.com/dbf0a4d4e40411ed8b5f0242ac190002.jpg"]
 
 <!--more-->
 
-
+# 前端包管理器之pnpm
 
 [pnpm](https://pnpm.io/zh/motivation) 正如他官网的口号一样：速度快、节省磁盘空间的软件包管理器。
 
@@ -23,7 +23,7 @@ photo: ["https://origin.chaizz.com/dbf0a4d4e40411ed8b5f0242ac190002.jpg"]
 
 
 
-安装pnpm
+## 1 安装pnpm
 
 建议写卸载现有的npm,node和nvm等其他的包管理器，和node版本管理器。
 
@@ -55,11 +55,11 @@ set-alias -name pn -value pnpm
 
 
 
-pnpm的常用命令
+## 2 pnpm的常用命令
 
 大部分都和npm一致, 少数会有区别
 
-node环境管理
+### 2.1 node环境管理
 
 ```powershell
 # 查看有哪些可安装的node版本
@@ -77,7 +77,7 @@ pn env remove --global 14.0.0
 
 
 
-设置 pnpm 配置 
+### 2.2  设置 pnpm 配置 
 
 Windows路径为：**C:\Users\<UserName>\.npmrc**，可以手动打开进行配置
 
@@ -96,7 +96,7 @@ pn config set registry http://mirrors.cloud.tencent.com/npm/
 pn config set registry https://repo.huaweicloud.com/repository/npm/
 ```
 
-安装/更新/卸载包和相关依赖
+### 2.3 安装/更新/卸载包和相关依赖
 
 ```powershell
 # -g 全局安装  -D 保存到 devDependencies
