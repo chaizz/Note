@@ -106,6 +106,7 @@ pn add -g pkg
 # 更新包
 # 在不带参数的情况下使用时，将更新所有依赖关系
 pn update pkg
+# 别名： pn up
 
 
 
@@ -114,9 +115,58 @@ pn remove -g pkg
 # 别名：rm, uninstall, un
 ```
 
+### 2.4 运行/测试脚本
+
+```powershell
+pn run 
+
+# 运行一个在 packagel.json 文件中定义的脚本。
+
+# pnpm 默认不会执行用户自定义的hook,如果需要开启， 在 .npmrc文件中配置， enable-pre-post-scripts=true
+
+
+pn test 
+# 别名：t tst
+# 运行在 package 的 scripts 对象中test 属性指定的任意的命令。
+
+
+pn start 
+# 运行在 package 的 scripts 对象中start 属性指定的任意的命令。 如果scripts 对象没有指定 start 属性，那么默认将尝试执行 node server.js，如果都不存在则会执行失败。
+```
+
+### 2.5 pnpm 安装所有依赖 
+
+```powershell
+pn install 
+# 别名：i
+```
 
 
 
+### 2.6 生成pnpm-lock.yaml
 
-### 2.4 pnpm 
+```powershell
+pn import 
+# 从另一个软件包管理器的 lock 文件生成 `pnpm-lock.yaml`，支持`package-lock.json``npm-shrinkwrap.json``yarn.lock`。
+```
+
+### 2.7 移除不需要的package
+
+```powershell
+pnpm prune
+```
+
+### 2.8 列出一个树形结构输出所有的已安装`package`的版本及其依赖。
+
+```powershell
+pn list 
+
+# 别名：pn ls  -D dev的依赖  -P 生产环境  --depth  依赖的最大深度 
+```
+
+### 2.9 创建一个package.json
+
+```powershell
+pn init
+```
 
