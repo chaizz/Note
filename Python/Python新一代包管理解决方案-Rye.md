@@ -122,7 +122,7 @@ description = "Add a short description here"
 authors = [
     { name = "username", email = "username@163.com" }
 ]
-dependencies = ["flask~=2.3.2", "numpy~=1.24.3"]
+dependencies = ["flask~=2.3.2", "flask-cors~=3.0.10"]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -132,13 +132,9 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = ["requests~=2.30.0"]
-excluded-dependencies = ["redis"]
-
 
 [tool.rye.scripts]
-# These three options are equivalent:
-dev = "python ./src/my_project/hello.py"
+dev = { cmd = "flask run --debug", env = { FLASK_APP = "./src/my_project/app.py" } }
 ```
 
 
