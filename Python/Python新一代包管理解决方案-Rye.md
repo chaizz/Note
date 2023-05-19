@@ -186,10 +186,8 @@ rye run xxx  // 此处xxx 是在 tool.rye.scripts 中配置的 key
 .venv/scripts/activate
 
 # 退出虚拟环境
-deactivate
+deactivate 
 ```
-
-
 
 ## 4 结语
 
