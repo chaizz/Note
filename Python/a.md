@@ -1,0 +1,69 @@
+---
+title: 开发前的基础工作之编辑器配置篇【Pythonista】
+author: chaizz
+date: 2023-06-14
+tags: 编辑器配置
+categories: 编辑器配置
+photos: ["https://origin.chaizz.com/PyCharm.png"]
+---
+
+​    
+
+<!--more-->
+
+
+
+编辑器基础配置
+
+外观
+
+- 字体：Fira Code Medium  大小：16
+
+编辑器
+
+- 字体：Fira Code  大小：18
+
+
+
+快捷键：
+
+- 禁用双击shift唤醒全局搜索框 [shift-shift] 
+
+  设置 -> 高级设置 -> 用户界面
+
+  ![](https://origin.chaizz.com/tc/image-20230614153241084.png)
+
+
+
+插件：
+
+- .ignore  忽略文件
+
+- Translation 翻译插件， 需要自己设置翻译SDK的key 
+- Atom Material Icons   一个好看的文件夹主题
+- GitToolBox    git 相关插件， 显示历史修改人等
+- One Dark Theme  黑色主题
+- Tabnine AI Code Completion AI开发助手
+
+
+
+代码模板
+
+-  设置 -> 编辑器 -> 文件和代码模板 -> Python Script 
+
+  ```
+  """
+  -------------------------------------------------
+      File Name:   ${NAME}.py
+      Description: 
+          
+      Author:      chaizz
+      Date:        ${DATE} ${TIME}
+  -------------------------------------------------
+      Change Activity:
+            ${DATE} ${TIME}
+  -------------------------------------------------
+  """
+  ```
+
+  
