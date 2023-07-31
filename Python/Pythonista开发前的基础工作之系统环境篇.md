@@ -1,5 +1,5 @@
 ---
-title: 开发前的基础工作之系统环境篇【Pythonista】
+title: Pythonista开发前的基础工作之系统环境篇
 author: chaizz
 date: 2023-04-6
 tags: 系统设置
@@ -11,7 +11,7 @@ photos: ["https://origin.chaizz.com/tc/DALL·E 2023-04-06 17.04.16 - A cartoon v
 
 <!--more-->
 
-# 开发前的基础工作之系统环境篇
+# Pythonista开发前的基础工作之系统环境篇
 
 
 
@@ -111,40 +111,92 @@ conda init powershell
 
 ### 2.3 配置WSL
 
-直接在微软应用商店，下载需要的Linux版本， 这里我常用的是Ubuntu, 一般选择最新版22.04或者是20.04。
+直接在微软应用商店，下载需要的Linux版本， 这里我常用的是Ubuntu, 一般选择最新版22.04或者是20.04。 存储以 Ubuntu-22.04 为例。
 
-安装完毕后在windwos菜单中可以直接找到安装的ubuntu图标。可以直接打开使用。但是这里有一个点是默认安装的系统在C盘。我们可以手动更改为其他的盘符。
+安装完毕后在windwos菜单中可以直接找到安装的ubuntu图标。可以直接打开使用。
+
+打开系统后会提示让我们输入用户名密码， 我们可以直接关闭 Terminal，在重新打开默认就是root用户。
+
+但是这里有一个点是默认安装的系统在C盘。我们可以手动更改为其他的盘符。
 
 步骤如下：
 
-```powershell
-# 1、以管理员身份打开Windows Terminal 或者 PowerShell
+1. 以管理员身份打开Windows Terminal 或者 PowerShell
 
-# 2、 查看当前WSL服务应用
-wsl -l -v
-# 展示结果如下，Ubuntu-20.04是上一步安装的LInux子系统名称 （名称可能不一样） 
-  NAME                   STATE           VERSION
-* docker-desktop-data    Stopped         2
-  Ubuntu-20.04           Running         2
-  docker-desktop         Stopped         2
+2. 查看当前WSL服务应用
 
-# 3、关闭wsl
-wsl --shutdown
- 
-# 4、 卸载刚刚安装的系统
-wsl --unregister Ubuntu-20.04
+   ```powershell
+   wsl -l -v
+   ```
 
-# 5、 导出到别的文件夹，此处导出到D盘下的WSL_Ubuntu
-wsl --export Ubuntu-20.04 D:\WSL_Ubuntu\ubuntu.rar
+   ```powershell
+   # 展示结果如下，Ubuntu-20.04是上一步安装的LInux子系统名称 （名称可能不一样） 
+     NAME                   STATE           VERSION
+   * docker-desktop-data    Stopped         2
+     Ubuntu-22.04           Running         2
+     docker-desktop         Stopped         2
+   ```
 
-# 6、 导入到指定的文件夹，同样在D盘D盘下的WSL_Ubuntu
-wsl --import Ubuntu D:\WSL_Ubuntu D:\WSL_Ubuntu\ubuntu.rar
+3. 我们直接将刚刚安装的Ubuntu-22.04导出到别的文件夹，此处导出到D盘下的WSL_Ubuntu
 
-# 7、启动Ubutnu
-wsl -d ubuntu
-```
+   ```powershell
+   wsl --export Ubuntu-22.04 D:\WSL_Ubuntu\ubuntu.rar
+   ```
 
-讲过上述布置后我们就可以得到一个在windwos下的Linux子系统，我们可以直接通过命令行进入该系统，就像操作Linux一样。
+4. 然后再将刚刚导出的ubuntu.rar， 在重新导入为wsl的应用，ubuntu为新的应用的名称，D:\WSL_Ubuntu 使我们要存放的此应用ubuntu的具体的路径，D:\WSL_Ubuntu\ubuntu.rar 是上一步存储的路径。
+
+   ```powershell
+   wsl --import ubuntu D:\WSL_Ubuntu D:\WSL_Ubuntu\ubuntu.rar
+   ```
+
+5. 此时我们再查看wsl的应用, 就会多出来我们刚刚导入的应用。
+
+   ```powershell
+   wsl --list -v
+   ```
+
+   ```powershell
+   # 展示结果如下，Ubuntu-20.04是上一步安装的LInux子系统名称 （名称可能不一样） 
+     NAME                   STATE           VERSION
+   * docker-desktop-data    Stopped         2
+     ubuntu                 Stopped         2
+     Ubuntu-22.04           Stopped         2
+     docker-desktop         Stopped         2
+   ```
+
+6. 注销原来的应用
+
+   ```powershell
+   wsl --unregister Ubuntu-22.04
+   ```
+
+7. 此时我们再查看wsl的应用, 原始的应用就不存在了。
+
+   ```powershell
+   wsl --list -v
+   ```
+
+   ```powershell
+   # 展示结果如下，Ubuntu-20.04是上一步安装的LInux子系统名称 （名称可能不一样） 
+     NAME                   STATE           VERSION
+   * docker-desktop-data    Stopped         2
+     ubuntu                 Stopped         2
+     docker-desktop         Stopped         2
+   ```
+
+8. 启动/退出ubuntu 应用
+
+   ```powershell
+   wsl -d ubuntu
+   
+   exit
+   ```
+
+> Tips：
+>
+> 我们也可以在执行开始时 关闭wsl在进行操作，命令：wsl --shutdown
+
+经过上述配置后我们就可以得到一个在windwos下的Linux子系统，我们可以直接通过命令行进入该系统，就像操作Linux一样。之前在 microsoft Store 下载的也可以直接删除了。
 
 ### 2.4 WSL 文件传输配置
 
@@ -211,4 +263,57 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 安装 minicaonda 和在windows上安装一致。
+
+
+
+一些其他的源：
+
+默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释。
+
+中科大（贼快）：
+
+```shell
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+```
+
+
+
+清华源（还行）：
+
+```shell
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+```
+
+
+
+阿里源（一般）：
+
+```shell
+deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+```
 
