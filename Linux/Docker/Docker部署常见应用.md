@@ -1,3 +1,219 @@
+# 部署nginx
+
+```yaml
+version: '3'
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /opt/apps/web_apps:/opt/apps/web_apps
+      - /opt/apps/nginx/cert:/opt/apps/nginx/cert
+      
+      - /opt/apps/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /opt/apps/nginx/conf.d:/etc/nginx/conf.d
+      - /opt/apps/nginx/logs:/var/log/nginx
+    restart: always
+
+```
+
+## nginx.conf 默认配置
+
+```nginx
+user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+```
+
+
+
+## 七牛云图床前端配置
+
+```nginx
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name qn.chaizz.com;
+    # ssl on;  # 已经被弃用
+    ssl_certificate /opt/apps/nginx/cert/qn.chaizz.com_bundle.pem;
+    ssl_certificate_key /opt/apps/nginx/cert/qn.chaizz.com.key;
+    ssl_session_timeout 5m;
+    #按照这个协议配置
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #按照这个套件配置
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+
+    root /opt/apps/web_apps/qiniu;
+    index index.html;
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    ###########设置缓存###############
+    location ~ .*\.(gif|jpg|png|css|js)(.*) {
+        proxy_set_header Host $host;
+        proxy_cache_valid 301 30d;
+        proxy_cache_valid any 5m;
+        expires 10d;
+        }
+}
+```
+
+## 七牛云图床后端配置
+
+```nginx
+upstream qn_backend {
+    server 101.35.188.40:6677;
+}
+
+server {
+    listen 80;
+    listen 443 ssl;
+    # ssl on;  # 已经被弃用
+    server_name  img.chaizz.com;
+    ssl_certificate  /opt/apps/nginx/cert/img.chaizz.com_bundle.pem;       # 证书公钥，这里在nginx.conf所在文件夹下面的
+cert文件夹里面
+    ssl_certificate_key  /opt/apps/nginx/cert/img.chaizz.com.key;  # 证书私钥
+    ssl_session_timeout  5m;
+    ssl_session_cache    shared:SSL:1m;
+    ssl_ciphers          ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols        TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers  on;
+
+    location / {
+            # 请求转发到多个gunicorn服务器
+            proxy_pass http://qn_backend;
+            # 设置请求头，并将头信息传递给服务器端
+            proxy_set_header Host $host;
+            # 设置请求头，传递原始请求ip给 gunicorn 服务器
+            proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+```
+
+## vitepress 配置
+
+```nginx
+server {
+    listen 80;
+    server_name ninth.games www.ninth.games;
+    # 重定向到 
+    return 301 https://www.ninth.games$request_uri;
+}
+
+
+server {
+
+    listen 443 ssl;
+    server_name  www.ninth.games;
+
+    # SSL 配置
+    ssl_certificate /opt/apps/nginx/cert/ninth.games_bundle.pem;
+    ssl_certificate_key /opt/apps/nginx/cert/ninth.games.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+    ssl_prefer_server_ciphers on;
+
+    root /opt/apps/web_apps/vitepress;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    ###########设置缓存###############
+    location ~ .*\.(gif|jpg|png|css|js)(.*) {
+        proxy_set_header Host $host;
+        proxy_cache_valid 301 30d;
+        proxy_cache_valid any 5m;
+        expires 10d;
+        }
+}
+```
+
+
+
+## mqtt emqx 前端配置
+
+```nginx
+server {
+        listen  80;
+        server_name  emqx.ninth.club;
+
+        location /dashboard {
+            proxy_pass  http://101.35.188.40:18083;
+            # 设置代理请求头
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Real-PORT $remote_port;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+}
+```
+
+## fastapi-todolist 配置
+
+```nginx
+server {
+    listen 80;
+    server_name todo.ninth.games;
+
+    location / {
+        proxy_pass http://101.35.188.40:3033;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    root /fastapi-todolist;
+    location /static {
+        alias /static;
+    }
+
+
+}
+```
+
+
+
+
+
+
+
+
+
 # 登陆Docker远程仓库
 
 ```
