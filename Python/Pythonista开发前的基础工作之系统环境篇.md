@@ -2,9 +2,12 @@
 title: Pythonista开发前的基础工作之系统环境篇
 author: chaizz
 date: 2023-04-6
-tags: 系统设置
-categories: 系统设置
+tags:
+  - 环境配置
+categories:
+  - 环境配置
 photos: ["https://origin.chaizz.com/tc/DALL·E 2023-04-06 17.04.16 - A cartoon version of a programmer.png"]
+cover: ["https://origin.chaizz.com/tc/DALL·E 2023-04-06 17.04.16 - A cartoon version of a programmer.png"]
 ---
 
 ​    
