@@ -222,11 +222,23 @@ explorer.exe .
 
 
 
+### 2.5 windows 配置pip
+
+找到`C:\Users\xxx\pip\pip.ini`， 设置清华源，速度很快。
+
+```ini
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+trusted-host = pypi.tuna.tsinghua.edu.cn
+```
+
+
+
 ## 3 Linux开发环境配置
 
 此处以WSL子系统为例。
 
-配置apt源
+### 3.1 配置apt源
 
 ```shell
 # 备份源文件
@@ -253,7 +265,7 @@ apt-get update
 | 网易网   | http://mirrors.163.com/               |
 | 北大     | https://mirrors.pku.edu.cn/Mirrors    |
 
-配置pip源
+### 3.2 配置pip源
 
 Linux 默认安装的python的pip源
 

@@ -2,30 +2,41 @@
 title: Pythonista开发前的基础工作之编辑器配置篇
 author: chaizz
 date: 2023-06-14
-tags: 编辑器配置
-categories: 编辑器配置
+tags:
+  - Pycharm
+categories:
+  - Pycharm
 photos: ["https://origin.chaizz.com/PyCharm.png"]
+cover: "https://origin.chaizz.com/PyCharm.png"
 ---
 
 ​    
 
 <!--more-->
 
+# Pythonista开发前的基础工作之编辑器配置篇
 
+## 1 编辑器基础配置
 
-编辑器基础配置
-
-外观
+### 1.1 外观
 
 - 字体：Fira Code Medium  大小：16
 
-编辑器
+### 1.2 编辑器
 
 - 字体：Fira Code  大小：18
 
+### 1.3 Atom Material Icons Setting
+
+​	![image-20230731181034618](https://origin.chaizz.com/tc/image-20230731181034618.png)
 
 
-快捷键：
+
+![image-20230731181125760](https://origin.chaizz.com/tc/image-20230731181125760.png)
+
+
+
+## 2 快捷键
 
 - 禁用双击shift唤醒全局搜索框 [shift-shift] 
 
@@ -35,7 +46,7 @@ photos: ["https://origin.chaizz.com/PyCharm.png"]
 
 
 
-插件：
+## 3 插件
 
 - .ignore  忽略文件
 
@@ -44,10 +55,12 @@ photos: ["https://origin.chaizz.com/PyCharm.png"]
 - GitToolBox    git 相关插件， 显示历史修改人等
 - One Dark Theme  黑色主题
 - Tabnine AI Code Completion AI开发助手
+- sourcery  基于AI的编码助手
+- LeetCode Editor leetcode 插件
 
 
 
-代码模板
+## 4 代码模板
 
 -  设置 -> 编辑器 -> 文件和代码模板 -> Python Script 
 
