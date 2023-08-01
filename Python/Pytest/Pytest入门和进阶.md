@@ -2,15 +2,19 @@
 title: Pytest入门和进阶
 author: chaizz
 date: 2023-7-29
-tags: pytest
-categories: pytest
+tags:
+  - pytest
+categories:
+  - pytest
 photos: ["https://origin.chaizz.com/pytest_logo_curves.svg"]
-
+cover: "https://origin.chaizz.com/pytest_logo_curves.svg"
 ---
 
 ​    
 
 <!--more-->
+
+# Pytest入门和进阶
 
 
 
@@ -33,25 +37,228 @@ photos: ["https://origin.chaizz.com/pytest_logo_curves.svg"]
 
 
 
-*以上序使用ChatGPT输出*  
+*以上序使用ChatGPT输出*。
 
 
 
-1、测试的基本原理
+## 1 Pytest 测试用例的默认规则
 
-2、测试的基本语法
-
-3、测试前后的准备和善后工作
-
-3.1 steup和teardown
-
-3.2 fixture
-
-4、测试报告allure
-
-​	配置报告输出的位置
+- 模块名必须以`test_`开头或者`_test`结尾。
+- 方法或者函数名必须以`test_`开头。
+- 类名必须以`Test`开头。
+- 测试类中不能有`__init__`方法。
+- 不建议在类中设置一些类示例方法。
 
 
+
+```python
+import pytest
+
+
+def add_func():
+    return 1 + 1
+
+
+def sum_func():
+    return sum([1, 2, 3, 4, 5])
+
+
+def test_add():
+    assert add_func() == 2
+
+
+class TestCase:
+
+    def test_sum(self):
+        assert sum_func() == 15
+
+    def test_add(self):
+        assert add_func() == 2
+
+
+if __name__ == '__main__':
+    pytest.main(['-vs'])
+```
+
+
+
+## 2 Pytest 的一些插件
+
+- pytest-html 使用--html=./report/report.html 生成html格式的自动化测试报告
+
+- pytest-xdist 分布式执行 使用-n=number指定线程数
+
+- pytest-ordering 改变测试用例的执行顺序
+
+- pytest-rerunfailures 失败重试，使用 --reruns=number 设置重试测试
+
+- allurre-pytest 更加美观的测试报告
+
+## 3 Pytest 测试用例运行的方法
+
+### 3.1 主函数模式
+
+指定跟目录下所有的测试用例运行
+
+```python
+pytest.main(['-vs'])
+```
+
+指定运行某个文件
+
+```python
+pytest.main(["-vs"], "test_roles.py")
+```
+
+指定某个文件夹下的所有测试用例
+
+```python
+pytest.main(["-vs", "./filepath"])
+```
+
+使用多线程运行
+
+```python
+pytest.main(["-vs", "./filepath", "-n=2"])
+```
+
+每个用例失败重试两次
+
+```python
+pytest.main(["-vs", "./filepath", "--reruns=2"])
+```
+
+修改每个测试用例执行的顺序
+
+```python
+class TestCase:
+
+    @pytest.mark.run(order=1)
+    def test_sum(self):
+        assert sum_func() == 11
+
+    def test_add(self):
+        assert add_func() == 1
+```
+
+
+
+参数解释：
+
+- v：表述语输出调试信息， 包括打印的信息
+- s：显示更详细的信息
+
+- n：支持多线程或者分布式调用, 后面跟的数字代表开启的线程
+- reruns：失败重试
+- x：只要有一个错误，测试就停止
+- --html filepath.html 报告路径
+- -m "smoke or xx or xx..."  根据markers进行分组执行
+
+
+
+### 3.2 命令行模式
+
+```shell
+pytest -vs ./filepath -n 2 --reruns 2
+```
+
+
+
+### 3.3 **配置文件模式 （pytest.ini）**
+
+在项目中一般使用这种方式运行，一般在项目的根目录，编码模式要保证为`ANSI`的模式，使用命令模式或者函数模式都会读取这个配置文件。
+
+```ini
+[pytest]
+
+# 命令行的参数
+addopts = -vs --html ./report/report.html
+
+# 测试用例的路径
+testpaths = ./testcase
+
+# 模块名的规则
+python_files = test_*.py
+
+# 测试类名的规则
+python_class = Test*
+
+# 方法名的规则
+python_functions = test_*
+
+# 测试用例分组
+markers =
+    smoke: 冒烟测试
+    loginTest: 登录测试
+    userTest: 用户模块测试
+```
+
+
+
+
+
+### 3.4 测试用例分组的使用方法
+
+使用`@pytest.mark.xx`， 这个`xx` 是指的是 `pytest.ini`中的markers中的选项，可以应用在函数上或者类上。
+
+```python
+class TestCase:
+
+    @pytest.mark.run(order=1)
+    def test_sum(self):
+        assert sum_func() == 15
+
+    @pytest.mark.smoke
+    def test_add(self):
+        assert add_func() == 2
+
+    def test_login(self):
+        assert add_func() == 2
+
+
+@pytest.mark.loginTest
+class TestCaseTwo:
+
+    @pytest.mark.run(order=1)
+    def test_two_sum(self):
+        assert sum_func() == 15
+
+    def test_two_add(self):
+        assert add_func() == 2
+
+    def test_two_login(self):
+        assert add_func() == 2
+```
+
+执行指令
+
+使用 or 可以制定多个分组的测试用例 
+
+```shell
+pytest -m "smoke or loginTest"
+```
+
+
+
+### 3.5 跳过测试用例
+
+#### 3.5.1 有条件跳过
+
+```python
+@pytest.mark.skipif(age >= 18, reason="年龄大于等于18岁")
+```
+
+#### 3.5.2 无条件跳过
+
+```python
+@pytest.mark.skip(reason="跳过原因")
+```
+
+
+
+## 4 测试前后的准备和善后工作
+
+steup和teardown
 
 Pytest中的 steup 和 teardown 用法，分别有四种级别：
 
@@ -62,19 +269,17 @@ Pytest中的 steup 和 teardown 用法，分别有四种级别：
 
 
 
+fixture
+
+测试报告allure
 
 
-小Tips:
-
-在Pycharm中使用`pytest.main()` 会将当前文件的所有测试用例全部执行。
-
-```python
-import pytest
 
 
-if __name__ == __main__:
-    pytest.main()
-```
+
+
+
+
 
 
 
