@@ -1,5 +1,5 @@
 ---
-title: Pytest入门和进阶
+title: Pytest入门
 author: chaizz
 date: 2023-7-29
 tags:
@@ -566,7 +566,7 @@ conftest.py 目的是和fixture结合使用实现==全局或者模块级别全�
 
 ### 6.3 allure 报告的定制
 
-​	待续...
+​	![image-20230801230915506](https://tc.chaizz.com/tc/image-20230801230915506.png)
 
 ## 7 jenkins 集成
 
