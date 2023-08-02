@@ -35,7 +35,7 @@ cover: "https://origin.chaizz.com/pytest_logo_curves.svg"
 
 
 
-*以上序使用ChatGPT输出*。
+*以上序使用AI输出*。
 
 
 
@@ -386,7 +386,7 @@ if __name__ == '__main__':
     pytest.main(["-vs"])
 ```
 
-#### 4.1.3 类级别
+#### 5.1.3 类级别
 
 ```python
 import pytest
@@ -415,7 +415,7 @@ if __name__ == '__main__':
 
 
 
-#### 4.1.4 方法级别的实例
+#### 5.1.4 方法级别的实例
 
 ```python
 import pytest
@@ -564,26 +564,227 @@ conftest.py 目的是和fixture结合使用实现==全局或者模块级别全�
 
    
 
-### 6.3 allure 报告的定制
+### 6.3 allure 报告的详细参数
 
-| 使用方法          | 参数值   | 参数说明                                    |
-| ----------------- | -------- | ------------------------------------------- |
-| @allure.epic()    | epic描述 | 定义项目，当有多个项目时使用，往下是feature |
-| @allure.feature() | 模块名称 | 用例按照模块区分                            |
-| @allure.story()   |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
-| @allure.          |          |                                             |
 
-​	![image-20230801230915506](https://tc.chaizz.com/tc/image-20230801230915506.png)
 
-## 7 jenkins 集成
+| 装饰器                | 参数说明                                                     |
+| --------------------- | ------------------------------------------------------------ |
+| @allure.epic()        | 用例的一种分类级别，即一组相关功能需求的集合。               |
+| @allure.frature()     | 用例的一种分类级别，即一个功能的集合。                       |
+| @allure.story()       | 用例的一种分类级别，即一个用户需求的集合。                   |
+| @allure.title()       | 用于定义测试用例的标题。                                     |
+| allure.issue()        | 用于关联测试用例与缺陷/问题跟踪系统中的问题。                |
+| @allure.testcase()    | 用于指定测试用例的链接，将测试用例和测试步骤与外部的测试管理工具（如JIRA）中的具体测试用例进行关联。 |
+| @allure.description() | 用于定义测试用例的描述信息。                                 |
+| @allure.step()        | 用于定义测试用例中的步骤信息，比如多个步骤1、2、3等。        |
+| @allure.severity()    | 用于定义测试用例的严重程度，可以是`BLOCKER`、`CRITICAL`、`NORMAL`、`MINOR`或`TRIVIAL`。 |
+| @allure.link()        | 用于定义测试用例的相关链接，例如需求文档、设计文档、缺陷跟踪工具等，方便查阅和跳转。 |
+| @allure.attach()      | 用于添加附件到测试报告中，例如截图、日志文件等。             |
 
-​	待续...
+
+
+#### 6.3.1 @allure.epic
+
+- 功能：`@allure.epic()`注解用于定义测试用例的史诗（Epic），即一组相关功能需求的集合。
+- 使用方式：在测试用例的代码上方添加`@allure.epic("epic_name")`注解，其中`epic_name`是史诗的名称。
+- 作用：可以将一组相关功能需求的测试用例标记为同一个史诗，以提供更好的组织和管理。
+
+#### 6.3.2 @allure.feature
+
+- 功能：`@allure.feature()`注解用于定义测试用例的功能模块（Feature），即一个功能的集合。
+- 使用方式：在测试用例的代码上方添加`@allure.feature("feature_name")`注解，其中`feature_name`是功能模块的名称。
+- 作用：可以将属于同一个功能的测试用例标记为同一个功能模块，以提供更好的组织和管理。
+
+#### 6.3.3 @allure.story
+
+- 功能：`@allure.story()`注解用于定义测试用例的用户故事（Story），即一个用户需求的集合。
+- 使用方式：在测试用例的代码上方添加`@allure.story("story_name")`注解，其中`story_name`是用户故事的名称。
+- 作用：可以将属于同一个用户故事的测试用例标记为同一个用户故事，以提供更好的组织和管理。
+
+#### 6.3.4 @allure.title
+
+- 功能：`@allure.title`注解用于定义测试用例的标题。
+- 使用方式：在测试用例的代码上方添加`@allure.title("title_name")`注解，其中`title_name`是测试用例的标题。
+- 作用：可以将测试用例标记为具体的标题，以提供更明确的测试用例描述。
+
+**区别：**
+
+- `@allure.epic()`用于定义测试用例的史诗，标记一组相关功能需求的集合。
+- `@allure.feature()`用于定义测试用例的功能模块，标记一个功能的集合。
+- `@allure.story()`用于定义测试用例的用户故事，标记一个用户需求的集合。
+- `@allure.title`用于定义测试用例的标题，即具体的测试用例描述。
+
+**使用建议：**
+
+- 使用`@allure.epic()`注解可以将一组相关功能需求的测试用例标记为同一个史诗，以提供更好的组织和管理。
+- 使用`@allure.feature()`注解可以将属于同一个功能的测试用例标记为同一个功能模块，以提供更好的组织和管理。
+- 使用`@allure.story()`注解可以将属于同一个用户故事的测试用例标记为同一个用户故事，以提供更好的组织和管理。这样可以更清晰地描述测试用例和需求之间的关系。
+- 使用`@allure.title`注解将测试用例标记为具体的标题，以提供更明确的测试用例描述。这样可以更直观地了解测试用例的目的和预期结果。
+
+
+
+#### 6.3.5 @allure.issue
+
+- 功能：`allure.issue`注解用于关联测试用例与缺陷/问题跟踪系统中的问题。
+- 使用方式：在测试用例的代码上方添加`@allure.issue("issue_key")`注解，其中`issue_key`是缺陷/问题跟踪系统中的问题的唯一标识符，如Bug的ID或链接。
+- 作用：可以将测试用例与相关的缺陷/问题跟踪系统中的问题关联起来，以便更方便地追踪和查看问题的解决情况。
+
+
+
+使用建议：
+
+- 使用`@allure.issue`注解在测试用例中关联相关的缺陷/问题跟踪系统中的问题。
+- 在注解中提供问题的唯一标识符，如Bug的ID或链接，以确保可以准确定位并追踪相关的问题。
+- 这样可以帮助开发团队跟踪和解决测试用例中发现的问题，提高问题的解决效率。
+
+
+
+#### 6.3.6  @allure.description
+
+- 功能：`@allure.description`注解用于定义测试用例的描述信息。
+- 使用方式：在测试用例的代码上方添加`@allure.description("description_text")`注解，其中`description_text`是测试用例的描述文本。
+- 作用：可以将测试用例标记为具体的描述信息，以提供更详细的测试用例说明。
+
+使用建议：
+
+- 使用`@allure.description`注解将测试用例标记为具体的描述信息，以提供更详细的测试用例说明。
+- 在注解中添加测试用例的描述文本，可以包括测试目的、测试步骤、预期结果等信息。
+- 这样可以使测试用例更易于理解和维护，也能帮助其他团队成员更好地理解和执行测试用例。
+
+
+
+#### 6.3.7 @allure.step
+
+- 功能：`@allure.step`注解用于定义测试用例中的步骤信息。
+- 使用方式：在测试用例的代码中，使用`@allure.step("step_description")`注解来标记测试用例中的步骤，其中`step_description`是步骤的描述文本。
+- 作用：可以将测试用例划分为多个步骤，并为每个步骤添加描述信息，使测试报告更加详细和可读。
+
+使用建议：
+
+- 使用`@allure.step`注解将测试用例划分为多个步骤，并为每个步骤添加描述信息。
+- 在注解中添加步骤的描述文本，可以包括具体的操作、输入数据、预期结果等信息。
+- 每个步骤都会在测试报告中显示为一个独立的小区块，使测试执行过程更加清晰可见。
+- 这样可以使测试报告更加详细和可读，方便测试人员和其他团队成员理解测试执行的流程、数据和结果。
+
+
+
+#### 6.3.8 @allure.severity
+
+- 功能：`@allure.severity`注解用于定义测试用例的严重程度。
+- 使用方式：在测试用例的代码上方添加`@allure.severity(severity_level)`注解，其中`severity_level`是测试用例的严重程度，可以是`BLOCKER`、`CRITICAL`、`NORMAL`、`MINOR`或`TRIVIAL`。
+- 作用：可以将测试用例标记为不同的严重程度，以便根据优先级进行测试执行和问题跟踪。
+
+使用建议：
+
+- 使用`@allure.severity`注解将测试用例标记为不同的严重程度，以便根据优先级进行测试执行和问题跟踪。
+
+
+
+#### 6.3.9 @allure.link
+
+- 功能：`@allure.link`注解用于定义测试用例的相关链接。
+- 使用方式：在测试用例的代码上方添加`@allure.link(url, name)`注解，其中`url`是相关链接的URL地址，`name`是链接的显示名称。
+- 作用：可以为测试用例添加相关的链接，例如需求文档、设计文档、缺陷跟踪工具等，方便查阅和跳转。
+
+使用建议：
+
+- 使用`@allure.link`注解为测试用例添加相关的链接，方便查阅和跳转到相关资料。
+
+
+
+#### 6.3.10  @allure.attach
+
+- 功能：`@allure.attach`注解用于添加附件到测试报告中。
+- 使用方式：在测试用例的代码中使用`@allure.attach(name, content_type)`注解来添加附件，其中`name`是附件的名称，`content_type`是附件的内容类型。
+- 作用：可以将附件添加到测试报告中，例如截图、日志文件等，便于查看和分析测试执行过程中的细节。
+
+使用建议：
+
+- 使用`@allure.attach`注解将附件添加到测试报告中，方便查看和分析测试执行过程中的细节。
+
+
+
+#### 6.3.13 代码示例
+
+```python
+import allure
+
+
+@allure.step("第一步")
+def step_1():
+    print("-" * 10 + str(1))
+
+
+@allure.step("第二步")
+def step_2():
+    print("-" * 10 + str(2))
+
+
+@allure.epic("用户管理")
+class TestUserManagement:
+
+    @allure.feature("注册")
+    @allure.story("用户注册")
+    @allure.title("使用有效数据进行测试注册")
+    @allure.testcase("https://example.com/docs/login", name="对应测试系统中的测试用例")
+    @allure.issue("https://example.com/docs/login", name="对应测试系统中的缺陷")
+    @allure.link("https://example.com/docs/login", name="登录逻辑开发文档")
+    @allure.description("验证用户是否可以使用有效凭据登录")
+    @allure.severity(allure.severity_level.BLOCKER)
+    def test_registration_valid_data(self):
+        """使用有效数据进行注册的测试代码"""
+        allure.attach.file("./feihongnvwu.jpg", attachment_type=allure.attachment_type.JPG)
+        step_1()
+        step_2()
+
+    @allure.feature("注册")
+    @allure.story("用户注册")
+    @allure.title("使用无效数据进行测试注册“")
+    def test_registration_invalid_data(self):
+        """使用无效数据进行注册的测试代码"""
+
+    @allure.feature("登录")
+    @allure.story("用户登录")
+    @allure.title("使用有效凭据测试登录")
+    def test_login_valid_credentials(self):
+        """使用有效凭证进行登录的测试代码"""
+
+    @allure.feature("登录")
+    @allure.story("用户登录")
+    @allure.title("使用无效凭据测试登录")
+    def test_login_invalid_credentials(self):
+        """使用无效凭证进行登录的测试代码"""
+
+    @allure.feature("密码管理")
+    @allure.story("用户密码管理")
+    @allure.title("测试更改密码")
+    def test_password_change(self):
+        """修改密码的测试代码"""
+
+```
+
+
+
+#### 6.3.12 报告显示
+
+![image-20230802224820516](https://origin.chaizz.com/tc/image-20230802224820516.png)
+
+
+
+
+
+### 6.4 总结
+
+Allure-pytest 简化了测试报告的生成过程，通过添加一些装饰器和注解，可以很容易地在测试用例中添加附件、标签等。它的报告展示了各个测试用例的执行情况，以及对应的附件和日志信息，帮助我们更好地了解测试结果。
+
+Allure-pytest 提供了丰富的插件和扩展，可以与其他测试框架（如pytest、unittest）和工具（如Selenium、Appium）集成使用。它支持多种语言和平台，可以用于不同的测试环境和项目。
+
+Allure-pytest 还提供了命令行工具和 API，方便我们自定义测试报告的生成和使用。我们可以通过命令行工具直接生成测试报告，也可以通过 API 在自动化流水线中集成 Allure-pytest。
+
+总之，Allure-pytest 是一个强大的测试报告生成工具，它提供了丰富的功能和灵活的扩展性，可以帮助我们更好地组织和展示测试结果，提高测试效率和可视化程度。它是一个值得推荐和使用的工具。
+
+*来自于AI*
 
 
 
