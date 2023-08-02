@@ -254,6 +254,14 @@ docker run -d \
     influxdb:2.1.1
 ```
 
+
+
+# 部署EMQX
+
+```shell
+docker run -d  --restart=always --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:5.1.3
+```
+
 # 部署RabbitMQ
 
 ```shell
@@ -284,6 +292,7 @@ docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY='izb)os5w=n#8w-@ujxnu5
 
 ```shell
 docker run -d \
+  --restart=always \
   -p 3000:3000 \
   --name=grafana \
   -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource" \

@@ -13,11 +13,11 @@ photos: ["https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
 
 
 
-s
+
 
 # 1、安装Docker
 
-略
+
 
 # 2、直接运行命令
 
