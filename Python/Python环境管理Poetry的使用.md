@@ -197,11 +197,24 @@ poetry env remove
 ```powershell
 # --default 设置为默认源
 # 阿里源：
-poetry source add ali https://mirrors.aliyun.com/pypi/simple/ --default
+# poetry source add ali https://mirrors.aliyun.com/pypi/simple/ --default
+# -- default 已经弃用，建议使用以下方式
+# --priority=default 将源设置为默认源
+poetry source add --priority=default tsinghua https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+
 # 腾讯源：
 poetry source add tencent https://mirrors.cloud.tencent.com/pypi/simple/ 
 # 清华源：
 poetry source add  tsinghua  https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+```
+
+设置源以后，在`pyproject.toml`会有如下显示：
+
+```toml
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+priority = "default"
 ```
 
 删除源

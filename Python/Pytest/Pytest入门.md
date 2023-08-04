@@ -478,9 +478,7 @@ scope 参数详解：
 
 socpe 参数也是一个可调用的对象，来动态的设置域。
 
-autouse 参数:
-
-- 默认为fasle, 所有的测试都不显示使用自定义的fixture，当为true时，所有的测试都自动使用该fixture。
+autouse 参数：默认为fasle, 所有的测试都不显示使用自定义的fixture，当为true时，所有的测试都自动使用该fixture。
 
 name 参数：默认为函数名，目的是给fixture起一个别名， 设置别名以后原来的函数名无法使用。
 
