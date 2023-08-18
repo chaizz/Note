@@ -590,3 +590,64 @@ docker run -d \
 pangliang/rocketmq-console-ng
 ```
 
+# rocketmq docker compose  方式
+
+docker-compose.yml
+
+```yaml
+version: '3.3'
+services:
+  namesrv:
+    image: apache/rocketmq:4.9.4
+    container_name: rmqnamesrv
+    ports:
+      - 9876:9876
+    environment:
+      JAVA_OPT_EXT: "-server -Xms512m -Xmx512m"
+    volumes:
+      - /opt/rocketmq/namesrv/logs:/home/rocketmq/logs
+    command: sh mqnamesrv
+    restart: always
+  broker1:
+    image: apache/rocketmq:4.9.4
+    container_name: rmqbroker
+    links:
+      - namesrv
+    ports:
+      - 10909:10909
+      - 10911:10911
+      - 10912:10912
+    environment:
+      NAMESRV_ADDR: namesrv:9876
+      JAVA_OPT_EXT: "-server -Xms512m -Xmx512m"
+    volumes:
+      - /opt/rocketmq/broker/logs:/home/rocketmq/logs
+      - /opt/rocketmq/broker/store:/home/rocketmq/store
+      - /opt/rocketmq/broker/conf/broker.conf:/opt/rocketmq-4.9.4/conf/broker.conf
+    command: sh mqbroker -c /opt/rocketmq-4.9.4/conf/broker.conf
+    restart: always
+  dashbord:
+    image: apacherocketmq/rocketmq-dashboard:1.0.0
+    ports:
+      - 9999:9999
+    environment:
+      JAVA_OPTS: "-Drocketmq.namesrv.addr=namesrv:9876"
+    restart: always
+```
+
+
+
+broker.conf
+
+```
+brokerClusterName = DefaultCluster
+brokerName = broker-1
+brokerId = 0
+deleteWhen = 04
+fileReservedTime = 72
+brokerRole = ASYNC_MASTER
+flushDiskType = ASYNC_FLUSH
+#写上运行主机的IP，公网调用得使用公网IP
+brokerIP1 = 119.3.77.49
+```
+
