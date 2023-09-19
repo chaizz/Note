@@ -1,10 +1,26 @@
-查询性能优化
+---
+title: 查询性能优化
+author: chaizz
+date: 2023-9-17
+tags: MySQL
+categories:
+    - 读书笔记
+    - 高性能MySQL(第四版)
+photos: ["https://origin.chaizz.com/tc/HighPerformanceMysql.png"]
+cover: "https://origin.chaizz.com/tc/HighPerformanceMysql.png"
+---
 
 
 
-优化数据访问
+# 查询性能优化
 
-1、是否在查询中包含了大量的不需要的行；2、服务器是否在分析大量的不需要的行。
+
+
+## 优化数据访问
+
+1、是否在查询中包含了大量的不需要的行
+
+2、服务器是否在分析大量的不需要的行。
 
 针对第一点我们要规避的一些操作：
 
@@ -15,7 +31,9 @@
 
 针对第二点如何确保MySQL是否在扫描一些额外的记录，我们可以通过三个指标进行衡量：响应时间、扫描行数、返回的行数。这是哪个指标们记录到MySQL的慢查询日志中。
 
-MySQL 执行计划的知识补充：
+
+
+## MySQL 执行计划的知识补充
 
 我们主要查看两个字段的含义：
 

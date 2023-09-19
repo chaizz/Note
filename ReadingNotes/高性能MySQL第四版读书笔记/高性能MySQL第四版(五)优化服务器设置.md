@@ -1,6 +1,22 @@
-MySQL 的服务器配置
+---
+title: MySQL的服务器配置
+author: chaizz
+date: 2023-9-17
+tags: MySQL
+categories:
+    - 读书笔记
+    - 高性能MySQL(第四版)
+photos: ["https://origin.chaizz.com/tc/HighPerformanceMysql.png"]
+cover: "https://origin.chaizz.com/tc/HighPerformanceMysql.png"
+---
 
-查询MySQL的配置
+
+
+# MySQL的服务器配置
+
+
+
+## 查询MySQL的配置
 
 ```shell
 which mysqld
@@ -17,8 +33,8 @@ Default options are read from the following files in the given order:
 /etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf 
 ```
 
+## 配置文件说明
 
-配置文件说明
 配置文件采用标准INI格式，被分为多个部分，每个部分都以一行包含在方括号中的该部分名称开头。客户端程序也会读取client部分，服务器通常读取mysqld部分。
 
 配置使用小写字母表示，单词之间使用下划线或者短横分隔，两种表示方式都是有效的。（建议使用同一种风格）
@@ -29,8 +45,7 @@ MySQL 8.0引入了一个名为持久化系统变量的新功能，语法为：`S
 
 > 我们建议专注于优化峰值工作负载，然后在“足够好”的时候就可以停止优化。
 
-
-最小示例文件
+## 最小示例文件
 
 ```ini
 [mysqld]
@@ -73,3 +88,7 @@ open_file_limit           = 65535
 socket                    = /var/lib/mysql/mysql.sock
 port                      = 3306
 ```
+
+
+
+后续还会在补充
