@@ -1,4 +1,22 @@
-## 什么MQ
+---
+title: 面试-消息队列
+author: chaizz
+date: 2021-11-15 21:28:48
+tags: 面试
+categories:
+    - 面试
+    - 消息队列
+photos: ["https://origin.chaizz.com/037cabda46cf11ec9d7c5254006b8f1d.png"]
+cover: "https://origin.chaizz.com/037cabda46cf11ec9d7c5254006b8f1d.png"
+---
+
+
+
+# 消息队列
+
+搬运自掘金用户：[小杰要吃蛋](https://juejin.cn/user/2506542243918030/posts) [侵删]
+
+## 什么是消息队列
 
 - MQ就是消息队列。是软件和软件进行通信的中间件产品
 
@@ -281,9 +299,9 @@
 
    这里顺便说一下吧，其实也很容易，就下面两步
 
-    1. 将queue的持久化标识durable设置为true,则代表是一个持久的队列
+     1. 将queue的持久化标识durable设置为true,则代表是一个持久的队列
 
-    2. 发送消息的时候将deliveryMode=2
+     2. 发送消息的时候将deliveryMode=2
 
    这样设置以后，即使rabbitMQ挂了，重启后也能恢复数据
 

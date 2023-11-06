@@ -3,8 +3,9 @@ title: Pythonista开发前的基础工作之编辑器配置篇
 author: chaizz
 date: 2023-06-14
 tags:
-  - Pycharm
+  - 开发环境配置
 categories:
+  - 开发环境配置
   - Pycharm
 photos: ["https://origin.chaizz.com/PyCharm.png"]
 cover: "https://origin.chaizz.com/PyCharm.png"

@@ -1,10 +1,13 @@
 ---
-title: 面试题汇总
+title: 面试-Python
 author: chaizz
 date: 2021-11-15 21:28:48
 tags: 面试
-categories: 面试
+categories:
+    - 面试
+    - Python
 photos: ["https://origin.chaizz.com/037cabda46cf11ec9d7c5254006b8f1d.png"]
+cover: "https://origin.chaizz.com/037cabda46cf11ec9d7c5254006b8f1d.png"
 ---
 
 ​                
@@ -261,7 +264,7 @@ sys.getrefcount(a)
 
 标记阶段：GC会把所有活动对象打上标记，这些活动对象就像是一个点，他们之间使用引用关系来连接，最终每个点和边构成了一个有向图。
 
-![](https://origin.chaizz.com/8d3dc5ea460a11ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/8d3dc5ea460a11ec9d7c5254006b8f1d.png)
 
 GC从跟对象触发遍历所整个图，如果该对象是可达的（reachable）也就是说还有对象在引用他，那么就标记该对象可达。如上图中从根对象开始遍历1、2、3、4是可达的，5、6、7是不可达的。（整个根对象就是全局对象，调用栈，寄存器）
 
@@ -509,6 +512,102 @@ print(random.random())
 
 
 
+
+
+## 27、type和instance的区别
+
+type用于获取对象的类型，返回的是对象的类型
+
+instance用于测试对象是否属于某种类型或者多种类型之一，返回的是布尔类型
+
+type不能判断子类对象是否属于父类，instance能够判断
+
+
+
+## 28、python 实现装饰器
+
+通用装饰器
+
+使用场景：常见的认证。权限控制、日志打印、函数执行耗时等
+
+```python
+from functools import  wraps
+
+def wrapper(func):
+    @wraps(func)
+    def inner(*args, **kwargs):
+        ts = time.time()
+        ret = func(*args, **kwargs)
+        print(f'函数：{func.__name__} 耗时：{time.time() - ts}')
+        return ret
+    return inner
+
+@wrapper
+def sing(name):
+    print(f'唱{name}')
+    return 'ok'
+
+if __name__ == '__main__':
+    print(sing('儿歌'))
+    
+    
+# 唱儿歌
+# 函数：sing 耗时：0.0
+# ok
+```
+
+
+
+带参数的装饰器
+
+可以根据装饰器的参数，进行返回不同的装饰效果，或者进行流程控制。
+
+```python
+def outer(var):
+    def func(func):
+
+        @wraps(func)
+        def inner(*args, **kwargs):
+            ret = func(*args, **kwargs)
+            print("-----------")
+            return ret
+
+        @wraps(func)
+        def inner2(*args, **kwargs):
+            ts = time.perf_counter()
+            ret = func(*args, **kwargs)
+            print(f'函数：{func.__name__} 耗时：{time.perf_counter() - ts}')
+            return ret
+
+        if var == 1:
+            return inner
+        else:
+            return inner2
+
+    return func
+
+
+# 使用方法
+@outer(1)
+def dance(name):
+    print(f'跳{name}')
+    return 'ok'
+
+
+if __name__ == '__main__':
+    print(dance('恰恰'))
+
+    
+# 我是outer装饰器
+# 跳恰恰
+# ok
+
+```
+
+
+
+
+
 # 二、     数据库
 
 ## 1、什么是事务
@@ -730,7 +829,7 @@ Select * from a right join b on a.id = b.id
 
 MySQL主从复制涉及到三个线程，一个运行在主节点（log dump thread），其余两个(I/O thread, SQL thread)运行在从节点，如下图所示:
 
-![](https://origin.chaizz.com/69080f8a407611ec9d7c5254006b8f1d.jpeg)
+![](https://tc.chaizz.com/69080f8a407611ec9d7c5254006b8f1d.jpeg)
 
 - 从节点上的I/O 进程连接主节点，并请求从指定日志文件的指定位置（或者从最开始的日志）之后的日志内容；
 - 主节点接收到来自从节点的I/O请求后，通过负责复制的I/O进程根据请求信息读取指定日志指定位置之后的日志信息，返回给从节点。返回信息中除了日志所包含的信息之外，还包括本次返回的信息的bin-log file 的以及bin-log position；从节点的I/O进程接收到内容后，将接收到的日志内容更新到本机的relay log中，并将读取到的binary log文件名和位置保存到master-info 文件中，以便在下一次读取的时候能够清楚的告诉Master“我需要从某个bin-log 的哪个位置开始往后的日志内容，请发给我”；
@@ -818,15 +917,15 @@ write behind caching 先更新缓存，缓存定期异步更新数据库。
 
 布隆过滤器内部维护一个位数组（bitarray），开始所有数据全部置0，当一个元素讲过多个hash函数计算不同的哈希值，并通过哈希值找到对应的bitarray，将值改为1。**（需要说明，布隆过滤器存在误判的可能）数组越长误判率越低，占用的空间也越大。）**
 
-![](https://origin.chaizz.com/128523c846b111ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/128523c846b111ec9d7c5254006b8f1d.png)
 
 以上是一个空的布隆过滤器，现在要插入这个A字段，经过三个hash函数计算得到了2、5、7 所以将将布隆过滤器的相对应的值设置为1。
 
-![](https://origin.chaizz.com/4c40b08646b211ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/4c40b08646b211ec9d7c5254006b8f1d.png)
 
 接下来继续插入B字段，计算出来的值为2、4、8，继续往布隆过滤器对相应的位置上设置为1，注意A和B同时hash计算出来的值一致。所以导致了布隆过滤器不能确保某个元素一定存在。
 
-![](https://origin.chaizz.com/9600ff0a46b211ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/9600ff0a46b211ec9d7c5254006b8f1d.png)
 
 布隆过滤器的查询也很简单，例如我们要找一个字段C，只需要计算出他的hash值，如果该值为2、3、4，那么因为布隆过滤器对应bit位上的数据有一个不为1，所以就断定C不存在，但是如果他计算的值为1、4、8，name就不能确定他一定存在。
 
@@ -1060,7 +1159,7 @@ AOF持久化的流程：
 - 复制及压缓冲区：主节点内部维护一个固定长度的、先进先出的队列作为复制缓冲区，如果缓冲区超过最大长度，那么只能进行全量复制。
 - 每个Redis启动都会产生一个ID， 主节点还会将自己的ID发送给从节点，如果主节点挂掉重新选举，主节点ID不一致那么只能全量复制。如果一致那就继续使用增量复制。
 
-![](https://origin.chaizz.com/2e7fbffc46d411ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/2e7fbffc46d411ec9d7c5254006b8f1d.png)
 
 
 
@@ -1134,7 +1233,7 @@ select * from user where name like '张%' and age = 20;
 
 在关闭索引下推的时候，InnoDB引擎会根据只name找到复合条件的索引字段，如下图中的左边绿色，然后就将数据返回给MySQL服务器，由MySQL服务器去判断其他的符合条件的数据。MySQL服务器会拿着查到的ID：1、2  在进行回表查询。
 
-![](https://origin.chaizz.com/161026e0486011ec9d7c5254006b8f1d.png)
+![](https://tc.chaizz.com/161026e0486011ec9d7c5254006b8f1d.png)
 
 
 
@@ -1144,18 +1243,7 @@ select * from user where name like '张%' and age = 20;
 
 
 
-## 27、数据库三范式
 
-第一范式：列不可再分
-
-- 每一列属性都是不可再分的属性值，确保每一列的原子性。
-- 两列的属性相近或相似或一样，尽量合并属性一样的列，确保不产生冗余数据
-
-第二范式：确保表中的每列都和主键相关。
-
-第三范式：确保每列都和主键列直接相关,而不是间接相关。
-
-微信
 
 # 三、操作系统
 
@@ -1547,7 +1635,7 @@ Session 是通过服务器保存session识别用户，cookie保存在客户端�
 
 # 五、Python WSGI 与WEB框架的常考问题
 
-## 1.   什么是WSGI：和web框架交互的一个规范。
+## 1、什么是WSGI：和web框架交互的一个规范。
 
 主要是解决python web server 乱象 mod_python 、CGI、FastCGI 等。描述了 web server (Gunicorn/Uwsgi) 如何与web框架（django/flask）交互，web 框架如何处理请求。
 
@@ -1786,7 +1874,7 @@ django.core.signals.request_started & request_finished Django建立或关闭HTTP
 
 使用CDN加速静态文件。
 
-## 25、什么是MVC ：
+## 25、什么是MVC 
 
 Modle：数据层，数据业务对象和数据库的交互(ORM)。
 
@@ -1816,7 +1904,7 @@ Controller ：接收请求参数,调佣模型和视图完成请求。
 
 数据库层：做好明文管理，不要存储明文敏感信息。
 
-## 28、什么是XSS :
+## 28、什么是XSS 
 
 恶意用户将代码植入到提供给其他用户使用的页面中。未经转义的恶意代码输出到其他的用户浏览器被执行。
 
@@ -1839,6 +1927,45 @@ Controller ：接收请求参数,调佣模型和视图完成请求。
 所有的事物抽象为资源，资源对应唯一的标识。
 
 资源通过接口进行操作实现状态转移。操作本身是无状态的。
+
+
+
+## 32、Django和Flask有什么区别？
+
+1、项目大小：
+
+- Flask 小而美， 更加的灵活，根据业务有选择的使用第三方组件。进行定制化开发。但是同时也带来风险， 后期维护需要依赖第三方组件。
+- Django 大而全，一站式开发，包含丰富的内部组件：中间件、admin、缓存、等等。
+
+2、请求传递方式：
+
+- Flask 在上下文管理器
+- Django 通过请求传递
+
+3、会话：
+
+Flask 的session是以加密的方式保存到浏览器 cookie 
+
+Django的session是保存到数据库。
+
+
+
+## 32、Django的app和Flask的蓝图有什么区别？
+
+项目结构：
+
+- Django的app包含整应用的router、views、templates
+
+- Flask的蓝图最小只包括路由和views。
+
+注册方式：
+
+- Flask 使用app.register_blueprint
+- Django是在settings中注册
+
+但是等到项目结构增大时，flask的蓝图趋近于Django的app。所以他们本质上没什么区别，都是为了内部的应用区分。
+
+
 
  
 
@@ -1871,5 +1998,37 @@ def select_sort(li):
                 min_index = j
         if min_index != i:
             li[i], li[min_index] = li[min_index], li[i]
+```
+
+
+
+# 七 其他
+
+## 1、编程语言的区别
+
+- c/c++ 代码执行效率高， 很多语言的底层实现都是c，对代码要求比较高，需要自己实现一些低等的功能，内存管理等。
+
+- java 企业级web开发语言。
+
+- c# 微软开发的语言。
+- javascript 一种运行在浏览器中的解释型的编程语言。
+- Python 解释性语言，简洁，入门简单。封装性高，使用很少的语言，完成一些功能。
+- Golang 语法和c接近，对并发性有比较好的支持，支持原生协程，运维云原生的主流语言。docker、k8s。
+
+
+
+## 2、构造函数析构函数
+
+构造函数：用于创建对象的函数。
+
+析构函数：用于销毁对象的函数。
+
+```python
+class Foo():
+    def __init__(**args, **kwargs): # 构造函数
+        pass
+    
+    def __del__(): # 析构函数
+        pass
 ```
 
