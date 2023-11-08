@@ -1,10 +1,11 @@
 ---
-title: flaskshell创建索引出错
+title: Flaskshell创建索引出错
 author: chaizz
 date: 2021-02-02 15:51:12
-tags: Flask
+tags: Flaskshell
 categories: Flask
 photos: ["https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
+cover: https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png
 ---
 
 ​    

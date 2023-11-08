@@ -5,6 +5,7 @@ author: chaizz
 tags: Django
 categories: Django
 photos: ["https://origin.chaizz.com/13a29924250a11ed94870242ac190002.jpg"]
+cover: https://origin.chaizz.com/13a29924250a11ed94870242ac190002.jpg
 ---
 
 ​       

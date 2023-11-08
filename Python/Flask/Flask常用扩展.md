@@ -1,10 +1,11 @@
 ---
-title: flask常用扩展
+title: Flask常用扩展
 author: chaizz
-date: 2022-8-30 11:23:12
-tags: Flask
+date: 2022-8-30
+tags: Flask扩展
 categories: Flask
 photos: ["https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
+cover: "https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"
 ---
 
 ​                  

@@ -1969,39 +1969,6 @@ Django的session是保存到数据库。
 
  
 
-# 六、数据结构算法
-
-```python
-def bubble_sort(li):
-    """冒泡排序"""
-    # n = len(a)  # 获取列表的长度
-    for i in range(len(li) - 1):
-        exchange = False
-        for j in range(len(li) - i - 1):
-            if li[j] > li[j + 1]:
-                li[j], li[j + 1] = li[j + 1], li[j]
-                exchange = True
-        if not exchange:
-            return
-```
-
-
-
-```python
-def select_sort(li):
-    """选择排序"""
-    n = len(li)
-    for i in range(n):
-        min_index = i
-        for j in range(i, n):
-            if li[min_index] > li[j]:
-                min_index = j
-        if min_index != i:
-            li[i], li[min_index] = li[min_index], li[i]
-```
-
-
-
 # 七 其他
 
 ## 1、编程语言的区别
