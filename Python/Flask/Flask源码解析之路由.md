@@ -6,8 +6,8 @@ tags: Flask源码解析
 categories: 
   - 源码解析
   - Flask
-photos: ["https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"]
-cover: "https://origin.chaizz.com/a59930a4250a11ed94870242ac190002.png"
+photos: ["https://origin.chaizz.com/tc/flask-horizontal.png"]
+cover: "https://origin.chaizz.com/tc/flask-horizontal.png"
 ---
 
 ​                  
