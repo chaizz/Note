@@ -712,7 +712,7 @@ Myisam: 不支持事务，不支持外键、只支持表锁 支持全文索引�
 
 - % Like 语句 以%开头索引失效。
 
-- 如果列类型是字  符串，那一定要在条件中将数据使用引号引用起来,否则不使用索引。（隐式转换）
+- 如果列类型是字符串，那一定要在条件中将数据使用引号引用起来,否则不使用索引。（隐式转换）
 
 - 如果条件中有or，即使其中有条件带索引也不会使用(这也是为什么尽量少用or的原因)，要想使用or，又想让索引生效，只能将or条件中的每个列都加上索引。
 -  查询条件使用函数在索引列上，或者 对索引列进行运算， 运算包括(+，-，*，/，! 等) 
@@ -1637,7 +1637,11 @@ Session 是通过服务器保存session识别用户，cookie保存在客户端�
 
 ## 1、什么是WSGI：和web框架交互的一个规范。
 
+WSGI全称：Web Server Gateway Interface，是一个网关服务接口协议。
+
 主要是解决python web server 乱象 mod_python 、CGI、FastCGI 等。描述了 web server (Gunicorn/Uwsgi) 如何与web框架（django/flask）交互，web 框架如何处理请求。
+
+实现了协议的有Flask使用的werkzurg/ django常用的uwsgi（性能好一点） 和 gunicorn 和 Python 自带的 wsgiref （一种wsgi参考）。
 
 ## 2、django请求的生命周期？
 
@@ -1781,7 +1785,7 @@ Aggregate 是聚合的意思，是对一组值(比如queryset的某个字段)进
 
 Annotate ：可以理解为分组，对数据集先进行分组然后再进行某些聚合操作或排序时，需要使用annotate方法来实现。与aggregate方法不同的是，annotate方法返回结果的不仅仅是含有统计结果的一个字典，而是包含有新增统计字段的查询集(queryset）
 
-## 18、常用的框架Django/Flask/Tornado 的对比。 
+## 18、常用的框架Django/Flask/Fastapi的对比。 
 
 Django ：大而全，内置ORM、Admin, 第三方的插件比较多。
 

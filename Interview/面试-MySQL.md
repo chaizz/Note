@@ -103,7 +103,11 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - avg(column)：返回指定列或表达式中的数值平均值
 - date（Expression）: 返回指定表达式代表的日期值
 
-......
+### 使用Int自增主键最大ID是10，删除10和9之后，添加一条新的记录，该记录的ID是多少？
+
+如果重启，最大ID是9 ， 如果没有重启，则会延续删除之前的最大ID开始递增，是11。
+
+是因为mysql会存储当前最大的ID， 重启了之后会更新这个最大的ID。
 
 ## 数据类型
 
@@ -280,10 +284,9 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 1. 主键是一种约束，唯一索引是一种索引，两者在本质上是不同的。
 2. 主键创建后一定包含一个唯一性索引，唯一性索引并不一定就是主键。
 3. 唯一性索引列允许空值，而主键列不允许为空值。
-4. 主键列在创建时，已经默认为空值 ++    唯一索引了。
 5. 一个表最多只能创建一个主键，但可以创建多个唯一索引。
 6. 主键更适合那些不容易更改的唯一标识，如自动递增列、身份证号等。
-7. 主键可以被其他表引用为外键，而唯一索引不能。   ？
+7. 主键可以被其他表引用为外键，而唯一索引不能。
 
 ### 索引有哪几种类型？
 
@@ -355,7 +358,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - BTree是最常用的mysql数据库索引算法，也是mysql默认的算法。因为它不仅可以被用在=,>,>=,<,<=和between这些比较操作符上，而且还可以用于like操作符，只要它的查询条件是一个不以通配符开头的常量， 例如：
 
   ```
-  复制代码-- 只要它的查询条件是一个不以通配符开头的常量
+  -- 只要它的查询条件是一个不以通配符开头的常量
   select * from user where name like 'jack%'; 
   -- 如果一通配符开头，或者没有使用常量，则不会使用索引，例如： 
   select * from user where name like '%jack'; 
@@ -394,7 +397,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 第二种方式：使用ALTER TABLE命令去增加索引
 
   ```
-  复制代码ALTER TABLE table_name ADD INDEX index_name (column_list);
+  ALTER TABLE table_name ADD INDEX index_name (column_list);
   ```
 
   - ALTER TABLE用来创建普通索引、UNIQUE索引或PRIMARY KEY索引。
@@ -404,7 +407,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 第三种方式：使用CREATE INDEX命令创建
 
   ```
-  复制代码CREATE INDEX index_name ON table_name (column_list);
+  CREATE INDEX index_name ON table_name (column_list);
   ```
 
   - CREATE INDEX可对表增加普通索引或UNIQUE索引。（但是，不能创建PRIMARY KEY索引）
@@ -414,7 +417,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 根据索引名删除普通索引、唯一索引、全文索引：`alter table 表名 drop KEY 索引名`
 
   ```
-  复制代码alter table user_index drop KEY name;
+  alter table user_index drop KEY name;
   alter table user_index drop KEY id_card;
   alter table user_index drop KEY information;
   ```
@@ -430,7 +433,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 需要取消自增长再行删除：
 
   ```
-  复制代码alter table user_index
+  alter table user_index
   -- 重新定义字段
   MODIFY id int,
   drop PRIMARY KEY
@@ -560,7 +563,85 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - MySQL使用索引时需要索引有序，假设现在建立了"name，age，school"的联合索引，那么索引的排序为: 先按照name排序，如果name相同，则按照age排序，如果age的值也相等，则按照school进行排序。
 - 当进行查询时，此时索引仅仅按照name严格有序，因此必须首先使用name字段进行等值查询，之后对于匹配到的列而言，其按照age字段严格有序，此时可以使用age字段用做索引查找，以此类推。因此在建立联合索引的时候应该注意索引列的顺序，一般情况下，将查询需求频繁或者字段选择性高的列放在前面。此外可以根据特例的查询或者表结构进行单独的调整。
 
+
+
+### 为什么 哈希表、完全平衡二叉树、红黑树、b树、B+树都可以优化查询，但是MySQL使用B+树呢
+
+平衡二叉树：又称为AVL树，遵循以下两个特点的二叉树都是平衡二叉树：
+
+1. 每棵子树中的左子树和右子树的深度差不超过1，
+2. 二叉树中每棵子树都要求是平衡二叉树。
+
+要保证二叉树是平衡二叉树，在插入数据的时候，二叉树要去旋转，而旋转的时候会有很大的性能损耗。每层的数据量太少，会导致数的高度很高，存储大量的数据同样需要很长的时间。
+
+
+
+红黑树（性能更加均衡）
+
+特殊的平衡二叉树，在自旋和查询性能之间会做权衡，
+
+
+
+### 什么是自适应哈希索引？
+
+自适应哈希索引是InnoDB引擎的一个特殊功能，当他注意到某些索引被使用的非常频繁时，他会在B+树 索引的基础上在创建一个哈希索引，就会让B+树索引有一定的哈希索引的优点，比如快速哈希查找。这是一个Mysql内部的行为，用户无法配置和控制。
+
+可以使用如下的命令查看Hash索引：
+
+```mysql
+show engine innodb status;
+```
+
+
+
+
+
+### 什么时候适合创建索引? 什么时候不适合创建索引？
+
+合适：
+
+- 频繁作为where条件的查询字段
+- 关联字段需要创建索引
+- 排序字段需要创建索引
+- 分组字段可以创建索引
+- 统计字段可以创建索引 例如 count() max()
+
+不合适：
+
+-  频繁更新的字段
+- where条件、分组、排序用不到的字段不需要创建索引
+- 数据量非常少不需要创建索引
+- 参与mysql函数计算的不适合创建索引
+
+
+
+### 索引失效的情况
+
+- 联合索引为符合最左前缀原则。
+
+- 当数据量较多时，mysql优化器会认为全表扫描快，不会走索引，索引会失效。
+
+- 当有类型转换时，索引会失效。
+
+- is not null 有可能会导致索引失效。是因为当数据表非空的数据有很多， 还不如全表扫描。
+
+- 使用计算 、函数导致索引失效。
+
+- like 以 % 开头。
+
+-  不等于（!=）索引失效。
+
+  
+
 ## 事务
+
+### 设置事务的隔离级别
+
+```mysql
+set session tramsaction isolation level read uncommitted;
+```
+
+
 
 ### 什么是数据库事务？
 
@@ -583,11 +664,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 3. **隔离性：** 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；
 4. **持久性：** 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。
 
-### 什么是脏读？幻读？不可重复读？
 
-- 脏读(Drity Read)：某个事务已更新一份数据，另一个事务在此时读取了同一份数据，由于某些原因，前一个RollBack了操作，则后一个事务所读取的数据就会是不正确的。
-- 不可重复读(Non-repeatable read):在一个事务的两次查询之中数据不一致，这可能是两次查询过程中间插入了一个事务更新的原有的数据。
-- 幻读(Phantom Read):在一个事务的两次查询中数据笔数不一致，例如有一个事务查询了几列(Row)数据，而另一个事务却在此时插入了新的几列数据，先前的事务在接下来的查询中，就会发现有几列数据是它先前所没有的。
 
 ### 什么是事务的隔离级别？MySQL的默认隔离级别是什么？
 
@@ -602,7 +679,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 
 **SQL 标准定义了四个隔离级别：**
 
-- **READ-UNCOMMITTED(读取未提交)：** 最低的隔离级别，允许读取尚未提交的数据变更，**可能会导致脏读、幻读或不可重复读**。
+- **READ-UNCOMMITTED(读取未提交)：** 最低的隔离级别，一个事务还未提交时，他所作的变更能够被别的事务看到。**可能会导致脏读、幻读或不可重复读**。
 - **READ-COMMITTED(读取已提交)：** 允许读取并发事务已经提交的数据，**可以阻止脏读，但是幻读或不可重复读仍有可能发生**。
 - **REPEATABLE-READ(可重复读)：** 对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，**可以阻止脏读和不可重复读，但幻读仍有可能发生**。
 - **SERIALIZABLE(可串行化)：** 最高的隔离级别，完全服从ACID的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，**该级别可以防止脏读、不可重复读以及幻读**。
@@ -613,6 +690,17 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 事务隔离机制的实现基于锁机制和并发调度。其中并发调度使用的是MVVC（多版本并发控制），通过保存修改的旧版本信息来支持并发一致性读和回滚等特性。
 - 因为隔离级别越低，事务请求的锁越少，所以大部分数据库系统的隔离级别都是**READ-COMMITTED(读取提交内容):**，但是你要知道的是InnoDB 存储引擎默认使用 **REPEATABLE-READ（可重读）**并不会有任何性能损失。
 - InnoDB 存储引擎在 **分布式事务** 的情况下一般会用到**SERIALIZABLE(可串行化)**隔离级别。
+
+
+
+### 什么是脏读？幻读？不可重复读？修改丢失？
+
+- 脏读(Drity Read)：某个事务已更新一份数据，另一个事务在此时读取了同一份数据，由于某些原因，前一个RollBack了操作，则后一个事务所读取的数据就会是不正确的。
+- 不可重复读(Non-repeatable read):在一个事务的两次查询之中数据不一致，这可能是两次查询过程中间插入了一个事务更新的原有的数据。
+- 幻读(Phantom Read):在一个事务的两次查询中数据笔数不一致，例如有一个事务查询了几列(Row)数据，而另一个事务却在此时插入了新的几列数据，先前的事务在接下来的查询中，就会发现有几列数据是它先前所没有的。
+- 修改丢失：一个事务修改数据，同时另一个事务也修改了数据，那么在前一个事务中，会导致修改的结果不一致，这种就是修改丢失。
+
+
 
 ## 锁
 
@@ -690,14 +778,14 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - **悲观锁**：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。在查询完数据的时候就把事务锁起来，直到提交事务。实现方式：使用数据库中的锁机制
 
   ```
-  复制代码//核心SQL,主要靠for update
+  //核心SQL,主要靠for update
   select status from t_goods where id=1 for update;
   ```
 
 - **乐观锁**：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。在修改数据的时候把事务锁起来，通过version的方式来进行锁定。实现方式：乐一般会使用版本号机制或CAS算法实现。
 
   ```
-  复制代码//核心SQL
+  //核心SQL
   update table set x=x+1, version=version+1 where id=#{id} and version=#{version};
   ```
 
@@ -705,6 +793,53 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 
 - 从上面对两种锁的介绍，我们知道两种锁各有优缺点，不可认为一种好于另一种，像**乐观锁适用于写比较少的情况下（多读场景）**，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。
 - 但如果是多写的情况，一般会经常产生冲突，这就会导致上层应用会不断的进行retry，这样反倒是降低了性能，所以**一般多写的场景下用悲观锁就比较合适。**
+
+
+
+## 日志相关
+
+### mysql 有哪些日志
+
+- 错误日志
+- 慢查询日志
+- binlog
+- undo log
+- redo log
+-  
+
+### 介绍 binlog 的刷盘机制。
+
+通过配置及变量配置不同的刷盘机制。
+
+- sync_binlog=0 表示每次提交事务，binlog 不会立刻写入磁盘，而是先写到 page cache, 相对于磁盘写入来说，写入page cache 要快的多， 不过在mysql 崩溃时会有丢失日志的风险。
+- sync_binlog=1 表示每次提交事务都会执行fsync写入磁盘。
+- sync_binlog 的值大于1,为n的时候，表示每次提交事务，都要先写入page cache，只有等到累积了n个事务之后，才会fsync写入磁盘，同样在此配置下mysql崩溃的时候会丢失n个事务日志的风险。
+
+很显然，sync_binLog=1的情况下，是强一致的选择，具体选择哪一种要看系统对一致性的要求。
+
+### 介绍 redo log 的刷盘机制。
+
+InnoDB 可以通过设置变量 innodb_flush_at_trx_commit 来提供刷盘策略，有三个值。
+
+- 0：事务在开启后，有更新操作，会将数据写入redolog, redolog 会写入 redolog buffer，由后台线程，每秒 将 redolog 的 buffer 写入到page cache, 然后在调用fsync 刷盘。
+
+  ![image-20231124232530760](https://origin.chaizz.com/tc/image-20231124232530760.png)
+
+- 1：事务在开启后，有更新操作，会将数据写入redolog, redolog 会写入 redolog buffer，然后在写入 page cache, 并等待 page cache 调用 fsync 刷盘后再返回。事务提交后会主动刷盘，等待返回。
+
+  ![image-20231124233214735](https://origin.chaizz.com/tc/image-20231124233214735.png)
+
+- 2：事务在开启后，有更新操作，会将数据写入redolog, redolog 会写入 redolog buffer，然后在写入 page cache, 再返回。同时也会有后台线程进行刷盘。
+
+  ![image-20231124233314992](https://origin.chaizz.com/tc/image-20231124233314992.png)
+
+综合对比以上三种模式：
+
+值为0的时候，性能最好，但是mysql宕机或者系统宕机会丢失一秒的数据。
+
+值为1的时候，性能最差，但是安全性最好，mysql宕机或者系统宕机都不会丢失数据。
+
+值为2的时候，mysql宕机不会丢失数据，因为数据已经写入系统的page cache，如果系统宕机则会丢失一秒的数据。
 
 ## 视图
 
@@ -867,7 +1002,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - 交叉连接（CROSS JOIN）
 
   ```
-  复制代码SELECT * FROM A,B(,C)或者SELECT * FROM A CROSS JOIN B (CROSS JOIN C)#没有任何关联条件，结果是笛卡尔积，结果集会很大，没有意义，很少使用内连接（INNER JOIN）SELECT * FROM A,B WHERE A.id=B.id或者SELECT * FROM A INNER JOIN B ON A.id=B.id多表中同时符合某种条件的数据记录的集合，INNER JOIN可以缩写为JOIN
+  SELECT * FROM A,B(,C)或者SELECT * FROM A CROSS JOIN B (CROSS JOIN C)#没有任何关联条件，结果是笛卡尔积，结果集会很大，没有意义，很少使用内连接（INNER JOIN）SELECT * FROM A,B WHERE A.id=B.id或者SELECT * FROM A INNER JOIN B ON A.id=B.id多表中同时符合某种条件的数据记录的集合，INNER JOIN可以缩写为JOIN
   ```
 
 **内连接分为三类**
@@ -884,7 +1019,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 **联合查询（UNION与UNION ALL）**
 
 ```n1ql
-复制代码SELECT * FROM A UNION SELECT * FROM B UNION ...
+SELECT * FROM A UNION SELECT * FROM B UNION ...
 ```
 
 - 就是把多个结果集集中在一起，UNION前的结果为基准，需要注意的是联合查询的列数要相等，相同的记录行会合并
@@ -894,7 +1029,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 **全连接（FULL JOIN）**
 
 ```
-复制代码SELECT * FROM A LEFT JOIN B ON A.id=B.id UNIONSELECT * FROM A RIGHT JOIN B ON A.id=B.id
+SELECT * FROM A LEFT JOIN B ON A.id=B.id UNIONSELECT * FROM A RIGHT JOIN B ON A.id=B.id
 ```
 
 - MySQL不支持全连接
@@ -927,7 +1062,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - SQL
 
 ```
-复制代码select r.*,s.* from r,s
+select r.*,s.* from r,s
 ```
 
 - 结果
@@ -949,7 +1084,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - SQL
 
 ```
-复制代码select r.*,s.* from r inner join s on r.c=s.c
+select r.*,s.* from r inner join s on r.c=s.c
 ```
 
 - 结果
@@ -964,7 +1099,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - SQL
 
 ```
-复制代码select r.*,s.* from r left join s on r.c=s.c
+select r.*,s.* from r left join s on r.c=s.c
 ```
 
 - 结果
@@ -980,7 +1115,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - SQL
 
 ```
-复制代码select r.*,s.* from r right join s on r.c=s.c
+select r.*,s.* from r right join s on r.c=s.c
 ```
 
 - 结果
@@ -996,7 +1131,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - SQL
 
 ```
-复制代码select r.*,s.* from r full join s on r.c=s.c
+select r.*,s.* from r full join s on r.c=s.c
 ```
 
 - 结果
@@ -1154,7 +1289,7 @@ MySQL服务器通过权限表来控制用户对数据库的访问，权限表存
 - **table** 查询的数据表，当从衍生表中查数据时会显示 x 表示对应的执行计划id **partitions** 表分区、表创建的时候可以指定通过那个列进行表分区。 举个例子：
 
 ```
-复制代码create table tmp (
+create table tmp (
     id int unsigned not null AUTO_INCREMENT,
     name varchar(255),
     PRIMARY KEY (id)
@@ -1185,7 +1320,7 @@ partition by key (id) partitions 5;
   4. Using temporary 使用了临时表 sql优化的目标可以参考阿里开发手册
 
 ```
-复制代码【推荐】SQL性能优化的目标：至少要达到 range 级别，要求是ref级别，如果可以是consts最好。 
+【推荐】SQL性能优化的目标：至少要达到 range 级别，要求是ref级别，如果可以是consts最好。 
 说明： 
 1） consts 单表中最多只有一个匹配行（主键或者唯一索引），在优化阶段即可读取到数据。 
 2） ref 指的是使用普通的索引（normal index）。 
@@ -1359,7 +1494,7 @@ partition by key (id) partitions 5;
 - 2.应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如：
 
   ```
-  复制代码select id from t where num is null
+  select id from t where num is null
   -- 可以在num上设置默认值0，确保表中num列没有null值，然后这样查询：
   select id from t where num=0
   ```
@@ -1369,7 +1504,7 @@ partition by key (id) partitions 5;
 - 4.应尽量避免在 where 子句中使用or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描，如：
 
   ```
-  复制代码select id from t where num=10 or num=20
+  select id from t where num=10 or num=20
   -- 可以这样查询：
   select id from t where num=10 union all select id from t where num=20
   ```
@@ -1377,7 +1512,7 @@ partition by key (id) partitions 5;
 - 5.in 和 not in 也要慎用，否则会导致全表扫描，如：
 
   ```
-  复制代码select id from t where num in(1,2,3) 
+  select id from t where num in(1,2,3) 
   -- 对于连续的数值，能用 between 就不要用 in 了：
   select id from t where num between 1 and 3
   ```
@@ -1387,7 +1522,7 @@ partition by key (id) partitions 5;
 - 7.如果在 where 子句中使用参数，也会导致全表扫描。因为SQL只有在运行时才会解析局部变量，但优化程序不能将访问计划的选择推迟到运行时；它必须在编译时进行选择。然 而，如果在编译时建立访问计划，变量的值还是未知的，因而无法作为索引选择的输入项。如下面语句将进行全表扫描：
 
   ```
-  复制代码select id from t where num=@num
+  select id from t where num=@num
   -- 可以改为强制查询使用索引：
   select id from t with(index(索引名)) where num=@num
   ```
@@ -1395,7 +1530,7 @@ partition by key (id) partitions 5;
 - 8.应尽量避免在 where 子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描。如：
 
   ```
-  复制代码select id from t where num/2=100
+  select id from t where num/2=100
   -- 应改为:
   select id from t where num=100*2
   ```
@@ -1403,7 +1538,7 @@ partition by key (id) partitions 5;
 - 9.应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描。如：
 
   ```
-  复制代码select id from t where substring(name,1,3)=’abc’
+  select id from t where substring(name,1,3)=’abc’
   -- name以abc开头的id应改为:
   select id from t where name like ‘abc%’
   ```

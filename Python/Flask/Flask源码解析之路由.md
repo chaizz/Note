@@ -20,9 +20,7 @@ cover: "https://origin.chaizz.com/tc/flask-horizontal.png"
 
 > 须知：
 >
-> - Flask 版本 3.0.x 
->
-> Flask 在3.0 版本对代码进行了重构，使 Flask 和 Blueprint 类具有 Sans-IO 基础。
+> Flask 版本 3.0.x Flask 在3.0 版本对代码进行了重构，使 Flask 和 Blueprint 类具有 Sans-IO 基础。
 
  ## 1. FBV 模式
 
@@ -163,7 +161,7 @@ class App(Scaffold):
         rule = self.url_rule_class(rule, methods=methods, **options)
         rule.provide_automatic_options = provide_automatic_options  # type: ignore
 		 
-        # 此处 url_map 是一个Map对象，包含了所有的rule对象。调用add方法将rule对象即Map中
+        # 此处 url_map 是一个Map对象，包含了所有的rule对象。调用add方法将rule对象添加到Map中
         self.url_map.add(rule)
         if view_func is not None:
             old_func = self.view_functions.get(endpoint)
@@ -172,6 +170,7 @@ class App(Scaffold):
                     "View function mapping is overwriting an existing"
                     f" endpoint function: {endpoint}"
                 )
+            # 将 endpoint 和 view_func 对应起来。 添加到view_functions 中
             self.view_functions[endpoint] = view_func
 ```
 
@@ -374,11 +373,11 @@ def dispatch_request(self, **kwargs: t.Any) -> ft.ResponseReturnValue:
 
 我可能可以看到是和`Django`的`CBV`是一致的。
 
-首先通过反射，获取当前实例下的请求方法对象的函数，如果没有或者是`HEAD`则自动设置为`get`方法，然后直接调用该类下的方法`meth(**kwargs)`。
+首先通过反射，获取当前实例下的请求方法对象的函数，如果没有或者是`HEAD`则自动设置为`GET`方法，然后直接调用该类下的方法`meth(**kwargs)`。
 
 
 
-在as_view视图执行的时候， 我们可以看到这样一段代码
+在`as_view`视图执行的时候， 我们可以看到这样一段代码
 
 ```python
 if cls.decorators:
@@ -388,9 +387,11 @@ if cls.decorators:
         view = decorator(view)
 ```
 
-此段代码正是处理CBV的请求装饰器的作用， 我们可以通过这种方式来给CBV请求添加装饰器。
+此段代码正是处理`CBV`的请求装饰器的作用， 我们可以通过这种方式来给`CBV`请求添加装饰器。
 
 ```python
+from functools import wraps
+
 from flask import Flask
 from flask.views import MethodView
 
@@ -398,6 +399,7 @@ app = Flask(__name__)
 
 
 def wrapper(func):
+    @wraps(func)
     def inner(*args, **kwargs):
         print('开始...1')
         ret = func(*args, **kwargs)
@@ -408,6 +410,7 @@ def wrapper(func):
 
 
 def wrapper2(func):
+    @wraps(func)
     def inner(*args, **kwargs):
         print('开始...2')
         ret = func(*args, **kwargs)
@@ -436,7 +439,7 @@ if __name__ == '__main__':
     app.run()
 ```
 
-wrapper, wrapper2 的执行顺序分别是:
+`wrapper`, `wrapper2`的执行顺序分别是:
 
 ```python
 # 开始...2
