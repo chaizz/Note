@@ -3,7 +3,9 @@ title: Docker部署常见应用[持续更新中]
 date: 2022-2-19 21:00:00
 author: chaizz
 tags: Docker部署应用
-categories: Docker
+categories:
+    - Docker
+    - 部署
 photos: ["https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
 cover: "https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"
 ---
