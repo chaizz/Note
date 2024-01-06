@@ -1,7 +1,7 @@
 ---
 title: Docker部署MySQL8
 date: 2022-2-19 21:00:00
-authoer: chaizz
+author: chaizz
 tags: MySQL
 categories: Docker
 photos: ["https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]

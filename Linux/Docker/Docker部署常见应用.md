@@ -1,4 +1,18 @@
-# 部署nginx
+---
+title: Docker部署常见应用[持续更新中]
+date: 2022-2-19 21:00:00
+author: chaizz
+tags: Docker部署应用
+categories: Docker
+photos: ["https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
+cover: "https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"
+---
+
+​               
+
+<!--more-->
+
+## 一、Nginx
 
 ```yaml
 version: '3'
@@ -20,7 +34,7 @@ services:
 
 ```
 
-## nginx.conf 默认配置
+### 1. nginx.conf 默认配置
 
 ```nginx
 user  nginx;
@@ -56,9 +70,7 @@ http {
 }
 ```
 
-
-
-## 七牛云图床前端配置
+### 2. 七牛云图床前端配置
 
 ```nginx
 server {
@@ -91,7 +103,7 @@ server {
 }
 ```
 
-## 七牛云图床后端配置
+### 3. 七牛云图床后端配置
 
 ```nginx
 upstream qn_backend {
@@ -124,7 +136,7 @@ cert文件夹里面
 
 ```
 
-## vitepress 配置
+### 4. vitepress 配置
 
 ```nginx
 server {
@@ -164,9 +176,7 @@ server {
 }
 ```
 
-
-
-## mqtt emqx 前端配置
+### 5. mqtt emqx 前端配置
 
 ```nginx
 server {
@@ -184,7 +194,7 @@ server {
 }
 ```
 
-## fastapi-todolist 配置
+### 6. fastapi-todolist 配置
 
 ```nginx
 server {
@@ -206,69 +216,46 @@ server {
 }
 ```
 
+## 三、EMQX
 
-
-
-
-
-
-
-
-# 登陆Docker远程仓库
-
-```
-username:admin
-password:Harbor12345
-```
-
-查看 Redis 连接
-
-```
-redis-cli  -a laihui  CLIENT LIST | awk '{printf "%-32s| %-16s| %-16s| %-16s| %-16s| %-16s| %s\n", $2,$5,$6,$7,$12,$16,$18}'
-```
-
-# 部署 算法服务
+创建持久化目录
 
 ```shell
-docker build -t python-dev:v1 .
-docker tag python-dev:v1 docker-registry.laihui.com/laihui/python-dev:latest
-docker push  docker-registry.laihui.com/laihui/python-dev:latest
+mkdir -p ./emqx/data   ./emqx/log  && cd ./emqx
 ```
 
-# 制作基础算法服务镜像
 
-```
-docker build -t python-base:v1 .
-docker tag python-base:v1 docker-registry.laihui.com/laihui/python-base:latest
-docker push  docker-registry.laihui.com/laihui/python-base:latest
-```
-
-# 部署InfluxDB
 
 ```shell
-docker run -d \
-    --name influxdb \
-    -p 8086:8086 \
-    --volume $PWD:/var/lib/influxdb2 \
-    -v $PWD/config.yml:/etc/influxdb2/config.yml \
-    influxdb:2.1.1
+docker run -d --name emqx \
+	--restart=always \
+    -p 1883:1883 -p 8083:8083 \
+    -p 8084:8084 -p 8883:8883 \
+    -p 18083:18083 \
+    -v ./data:/opt/emqx/data \
+    -v ./log:/opt/emqx/log \
+    emqx/emqx:latest
 ```
 
+## 四、RabbitMQ
 
-
-# 部署EMQX
+```shel
+mkdir -p ./rabbitmq/data   ./rabbitmq/log  ./rabbitmq/conf  && cd ./rabbitmq
+```
 
 ```shell
-docker run -d  --restart=always --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:5.1.3
+docker run -d --name rabbitmq \
+	--restart=always \
+    -e RABBITMQ_DEFAULT_USER=admin \
+    -e RABBITMQ_DEFAULT_PASS=admin \
+    -p 15672:15672 -p 5672:5672 \
+    -v ./data:/etc/lib/rabbitmq \
+    -v ./log:/var/log/rabbitmq \
+	-v ./conf:/var/rabbitmq/conf \
+    rabbitmq:management
 ```
 
-# 部署RabbitMQ
-
-```shell
-docker run -d --name Myrabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
-```
-
-# 部署Sentry
+## 五、Sentry
 
 1、获取sentry 配置文件
 
@@ -288,7 +275,7 @@ docker run -d --name sentry-cron -e SENTRY_SECRET_KEY='izb)os5w=n#8w-@ujxnu5m!bb
 docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY='izb)os5w=n#8w-@ujxnu5m!bbwxe+r)9b@h!p-s+wsdo=a5%j%' --link sentry-postgres:postgres --link sentry-redis:redis sentry run worker
 ```
 
-# 部署 grafana
+## 六、Grafana
 
 ```shell
 docker run -d \
@@ -299,22 +286,34 @@ docker run -d \
   grafana/grafana-enterprise
 ```
 
-
-
-# 部署redis
+## 七、Redis
 
 ```shell
-docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 9736:6379 --name myredis -v /opt/redis/conf/myredis.conf:/etc/redis/redis.conf -v /opt/redis/data:/data -d redis redis-server /etc/redis/redis.conf  --appendonly yes  --requirepass 123456
+mkdir -p ./redis/data ./redis/conf  && cd redis
 ```
 
 
 
 ```shell
-# bind 192.168.1.100 10.0.0.1
-# bind 127.0.0.1 ::1
+docker run  -d --restart=always \
+	--log-opt max-size=100m \
+    --log-opt max-file=2 \
+    -p 9736:6379 --name myredis \
+    -v ./conf/redis.conf.conf:/etc/redis/redis.conf \
+    -v ./data:/data \
+    redis redis-server /etc/redis/redis.conf \
+    --appendonly yes  --requirepass 123456
+```
+
+redis 配置文件
+
+```shell
+# redis.conf
+
 bind 0.0.0.0
 
 protected-mode no
+# Redis 服务器的端口号（默认：6379）
 port 9736
 tcp-backlog 511
 requirepass 123456
@@ -372,27 +371,59 @@ rdb-save-incremental-fsync yes
 
 ```
 
+## 八、MongoDB
+
+创建存储目录
+
+````she
+mkdir  ./datadir  ./config   ./logs
+````
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# 部署mongoDB
-
-
-
-# 部署Mysql
 
 ```dockerfile
+# docker-compose.yml
+
+version: '3'
+services:
+    mongo:
+        image: mongo:latest
+        container_name: mongo
+        restart: always
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./mongo/datadir:/data/db
+            - ./mongo/logs:/data/logs
+            - ./mongo/config:/etc/mongo
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: 123456
+            TZ: Asia/Shanghai
+        command:
+        	# 设置WiredTiger缓存大小限制
+            - --wiredTigerCacheSizeGB
+            - '1.5'
+            # 如果有配置文件，则启动方式加上 --config
+            - --config
+            - /etc/mongo/mongod.conf
+```
+
+
+
+
+
+## 九、MySQL
+
+```shell
+mkdir -p ./mysql/data ./mysql/conf && cd ./mysql
+```
+
+
+
+```dockerfile
+# docker-compose.yml
+
 version: '3'
 services:
   mysql:
@@ -402,7 +433,7 @@ services:
     container_name: my_mysql
     volumes:
       # 挂载数据目录
-      - ./datadir:/var/lib/mysql
+      - ./data:/var/lib/mysql
       # 挂载 my.cnf 配置文件
       - ./conf/my.cnf:/etc/mysql/my.cnf
     command: --default-authentication-plugin=mysql_native_password
@@ -465,19 +496,7 @@ mysql>  ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '密码';
 mysql> flush privileges;
 ```
 
-
-
-
-
-# 部署人脸识别Demo
-
-```shell
-docker build -t flask_face_recognition:latest .
-docker tag flask_face_recognition:latest docker-registry.laihui.com/laihui/flask_face_recognition:latest
-docker push  docker-registry.laihui.com/laihui/flask_face_recognition:latest
-```
-
-# Docker部署starRocks
+## 十、StarRocks
 
 ```shell
 docker run -it \
@@ -495,43 +514,43 @@ cd /root/starrocks
 ./build.sh
 ```
 
-# Docker 部署 RocketMQ
+## 十一、RocketMQ
 
-## 拉取rocketmq镜像
+### 方式一：单独部署
 
-```
-docker pull rocketmqinc/rocketmq
-```
+创建NameServer
 
-### 创建namesrv数据存储路径
+#### 1. 创建NameSrv数据存储路径
 
 ```
-mkdir -p  /opt/rocketmq/data/namesrv/logs   /opt/rocketmq/data/namesrv/store
+mkdir -p  ./rocketmq/data/namesrv/logs   ./rocketmq/data/namesrv/store && cd ./rocketmq
 ```
 
-### 构建namesrv容器
+#### 2. 运行namesrv容器
 
 ```shell
 docker run -d \
 --restart=always \
 --name rmqnamesrv \
 -p 9876:9876 \
--v /opt/rocketmq/data/namesrv/logs:/root/logs \
--v /opt/rocketmq/data/namesrv/store:/root/store \
+-v ./data/namesrv/logs:/root/logs \
+-v ./data/namesrv/store:/root/store \
 -e "MAX_POSSIBLE_HEAP=100000000" \
 rocketmqinc/rocketmq \
 sh mqnamesrv
 ```
 
-## 创建borker 节点
+#### 3. 创建borker节点数据存储路径
 
 ```
-mkdir -p  /opt/rocketmq/data/broker/logs   /opt/rocketmq/data/broker/store /opt/rocketmq/conf
+mkdir -p  ./rocketmq/data/broker/logs   ./rocketmq/data/broker/store ./rocketmq/conf && cd ./rocketmq
 ```
 
-### borker 配置文件 ：/opt/rocketmq/conf/broker.conf
+#### 4. 创建borker配置文件
 
 ```yaml
+# ./rocketmq/conf/broker.conf
+
 # 所属集群名称，如果节点较多可以配置多个
 brokerClusterName = DefaultCluster
 #broker名称，master和slave使用相同的名称，表明他们的主从关系
@@ -552,7 +571,7 @@ brokerIP1 = 101.35.188.40
 diskMaxUsedSpaceRatio=95
 ```
 
-### 创建borker 容器
+#### 5. 创建borker容器
 
 ```shell
 docker run -d  \
@@ -561,38 +580,32 @@ docker run -d  \
 --link rmqnamesrv:namesrv \
 -p 10911:10911 \
 -p 10909:10909 \
--v  /opt/rocketmq/data/broker/logs:/root/logs \
--v  /opt/rocketmq/data/broker/store:/root/store \
--v /opt/rocketmq/conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf \
+-v  ./data/broker/logs:/root/logs \
+-v  ./data/broker/store:/root/store \
+-v ./conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf \
 -e "NAMESRV_ADDR=namesrv:9876" \
 -e "MAX_POSSIBLE_HEAP=200000000" \
 rocketmqinc/rocketmq \
 sh mqbroker -c /opt/rocketmq-4.4.0/conf/broker.conf 
 ```
 
-## 创建Rockermq-console服务
-
-### 拉取 rockermq-console 镜像
-
-```
-docker pull pangliang/rocketmq-console-ng
-```
-
-### 创建rockermq-console容器
+#### 6. 创建Rockermq-console服务
 
 ```
 docker run -d \
 --restart=always \
 --name rmqadmin \
--e "JAVA_OPTS=-Drocketmq.namesrv.addr=49.235.122.63:9876 \
+-e "JAVA_OPTS=-Drocketmq.namesrv.addr=你的rockertmq主机IP:9876 \
 -Dcom.rocketmq.sendMessageWithVIPChannel=false" \
 -p 9999:8080 \
 pangliang/rocketmq-console-ng
 ```
 
-# rocketmq docker compose  方式
+### 方式二：compose 方式部署
 
-docker-compose.yml
+需要创建对应的配置文件
+
+#### 1. docker-compose.yml
 
 ```yaml
 version: '3.3'
@@ -633,21 +646,5 @@ services:
     environment:
       JAVA_OPTS: "-Drocketmq.namesrv.addr=namesrv:9876"
     restart: always
-```
-
-
-
-broker.conf
-
-```
-brokerClusterName = DefaultCluster
-brokerName = broker-1
-brokerId = 0
-deleteWhen = 04
-fileReservedTime = 72
-brokerRole = ASYNC_MASTER
-flushDiskType = ASYNC_FLUSH
-#写上运行主机的IP，公网调用得使用公网IP
-brokerIP1 = 119.3.77.49
 ```
 
