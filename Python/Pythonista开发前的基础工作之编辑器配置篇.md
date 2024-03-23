@@ -50,7 +50,6 @@ cover: "https://origin.chaizz.com/PyCharm.png"
 ## 3 插件
 
 - .ignore  忽略文件
-
 - Translation 翻译插件， 需要自己设置翻译SDK的key 
 - Atom Material Icons   一个好看的文件夹主题
 - GitToolBox    git 相关插件， 显示历史修改人等
@@ -58,6 +57,7 @@ cover: "https://origin.chaizz.com/PyCharm.png"
 - Tabnine AI Code Completion AI开发助手
 - sourcery  基于AI的编码助手
 - LeetCode Editor leetcode 插件
+- Git Commit Message Helper 提交规范
 
 
 
