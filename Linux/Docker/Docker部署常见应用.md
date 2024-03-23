@@ -10,8 +10,6 @@ photos: ["https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"]
 cover: "https://origin.chaizz.com/1d3f92b2918411ec84fb0242ac140002.png"
 ---
 
-​               
-
 <!--more-->
 
 ## 一、Nginx
@@ -28,7 +26,7 @@ services:
     volumes:
       - /opt/apps/web_apps:/opt/apps/web_apps
       - /opt/apps/nginx/cert:/opt/apps/nginx/cert
-      
+    
       - /opt/apps/nginx/nginx.conf:/etc/nginx/nginx.conf
       - /opt/apps/nginx/conf.d:/etc/nginx/conf.d
       - /opt/apps/nginx/logs:/var/log/nginx
@@ -226,8 +224,6 @@ server {
 mkdir -p ./emqx/data   ./emqx/log  && cd ./emqx
 ```
 
-
-
 ```shell
 docker run -d --name emqx \
 	--restart=always \
@@ -294,83 +290,34 @@ docker run -d \
 mkdir -p ./redis/data ./redis/conf  && cd redis
 ```
 
-
-
 ```shell
-docker run  -d --restart=always \
-	--log-opt max-size=100m \
-    --log-opt max-file=2 \
-    -p 9736:6379 --name myredis \
-    -v ./conf/redis.conf.conf:/etc/redis/redis.conf \
-    -v ./data:/data \
-    redis redis-server /etc/redis/redis.conf \
-    --appendonly yes  --requirepass 123456
+docker run  -d --name myredis \
+--restart=always \
+-p 9736:6379 \
+-v ./conf/redis.conf:/etc/redis/redis.conf \
+-v ./data:/data redis redis-server /etc/redis/redis.conf \
+--appendonly yes --requirepass redis123456
 ```
 
 redis 配置文件
 
 ```shell
-# redis.conf
+wget http://download.redis.io/redis-stable/redis.conf   //下载redis配置文件
+```
 
-bind 0.0.0.0
+
+
+```shell
+# redis.conf
 
 protected-mode no
 # Redis 服务器的端口号（默认：6379）
 port 9736
-tcp-backlog 511
-requirepass 123456
-timeout 0
-tcp-keepalive 300
+requirepass redis123456
 daemonize no
 supervised no
-pidfile /var/run/redis_6379.pid
-loglevel notice
-logfile ""
-databases 30
-always-show-logo yes
-save 900 1
-save 300 10
-save 60 10000
-stop-writes-on-bgsave-error yes
-rdbcompression yes
-rdbchecksum yes
-dbfilename dump.rdb
-dir ./
-replica-serve-stale-data yes
-replica-read-only yes
-repl-diskless-sync no
-repl-disable-tcp-nodelay no
-replica-priority 100
-lazyfree-lazy-eviction no
-lazyfree-lazy-expire no
-lazyfree-lazy-server-del no
-replica-lazy-flush no
 appendonly yes
 appendfilename "appendonly.aof"
-no-appendfsync-on-rewrite no
-auto-aof-rewrite-percentage 100
-auto-aof-rewrite-min-size 64mb
-aof-load-truncated yes
-aof-use-rdb-preamble yes
-lua-time-limit 5000
-slowlog-max-len 128
-notify-keyspace-events ""
-hash-max-ziplist-entries 512
-hash-max-ziplist-value 64
-list-max-ziplist-size -2
-list-compress-depth 0
-set-max-intset-entries 512
-zset-max-ziplist-entries 128
-zset-max-ziplist-value 64
-hll-sparse-max-bytes 3000
-stream-node-max-bytes 4096
-stream-node-max-entries 100
-activerehashing yes
-hz 10
-dynamic-hz yes
-aof-rewrite-incremental-fsync yes
-rdb-save-incremental-fsync yes
-
 ```
 
 ## 八、MongoDB
@@ -380,8 +327,6 @@ rdb-save-incremental-fsync yes
 ````she
 mkdir  ./datadir  ./config   ./logs
 ````
-
-
 
 ```dockerfile
 # docker-compose.yml
@@ -411,17 +356,11 @@ services:
             - /etc/mongo/mongod.conf
 ```
 
-
-
-
-
 ## 九、MySQL
 
 ```shell
 mkdir -p ./mysql/data ./mysql/conf && cd ./mysql
 ```
-
-
 
 ```dockerfile
 # docker-compose.yml
@@ -445,13 +384,15 @@ services:
       - "TZ=Asia/Shanghai"
       # 设置时区
     ports:
-      - 3306:3306
+      - 6033:3306
     # 设置端口
 ```
 
 MySQL配置文件
 
 ```shell
+# my.cnf
+
 # Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -483,8 +424,6 @@ datadir         = /var/lib/mysql
 # Custom config should go here
 !includedir /etc/mysql/conf.d/
 ```
-
-
 
 mysql 设置远程访问
 
@@ -649,4 +588,3 @@ services:
       JAVA_OPTS: "-Drocketmq.namesrv.addr=namesrv:9876"
     restart: always
 ```
-
