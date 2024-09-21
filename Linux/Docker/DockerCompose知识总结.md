@@ -13,9 +13,9 @@ photos: ["https://origin.chaizz.com/tc/Snipaste_2021-09-27_15-34-13.png"]
 
 # 一、DockerCompose理解
 
-> [Docker Compose](https://docs.docker.com/compose/) is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down.
+> [Docker Compose](https://docs.docker.com/compose/) 是一种旨在帮助定义和共享多容器应用程序的工具。使用 Compose，我们可以创建一个 YAML 文件来定义服务，并且使用单个命令就可以启动或关闭所有内容。
 >
-> The *big* advantage of using Compose is you can define your application stack in a file, keep it at the root of your project repo (it’s now version controlled), and easily enable someone else to contribute to your project. Someone would only need to clone your repo and start the compose app. In fact, you might see quite a few projects on GitHub/GitLab doing exactly this now.
+> 使用 Compose 的*巨大*优势是您可以在文件中定义应用程序堆栈，将其保存在项目存储库的根目录中（现在已进行版本控制），并轻松让其他人为您的项目做出贡献。有人只需克隆您的存储库并启动 Compose 应用程序即可。
 
 
 
